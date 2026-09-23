@@ -176,12 +176,16 @@
           <figure class="goods goods--made">
             <div class="term casts" data-shadow="box" role="img" aria-label="Terminal de ejemplo: una orden lanza el equipo; Codex implementa, corren las pruebas, Claude audita y da el veredicto aprobado.">
               <div class="term__bar"><span class="term__tab">PowerShell</span><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
-<pre><span class="t-p">PS&gt;</span> .\ai-team.ps1 -Project "akora" -Task "cupones"
-<span class="t-d">[1/5]</span> Codex implementa ............ <span class="t-ok">listo</span>
-<span class="t-d">[2/5]</span> Pruebas del proyecto ........ <span class="t-ok">42 ok</span>
-<span class="t-d">[3/5]</span> Claude audita ............... <span class="t-w">2 hallazgos</span>
-<span class="t-d">[4/5]</span> Codex corrige ............... <span class="t-ok">listo</span>
-<span class="t-d">[5/5]</span> Veredicto ................... <span class="t-ok">APROBADO</span><span class="caret"></span></pre>
+<div class="term__body">
+                <p class="term__cmd"><span class="t-p">PS&gt;</span> .\ai-team.ps1 -Project akora -Task cupones</p>
+                <ol class="term__pasos">
+                  <li><span class="t-d">1</span><span>Codex implementa</span><b class="t-ok">listo</b></li>
+                  <li><span class="t-d">2</span><span>Pruebas del proyecto</span><b class="t-ok">42 ok</b></li>
+                  <li><span class="t-d">3</span><span>Claude audita</span><b class="t-w">2 hallazgos</b></li>
+                  <li><span class="t-d">4</span><span>Codex corrige</span><b class="t-ok">listo</b></li>
+                  <li class="term__fin"><span class="t-d">5</span><span>Veredicto</span><b class="t-ok">APROBADO<span class="caret"></span></b></li>
+                </ol>
+              </div>
             </div>
             <figcaption>Corrida ilustrativa: la orden es la real</figcaption>
           </figure>

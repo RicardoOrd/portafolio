@@ -259,7 +259,7 @@ Formas de papel y lona, casi sin redondeo. El boleto tiene esquinas de 3px, ojal
 
 ## Excepción: la terminal ilustrativa
 
-La terminal de AI Orchestrator (`.term`) reproduce la interfaz de **otro**
+La terminal de AI Orchestrator (`.term`, con sus pasos en `.term__pasos`) reproduce la interfaz de **otro**
 producto (Windows Terminal), no la del bazar: lleva sus propios colores, radios
 de 8 px y la fuente monoespaciada del sistema (Cascadia Mono / Consolas) a
 propósito. Su pie de foto dice que la corrida es ilustrativa. El detector la
