@@ -43,8 +43,8 @@ export const puestos: Puesto[] = [
     estado: "En producción",
     caliente: true,
     descripcion:
-      "Tienda web y punto de venta: catálogo, carrito, pago en línea con Openpay (BBVA), panel administrativo y POS para tablet. Cobra de verdad. Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta, con respaldo de la base antes de cada despliegue.",
-    tecnologias: ["Angular", "NestJS", "PostgreSQL", "Docker", "Caddy", "GitHub Actions"],
+      "La hice de cero hasta producción y la sigo manteniendo. Tienda web y punto de venta: catálogo, carrito, pagos con Openpay (BBVA), panel administrativo y POS para tablet, en Angular. Detrás, una API en NestJS con PostgreSQL y Prisma, en contenedores Docker detrás de Caddy con HTTPS. Cada cambio pasa por lint, pruebas y build en GitHub Actions; Sentry avisa de errores y un vigilante externo revisa cada 10 minutos que la tienda responda. La mudé de DigitalOcean a Oracle Cloud.",
+    tecnologias: ["Angular", "NestJS", "PostgreSQL", "Prisma", "Docker", "Caddy", "GitHub Actions", "Sentry"],
     mercancia: {
       tipo: "captura",
       imagen: {

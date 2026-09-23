@@ -74,7 +74,7 @@ export function Trato() {
       <div className="stall__body deal__body">
         <span className={`foco${encendido ? " on" : ""}`} aria-hidden="true"><i /></span>
         <div className="deal__texto">
-          <p className="deal__lead">Busco un equipo donde el detalle de la interfaz importe.</p>
+          <p className="deal__lead">Busco un equipo donde importe todo el camino, de la interfaz al servidor.</p>
           <p className="deal__sub">Escríbeme por correo o por LinkedIn y platicamos.</p>
           <p className="deal__correo" ref={correo}>{CORREO}</p>
           <div className="deal__actions" ref={casts}>
@@ -86,7 +86,7 @@ export function Trato() {
           <p className="deal__aviso" role="status" aria-live="polite">{aviso}</p>
         </div>
         <div className="deal__trato tag casts" data-shadow="box" ref={(el) => { trato.current = el; return casts(el); }}>
-          <span className="tag__row"><span className="tag__k">Puesto</span><span className="tag__v">Frontend y UI/UX</span></span>
+          <span className="tag__row"><span className="tag__k">Puesto</span><span className="tag__v">Full stack</span></span>
           <span className="tag__row"><span className="tag__k">Precio</span><span className="tag__v">Una entrevista</span></span>
           <span className="tag__row"><span className="tag__k">Estado</span><span className="tag__v tag__v--hot">Disponible</span></span>
           <span className="sello" aria-hidden="true" ref={sello}>Apartado</span>
