@@ -42,15 +42,15 @@
   <main>
     <!-- Portada -->
     <section id="inicio" class="hero">
-      <div class="guirnalda" aria-hidden="true">
-        <svg viewBox="0 0 1000 90" preserveAspectRatio="none" focusable="false"><path d="M0 20 Q125 70 250 20 Q375 70 500 20 Q625 70 750 20 Q875 70 1000 20"/></svg>
-        <span class="foco" style="left:12.5%;top:45px"><i></i></span>
-        <span class="foco" style="left:25%;top:20px"><i></i></span>
-        <span class="foco" style="left:37.5%;top:45px"><i></i></span>
-        <span class="foco" style="left:50%;top:20px"><i></i></span>
-        <span class="foco" style="left:62.5%;top:45px"><i></i></span>
-        <span class="foco" style="left:75%;top:20px"><i></i></span>
-        <span class="foco" style="left:87.5%;top:45px"><i></i></span>
+      <div class="guirnalda" role="group" aria-label="Guirnalda: prende y apaga los focos con clic o con las flechas">
+        <svg viewBox="0 0 1000 90" preserveAspectRatio="none" focusable="false" aria-hidden="true"><path d="M0 20 Q125 70 250 20 Q375 70 500 20 Q625 70 750 20 Q875 70 1000 20"/></svg>
+        <button class="foco" type="button" style="left:12.5%;top:45px" aria-pressed="false" aria-label="Foco 1 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:25%;top:20px" aria-pressed="false" aria-label="Foco 2 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:37.5%;top:45px" aria-pressed="false" aria-label="Foco 3 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:50%;top:20px" aria-pressed="false" aria-label="Foco 4 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:62.5%;top:45px" aria-pressed="false" aria-label="Foco 5 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:75%;top:20px" aria-pressed="false" aria-label="Foco 6 de 7"><i></i></button>
+        <button class="foco" type="button" style="left:87.5%;top:45px" aria-pressed="false" aria-label="Foco 7 de 7"><i></i></button>
       </div>
       <img class="hero__luna" src="img/luna-lro.jpg" width="500" height="500" alt="" aria-hidden="true">
 
@@ -76,42 +76,13 @@
         </div>
       </aside>
 
-      <svg class="lane" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-        <g fill="#111722">
-          <path d="M-20 54L-3.1999999999999993 28H173.20000000000002L190 54A13.1 13.1 0 0 1 163.8 54A13.1 13.1 0 0 1 137.5 54A13.1 13.1 0 0 1 111.3 54A13.1 13.1 0 0 1 85.0 54A13.1 13.1 0 0 1 58.8 54A13.1 13.1 0 0 1 32.5 54A13.1 13.1 0 0 1 6.3 54A13.1 13.1 0 0 1 -20.0 54Z"/>
-          <rect x="-9.5" y="54" width="4" height="66"/>
-          <rect x="175.5" y="54" width="4" height="66"/>
-          <rect x="-20" y="90" width="210" height="30"/>
-          <path d="M210 54L223.6 28H366.4L380 54A12.1 12.1 0 0 1 355.7 54A12.1 12.1 0 0 1 331.4 54A12.1 12.1 0 0 1 307.1 54A12.1 12.1 0 0 1 282.9 54A12.1 12.1 0 0 1 258.6 54A12.1 12.1 0 0 1 234.3 54A12.1 12.1 0 0 1 210.0 54Z"/>
-          <rect x="218.5" y="54" width="4" height="66"/>
-          <rect x="367.5" y="54" width="4" height="66"/>
-          <rect x="210" y="90" width="170" height="30"/>
-          <path d="M400 54L418.4 28H611.6L630 54A12.8 12.8 0 0 1 604.4 54A12.8 12.8 0 0 1 578.9 54A12.8 12.8 0 0 1 553.3 54A12.8 12.8 0 0 1 527.8 54A12.8 12.8 0 0 1 502.2 54A12.8 12.8 0 0 1 476.7 54A12.8 12.8 0 0 1 451.1 54A12.8 12.8 0 0 1 425.6 54A12.8 12.8 0 0 1 400.0 54Z"/>
-          <rect x="411.5" y="54" width="4" height="66"/>
-          <rect x="614.5" y="54" width="4" height="66"/>
-          <rect x="400" y="90" width="230" height="30"/>
-          <path d="M650 54L665.2 28H824.8L840 54A13.6 13.6 0 0 1 812.9 54A13.6 13.6 0 0 1 785.7 54A13.6 13.6 0 0 1 758.6 54A13.6 13.6 0 0 1 731.4 54A13.6 13.6 0 0 1 704.3 54A13.6 13.6 0 0 1 677.1 54A13.6 13.6 0 0 1 650.0 54Z"/>
-          <rect x="659.5" y="54" width="4" height="66"/>
-          <rect x="826.5" y="54" width="4" height="66"/>
-          <rect x="650" y="90" width="190" height="30"/>
-          <path d="M860 54L877.6 28H1062.4L1080 54A13.8 13.8 0 0 1 1052.5 54A13.8 13.8 0 0 1 1025.0 54A13.8 13.8 0 0 1 997.5 54A13.8 13.8 0 0 1 970.0 54A13.8 13.8 0 0 1 942.5 54A13.8 13.8 0 0 1 915.0 54A13.8 13.8 0 0 1 887.5 54A13.8 13.8 0 0 1 860.0 54Z"/>
-          <rect x="871" y="54" width="4" height="66"/>
-          <rect x="1065" y="54" width="4" height="66"/>
-          <rect x="860" y="90" width="220" height="30"/>
-          <path d="M1100 54L1114.4 28H1265.6L1280 54A12.9 12.9 0 0 1 1254.3 54A12.9 12.9 0 0 1 1228.6 54A12.9 12.9 0 0 1 1202.9 54A12.9 12.9 0 0 1 1177.1 54A12.9 12.9 0 0 1 1151.4 54A12.9 12.9 0 0 1 1125.7 54A12.9 12.9 0 0 1 1100.0 54Z"/>
-          <rect x="1109" y="54" width="4" height="66"/>
-          <rect x="1267" y="54" width="4" height="66"/>
-          <rect x="1100" y="90" width="180" height="30"/>
-          <path d="M1300 54L1314.4 28H1465.6L1480 54A12.9 12.9 0 0 1 1454.3 54A12.9 12.9 0 0 1 1428.6 54A12.9 12.9 0 0 1 1402.9 54A12.9 12.9 0 0 1 1377.1 54A12.9 12.9 0 0 1 1351.4 54A12.9 12.9 0 0 1 1325.7 54A12.9 12.9 0 0 1 1300.0 54Z"/>
-          <rect x="1309" y="54" width="4" height="66"/>
-          <rect x="1467" y="54" width="4" height="66"/>
-          <rect x="1300" y="90" width="180" height="30"/>
-        </g>
-        <rect x="123.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
-        <rect x="488.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
-        <rect x="988.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
-        <rect x="1386.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
-      </svg>
+      <nav class="calle" aria-label="Los puestos del tianguis">
+        <p class="calle__cuenta" aria-live="polite">0 de 4 puestos recorridos</p>
+        <a class="calle__puesto" href="#akora" aria-label="Akora Repostería"><span class="calle__toldo" aria-hidden="true"></span><span class="calle__mostrador" aria-hidden="true"><span class="calle__foco"></span><span class="calle__largo">Akora Repostería</span><span class="calle__corto">Akora</span></span></a>
+        <a class="calle__puesto" href="#pos" aria-label="POS de taquería"><span class="calle__toldo" aria-hidden="true"></span><span class="calle__mostrador" aria-hidden="true"><span class="calle__foco"></span><span class="calle__largo">POS de taquería</span><span class="calle__corto">POS</span></span></a>
+        <a class="calle__puesto" href="#sistema-de-leche" aria-label="Sistema de Leche"><span class="calle__toldo" aria-hidden="true"></span><span class="calle__mostrador" aria-hidden="true"><span class="calle__foco"></span><span class="calle__largo">Sistema de Leche</span><span class="calle__corto">Leche</span></span></a>
+        <a class="calle__puesto" href="#hacker-tycoon" aria-label="Hacker Tycoon"><span class="calle__toldo" aria-hidden="true"></span><span class="calle__mostrador" aria-hidden="true"><span class="calle__foco"></span><span class="calle__largo">Hacker Tycoon</span><span class="calle__corto">Tycoon</span></span></a>
+      </nav>
     </section>
 
     <!-- Los puestos -->
@@ -127,7 +98,7 @@
         <div class="stall__body">
           <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
-            <img class="casts" data-shadow="img" src="img/akora-portada.png" width="1080" height="675" loading="lazy" alt="Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate.">
+            <button class="lupa casts" data-shadow="img" type="button" aria-label="Ampliar la captura de akora.mx"><img src="img/akora-portada.png" width="1080" height="675" loading="lazy" alt="Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate."></button>
             <img class="goods__sticker casts" data-shadow="img" src="img/akora-gatita.png" width="227" height="283" loading="lazy" alt="">
             <figcaption>Captura de akora.mx en vivo</figcaption>
           </figure>
@@ -150,7 +121,7 @@
         <div class="stall__body">
           <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
-            <img class="casts" data-shadow="img" src="img/pos-comanda.jpg" width="1120" height="1000" loading="lazy" alt="Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar.">
+            <button class="lupa casts" data-shadow="img" type="button" aria-label="Ampliar la captura de la caja"><img src="img/pos-comanda.jpg" width="1120" height="1000" loading="lazy" alt="Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar."></button>
             <figcaption>La caja corriendo en local, con el menú real del cartel</figcaption>
           </figure>
           <div class="stall__info">
@@ -171,7 +142,7 @@
         <div class="stall__body">
           <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
-            <img class="casts" data-shadow="img" src="img/leche-hoy.jpg" width="1440" height="900" loading="lazy" alt="Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho.">
+            <button class="lupa casts" data-shadow="img" type="button" aria-label="Ampliar la captura de Sistema de Leche"><img src="img/leche-hoy.jpg" width="1440" height="900" loading="lazy" alt="Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho."></button>
             <figcaption>La app corriendo en local, con un hato de demostración</figcaption>
           </figure>
           <div class="stall__info">
@@ -186,41 +157,8 @@
         </div>
       </article>
 
-      <!-- AI Orchestrator -->
-      <article class="stall stall--flip" id="ai-orchestrator">
-        <div class="awning"><h3 class="awning__sign">AI Orchestrator</h3></div>
-        <div class="stall__body">
-          <span class="foco" aria-hidden="true"><i></i></span>
-          <figure class="goods goods--made">
-            <div class="term casts" data-shadow="box" role="img" aria-label="Terminal de ejemplo: una orden lanza el equipo; Codex implementa, corren las pruebas, Claude audita y da el veredicto aprobado.">
-              <div class="term__bar"><span class="term__tab">PowerShell</span><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
-<div class="term__body">
-                <p class="term__cmd"><span class="t-p">PS&gt;</span> .\ai-team.ps1 -Project akora -Task cupones</p>
-                <ol class="term__pasos">
-                  <li><span class="t-d">1</span><span>Codex implementa</span><b class="t-ok">listo</b></li>
-                  <li><span class="t-d">2</span><span>Pruebas del proyecto</span><b class="t-ok">42 ok</b></li>
-                  <li><span class="t-d">3</span><span>Claude audita</span><b class="t-w">2 hallazgos</b></li>
-                  <li><span class="t-d">4</span><span>Codex corrige</span><b class="t-ok">listo</b></li>
-                  <li class="term__fin"><span class="t-d">5</span><span>Veredicto</span><b class="t-ok">APROBADO<span class="caret"></span></b></li>
-                </ol>
-              </div>
-            </div>
-            <figcaption>Corrida ilustrativa: la orden es la real</figcaption>
-          </figure>
-          <div class="stall__info">
-            <div class="tag tag--masking casts" data-shadow="box">
-              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Mi propia máquina</span></span>
-              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__v">Aún no sale de casa</span></span>
-              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">En uso diario</span></span>
-            </div>
-            <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. Quién sigue y cuándo parar lo decide un script de PowerShell; los modelos solo trabajan.</p>
-            <ul class="tech-tags" aria-label="Tecnologías"><li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li></ul>
-          </div>
-        </div>
-      </article>
-
       <!-- Hacker Tycoon -->
-      <article class="stall" id="hacker-tycoon">
+      <article class="stall stall--flip" id="hacker-tycoon">
         <div class="awning"><h3 class="awning__sign">Hacker Tycoon</h3></div>
         <div class="stall__body">
           <span class="foco" aria-hidden="true"><i></i></span>
@@ -246,11 +184,14 @@
     <section id="comerciante" class="merchant">
       <h2 class="section-title">Sobre mí</h2>
       <div class="merchant__body">
-        <p class="merchant__quote">Me importa que el sistema aguante el sábado a las nueve de la noche, con fila en el mostrador.</p>
+        <figure class="merchant__cartel">
+          <button class="foco" type="button" aria-pressed="false" aria-label="Foco del cartel"><i></i></button>
+          <blockquote class="merchant__quote tag casts" data-shadow="box"><p>Me importa que el sistema aguante el sábado a las nueve de la noche, con fila en el mostrador.</p></blockquote>
+          <figcaption class="merchant__pista">Prende el foco.</figcaption>
+        </figure>
         <div class="merchant__text">
           <p>Soy Ricardo Orduño Camacho. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso diseño la interfaz y también todo lo que la sostiene: la base de datos, el backend, el servidor y el despliegue.</p>
           <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo: los focos los prendes tú.</p>
-          <p>Trabajo con agentes de IA como parte de mi equipo, con reglas claras: todo cambio va en rama, con pull request y con pruebas.</p>
         </div>
       </div>
     </section>
@@ -258,39 +199,55 @@
     <!-- Inventario -->
     <section id="inventario" class="inventory">
       <h2 class="section-title">Habilidades</h2>
-      <div class="ledger casts" data-shadow="box">
+      <div class="ledger casts" data-shadow="box" id="lista">
         <p class="ledger__note">Precios a tratar</p>
         <dl>
-          <div class="ledger__row"><dt>Interfaz</dt><dd>TypeScript&nbsp;· React&nbsp;· Next.js&nbsp;· Angular&nbsp;· RxJS&nbsp;· Zustand&nbsp;· TanStack Query&nbsp;· Tailwind&nbsp;· Vite&nbsp;· HTML y CSS a mano</dd></div>
-          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript&nbsp;· luz y sombras calculadas en vivo&nbsp;· respeto a quien pide menos movimiento</dd></div>
+          <div class="ledger__row"><dt>Interfaz</dt><dd><span class="marcado" style="--i:0">TypeScript<svg class="marca" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M10 24 C 6 8, 90 2, 95 18 C 99 33, 30 40, 8 30 C 1 25, 12 12, 42 9"/></svg></span>&nbsp;· <span class="marcado" style="--i:1">React<svg class="marca" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M10 24 C 6 8, 90 2, 95 18 C 99 33, 30 40, 8 30 C 1 25, 12 12, 42 9"/></svg></span>&nbsp;· Next.js&nbsp;· <span class="marcado" style="--i:2">Angular<svg class="marca" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M10 24 C 6 8, 90 2, 95 18 C 99 33, 30 40, 8 30 C 1 25, 12 12, 42 9"/></svg></span>&nbsp;· RxJS&nbsp;· Zustand&nbsp;· TanStack Query&nbsp;· Tailwind&nbsp;· Vite&nbsp;· HTML y CSS a mano</dd></div>
+          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript&nbsp;· <span class="marcado marcado--raya" style="--i:3">luz y sombras calculadas en vivo<svg class="marca" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 20 3, 40 8, 60 5 S 90 3, 99 6"/></svg></span>&nbsp;· respeto a quien pide menos movimiento</dd></div>
           <div class="ledger__row"><dt>Backend</dt><dd>Java con Spring Boot&nbsp;· Node.js&nbsp;· NestJS&nbsp;· Python&nbsp;· API REST&nbsp;· tiempo real con WebSockets y Socket.IO</dd></div>
           <div class="ledger__row"><dt>Datos</dt><dd>PostgreSQL&nbsp;· SQLite&nbsp;· Prisma&nbsp;· Drizzle ORM&nbsp;· IndexedDB con Dexie para trabajar sin conexión&nbsp;· respaldos y recuperación</dd></div>
           <div class="ledger__row"><dt>Seguridad y calidad</dt><dd>JWT y Passport&nbsp;· Argon2 y bcrypt&nbsp;· validación con Zod&nbsp;· pruebas con Jest, Vitest, Supertest y Karma&nbsp;· monitoreo con Sentry y Pino</dd></div>
           <div class="ledger__row"><dt>Servicios</dt><dd>Pagos con Openpay&nbsp;· imágenes con Cloudinary&nbsp;· correo con Resend</dd></div>
           <div class="ledger__row"><dt>Servidor</dt><dd>Docker&nbsp;· Caddy&nbsp;· nginx&nbsp;· GitHub Actions&nbsp;· Oracle Cloud&nbsp;· Vercel&nbsp;· Linux</dd></div>
           <div class="ledger__row"><dt>Juegos y escritorio</dt><dd>Roblox con Luau&nbsp;· Rojo&nbsp;· Wally&nbsp;· Electron</dd></div>
-          <div class="ledger__row"><dt>Oficio</dt><dd>Git con ramas y PR&nbsp;· agentes de IA&nbsp;· PowerShell y Bash</dd></div>
+          <div class="ledger__row"><dt>Oficio</dt><dd>Git con ramas y pull requests&nbsp;· revisión de código&nbsp;· PowerShell y Bash</dd></div>
         </dl>
       </div>
     </section>
 
     <!-- Cerrar trato -->
-    <section id="trato" class="deal">
-      <div class="awning awning--wide"><h2 class="awning__sign">Contacto</h2></div>
-      <div class="deal__body">
-        <p class="deal__lead">Busco un equipo donde el detalle de la interfaz importe.</p>
-        <p>Escríbeme por correo o por LinkedIn y platicamos.</p>
-        <div class="deal__actions">
-          <a class="ticket-btn casts" data-shadow="box" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
-          <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="line-btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
+    <section id="trato" class="deal stall">
+      <div class="awning"><h2 class="awning__sign">Contacto</h2></div>
+      <div class="stall__body deal__body">
+        <span class="foco" aria-hidden="true"><i></i></span>
+        <div class="deal__texto">
+          <p class="deal__lead">Busco un equipo donde el detalle de la interfaz importe.</p>
+          <p class="deal__sub">Escríbeme por correo o por LinkedIn y platicamos.</p>
+          <p class="deal__correo" id="correo">ricardoordunoc@gmail.com</p>
+          <div class="deal__actions">
+            <button class="ticket-btn casts" data-shadow="box" type="button" id="copiar" data-correo="ricardoordunoc@gmail.com">Copiar correo</button>
+            <a class="line-btn" href="mailto:ricardoordunoc@gmail.com">Escribir</a>
+            <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="line-btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="deal__aviso" role="status" aria-live="polite"></p>
+        </div>
+        <div class="deal__trato tag casts" data-shadow="box">
+          <span class="tag__row"><span class="tag__k">Puesto</span><span class="tag__v">Frontend y UI/UX</span></span>
+          <span class="tag__row"><span class="tag__k">Precio</span><span class="tag__v">Una entrevista</span></span>
+          <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v tag__v--hot">Disponible</span></span>
+          <span class="sello" aria-hidden="true">Apartado</span>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Abierto de 9 p.m. hasta que compile. No se aceptan devoluciones.</p>
+    <div class="horario">
+      <span class="foco" aria-hidden="true"><i></i></span>
+      <p class="horario__letrero"><span class="horario__estado">Abierto</span> <span class="horario__hora"></span></p>
+      <p class="horario__nota">Abierto de 9 p.m. hasta que compile. No se aceptan devoluciones.</p>
+    </div>
     <p>© <span id="anio">2026</span> Ricardo Orduño Camacho · Hecho a mano, sin frameworks.</p>
   </footer>
 
@@ -298,6 +255,11 @@
     <strong>Se fue la luz</strong>
     <span>Logro desbloqueado. Vuelve a teclear el código para que regrese.</span>
   </div>
+
+  <dialog class="visor" aria-label="Captura ampliada">
+    <button class="visor__cerrar" type="button">Cerrar</button>
+    <div class="visor__lienzo"><img alt="" src="data:," decoding="async"></div>
+  </dialog>
 
   <script src="main.js"></script>
 </body>
