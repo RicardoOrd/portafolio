@@ -315,3 +315,26 @@ propio mundo con los mismos datos (origen, commits, estado).
 
 Un proyecto nuevo elige su objeto de lo que su gente toca de verdad; no se copia
 otro.
+
+## Navegación y movimiento
+
+**Riel (`.rail`).** Un cable (`.rail__cable`) del que cuelgan las secciones como
+cartulinas (`.rail__tag`), cada una con su foquito (`.rail__foco`). El foco de la
+sección en pantalla se prende solo (`aria-current="true"`, por IntersectionObserver).
+Al pasar el cursor, la cartulina se columpia (`columpio`, 0.9 s, amortiguado).
+Abajo del riel, un segundo cable se enciende conforme bajas (`.rail__progreso`,
+`transform: scaleX`). En celular, "Menú" desenrolla un toldo de lona con las
+secciones en Bungee; cierra con Escape, al elegir o al tocar fuera.
+
+**Movimiento, uno por idea:**
+
+| Pieza | Qué comunica | Cómo |
+|---|---|---|
+| Focos al prenderse | que la luz es de tungsteno, no un switch | `enciende`, 0.55 s de titubeo |
+| Cartulina de la portada | que cuelga de verdad: se agarra y se suelta | péndulo amortiguado en JS (−k·sen θ − c·ω) que solo corre mientras se mueve, con airecitos cuando está en pantalla |
+| Toldos | que el puesto abre al llegar | `desenrolla` con `animation-timeline: view()`; sin soporte, el toldo ya está abierto |
+| Commits | que el número es un conteo real | odómetro de 0 al valor, 0.9 s, la primera vez que se prende el foco |
+| Riel | dónde estás y cuánto falta | foco de sección y cable de progreso |
+
+Con `prefers-reduced-motion` no hay titubeo, columpio, péndulo, desenrollado ni
+odómetro; los focos, el scroll-spy y el progreso siguen, porque son estado.

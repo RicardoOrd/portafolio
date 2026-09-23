@@ -82,6 +82,7 @@ function actualizar(p) {
   const prendido = enCentro.has(p) || p.matches(":hover");
   p.classList.toggle("is-lit", prendido);
   p.querySelector(".foco").classList.toggle("on", prendido);
+  if (prendido) contar(p.querySelector(".tag__num"));
   pedir();
 }
 const mostrador = new IntersectionObserver((entradas) => {
@@ -113,3 +114,106 @@ addEventListener("keydown", (e) => {
   ocultar = setTimeout(() => { logro.hidden = true; }, 4200);
   pedir();
 });
+
+// Odómetro: los commits corren hasta su número la primera vez que se prende el foco
+function contar(el) {
+  if (!el || el.dataset.contado) return;
+  el.dataset.contado = "1";
+  const m = el.textContent.match(/^(d+)(.*)$/);
+  if (!m || quietud.matches) return;
+  const meta = +m[1], resto = m[2], t0 = performance.now(), dur = 900;
+  const paso = (t) => {
+    const k = Math.min(1, (t - t0) / dur), suave = 1 - Math.pow(1 - k, 3);
+    el.textContent = Math.round(meta * suave) + resto;
+    if (k < 1) requestAnimationFrame(paso);
+  };
+  requestAnimationFrame(paso);
+}
+setTimeout(() => contar(document.querySelector(".hero__tag .tag__num")), 1500);
+
+// Riel: el foco de la sección en la que estás se prende solo
+const enlaces = [...document.querySelectorAll(".rail__nav a[data-seccion]")];
+const secciones = enlaces.map((a) => document.getElementById(a.dataset.seccion));
+const espia = new IntersectionObserver((entradas) => {
+  for (const e of entradas) {
+    if (!e.isIntersecting) continue;
+    enlaces.forEach((a) => a.dataset.seccion === e.target.id ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
+  }
+}, { rootMargin: "-45% 0px -50% 0px" });
+secciones.forEach((s) => s && espia.observe(s));
+const portada = new IntersectionObserver(([e]) => {
+  if (e.isIntersecting) enlaces.forEach((a) => a.removeAttribute("aria-current"));
+}, { rootMargin: "-45% 0px -50% 0px" });
+portada.observe(document.getElementById("inicio"));
+
+// Cable de abajo del riel: se enciende conforme bajas
+const progreso = document.querySelector(".rail__progreso span");
+let pidioProgreso = false;
+addEventListener("scroll", () => {
+  if (pidioProgreso) return;
+  pidioProgreso = true;
+  requestAnimationFrame(() => {
+    pidioProgreso = false;
+    const tope = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    progreso.style.setProperty("--p", (scrollY / tope).toFixed(4));
+  });
+}, { passive: true });
+
+// Menú del celular: un toldo que se desenrolla
+const riel = document.querySelector(".rail");
+const botonMenu = document.querySelector(".rail__menu");
+function menu(abrir) {
+  riel.classList.toggle("abierto", abrir);
+  botonMenu.setAttribute("aria-expanded", String(abrir));
+}
+botonMenu.addEventListener("click", () => menu(!riel.classList.contains("abierto")));
+enlaces.forEach((a) => a.addEventListener("click", () => menu(false)));
+addEventListener("keydown", (e) => { if (e.key === "Escape" && riel.classList.contains("abierto")) { menu(false); botonMenu.focus(); } });
+document.addEventListener("click", (e) => { if (riel.classList.contains("abierto") && !riel.contains(e.target)) menu(false); });
+
+// La cartulina de la portada cuelga de su cordel: agárrala y suéltala.
+// Péndulo amortiguado: aceleración = -k·sen(θ) - c·ω. Solo corre mientras se mueve.
+const colgada = document.querySelector(".hero__tag");
+if (colgada && !quietud.matches) {
+  let th = 0, w = 0, agarrada = false, corriendo = false, ultimo = 0, antTh = 0, antT = 0;
+  const K = 16, C = 1.4, MAX = 1.1;
+  const pivote = () => {
+    const r = colgada.getBoundingClientRect();
+    return [r.left + r.width / 2, r.top - 46];
+  };
+  const pintar = () => { colgada.style.setProperty("--ang", th.toFixed(4) + "rad"); pedir(); };
+  const tic = (t) => {
+    const dt = Math.min(0.033, (t - (ultimo || t)) / 1000); ultimo = t;
+    if (!agarrada) {
+      w += (-K * Math.sin(th) - C * w) * dt;
+      th = Math.max(-MAX, Math.min(MAX, th + w * dt));
+    }
+    pintar();
+    if (agarrada || Math.abs(w) > 0.002 || Math.abs(th) > 0.002) requestAnimationFrame(tic);
+    else { corriendo = false; ultimo = 0; th = 0; w = 0; pintar(); }
+  };
+  const arrancar = () => { if (!corriendo) { corriendo = true; requestAnimationFrame(tic); } };
+  colgada.addEventListener("pointerdown", (e) => {
+    agarrada = true; colgada.classList.add("agarrada"); colgada.setPointerCapture(e.pointerId);
+    antTh = th; antT = performance.now(); arrancar();
+  });
+  colgada.addEventListener("pointermove", (e) => {
+    if (!agarrada) return;
+    const [px, py] = pivote();
+    const nuevo = Math.max(-MAX, Math.min(MAX, Math.atan2(-(e.clientX - px), e.clientY - py)));
+    const ahora = performance.now();
+    w = (nuevo - antTh) / Math.max(0.008, (ahora - antT) / 1000);
+    antTh = nuevo; antT = ahora; th = nuevo;
+  });
+  const soltar = () => { agarrada = false; colgada.classList.remove("agarrada"); w = Math.max(-8, Math.min(8, w)); };
+  colgada.addEventListener("pointerup", soltar);
+  colgada.addEventListener("pointercancel", soltar);
+  // De vez en cuando pasa un airecito, solo si la cartulina está en pantalla
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(colgada);
+  const aire = () => {
+    if (visible && !agarrada && !document.hidden) { w += (Math.random() - 0.5) * 0.9; arrancar(); }
+    setTimeout(aire, 3500 + Math.random() * 4000);
+  };
+  setTimeout(aire, 2600);
+}
