@@ -82,10 +82,38 @@ a { color: inherit; text-underline-offset: 4px; }
   max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter);
   height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.rail__brand {
-  font: 400 22px/1 var(--f-sign); color: var(--saffron-hi); text-decoration: none;
-  text-shadow: .06em .06em 0 var(--hot);
+/* Letrero de lámina pintado a mano, con su lámpara de gancho encima */
+.rail__brand { position: relative; display: block; padding-top: 10px; text-decoration: none; }
+.rail__placa {
+  position: relative; display: flex; align-items: baseline; gap: .32em;
+  padding: 6px 16px 7px; background: var(--saffron-hi); border-radius: 3px;
+  font: 400 19px/1 var(--f-sign); color: var(--shadow-2);
+  text-shadow: .07em .07em 0 var(--hot);
+  box-shadow: inset 0 0 0 2px var(--shadow-2), inset 0 0 0 4px var(--saffron-hi), inset 0 0 0 5px rgb(10 14 19 / .55), 0 4px 10px rgb(0 0 0 / .5);
+  rotate: -1.2deg; transition: rotate .4s var(--ease-out);
 }
+/* tornillos */
+.rail__placa::before, .rail__placa::after {
+  content: ""; position: absolute; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8a7550, #3a2e1a);
+}
+.rail__placa::before { left: 7px; } .rail__placa::after { right: 7px; }
+.rail__apellido { color: var(--hot); text-shadow: .07em .07em 0 var(--shadow-2); }
+/* lámpara de gancho: brazo y pantalla que alumbran el letrero */
+.rail__lampara {
+  position: absolute; left: 50%; top: -2px; width: 22px; height: 9px; translate: -50% 0;
+  background: #2b313b; border-radius: 0 0 11px 11px; z-index: 1;
+}
+.rail__lampara::after {
+  content: ""; position: absolute; left: 50%; top: 7px; translate: -50% 0; width: 90px; height: 34px;
+  background: radial-gradient(ellipse at 50% 0, rgb(255 205 120 / .38), transparent 70%);
+  pointer-events: none; transition: opacity .4s var(--ease-out);
+}
+.rail__brand:hover .rail__placa { rotate: 1deg; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .rail__lampara::after { animation: enciende .55s linear .2s both; }
+}
+body.apagon .rail__lampara::after { opacity: 0; }
 
 .rail__nav { position: relative; align-self: stretch; display: flex; gap: 14px; padding: 0 6px; }
 .rail__cable {
@@ -556,7 +584,7 @@ body.apagon .stall .goods > :not(figcaption) { --b: .2; --s: 0; }
 
 @media (max-width: 640px) {
   body { font-size: 17px; }
-  .rail__brand { font-size: 20px; }
+  .rail__placa { font-size: 16px; padding: 5px 13px 6px; }
   .rail__menu { display: flex; align-items: center; gap: 8px; padding-top: 0; }
   .rail__menu::before { display: none; }
   .rail__menu .rail__tag { margin: 0; }
