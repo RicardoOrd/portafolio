@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ricardo Orduño Camacho · Frontend y UI/UX</title>
+  <meta name="description" content="Portafolio de Ricardo Orduño Camacho, desarrollador frontend y UI/UX en Sonora, México. Hace las tiendas, cajas y apps con las que cobran negocios de aquí.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ricardo Orduño Camacho · Frontend y UI/UX">
+  <meta property="og:description" content="Desarrollador frontend y UI/UX en Sonora. Cada proyecto es un puesto de tianguis con su foco.">
+  <meta property="og:locale" content="es_MX">
+  <meta name="theme-color" content="#0d1420">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1420'/%3E%3Crect x='13' y='4' width='6' height='6' fill='%232b313b'/%3E%3Cellipse cx='16' cy='18' rx='7' ry='9' fill='%23ffc766'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..800;1,62..125,400..800&family=Bungee&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#puestos">Saltar a los proyectos</a>
+
+  <div class="sky" aria-hidden="true"></div>
+
+  <header class="rail">
+    <div class="rail__inner">
+      <a class="rail__brand" href="#inicio" aria-label="Ricardo Orduño, volver al inicio">
+        <span class="rail__lampara" aria-hidden="true"></span>
+        <span class="rail__placa" aria-hidden="true"><span class="rail__nombre">Ricardo</span><span class="rail__apellido">Orduño</span></span>
+      </a>
+      <button class="rail__menu" type="button" aria-expanded="false" aria-controls="secciones"><span class="rail__foco" aria-hidden="true"></span><span class="rail__tag">Menú</span></button>
+      <nav class="rail__nav" id="secciones" aria-label="Secciones">
+        <span class="rail__cable" aria-hidden="true"></span>
+        <a href="#puestos" data-seccion="puestos"><span class="rail__foco" aria-hidden="true"></span><span class="rail__tag">Proyectos</span></a>
+        <a href="#comerciante" data-seccion="comerciante"><span class="rail__foco" aria-hidden="true"></span><span class="rail__tag">Sobre mí</span></a>
+        <a href="#inventario" data-seccion="inventario"><span class="rail__foco" aria-hidden="true"></span><span class="rail__tag">Habilidades</span></a>
+        <a href="#trato" data-seccion="trato" class="rail__deal"><span class="rail__foco" aria-hidden="true"></span><span class="rail__tag">Contacto</span></a>
+      </nav>
+    </div>
+    <div class="rail__progreso" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section id="inicio" class="hero">
+      <div class="guirnalda" aria-hidden="true">
+        <svg viewBox="0 0 1000 90" preserveAspectRatio="none" focusable="false"><path d="M0 20 Q125 70 250 20 Q375 70 500 20 Q625 70 750 20 Q875 70 1000 20"/></svg>
+        <span class="foco" style="left:12.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:25%;top:20px"><i></i></span>
+        <span class="foco" style="left:37.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:50%;top:20px"><i></i></span>
+        <span class="foco" style="left:62.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:75%;top:20px"><i></i></span>
+        <span class="foco" style="left:87.5%;top:45px"><i></i></span>
+      </div>
+      <img class="hero__luna" src="img/luna-lro.jpg" width="500" height="500" alt="" aria-hidden="true">
+
+      <div class="hero__copy">
+        <h1 class="hero__name">Ricardo<br>Orduño</h1>
+        <p class="hero__lead">
+          Desarrollador frontend y UI/UX en Sonora, México. Hago las tiendas, cajas y apps
+          con las que cobran negocios de aquí: una repostería en Navojoa vende con mi tienda
+          y una taquería cobra con mi caja.
+        </p>
+        <div class="hero__actions">
+          <a class="ticket-btn casts" data-shadow="box" href="#puestos">Ver proyectos</a>
+          <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="hero__tag" aria-label="Cartulina con mis datos">
+        <div class="tag casts" data-shadow="box">
+          <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Sonora, México</span></span>
+          <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">380+</span></span>
+          <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">Buscando equipo</span></span>
+          <span class="tag__row"><span class="tag__k">Precio</span><span class="tag__v">Una entrevista</span></span>
+        </div>
+      </aside>
+
+      <svg class="lane" viewBox="0 0 1440 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <g fill="#111722">
+          <path d="M-20 54L-3.1999999999999993 28H173.20000000000002L190 54A13.1 13.1 0 0 1 163.8 54A13.1 13.1 0 0 1 137.5 54A13.1 13.1 0 0 1 111.3 54A13.1 13.1 0 0 1 85.0 54A13.1 13.1 0 0 1 58.8 54A13.1 13.1 0 0 1 32.5 54A13.1 13.1 0 0 1 6.3 54A13.1 13.1 0 0 1 -20.0 54Z"/>
+          <rect x="-9.5" y="54" width="4" height="66"/>
+          <rect x="175.5" y="54" width="4" height="66"/>
+          <rect x="-20" y="90" width="210" height="30"/>
+          <path d="M210 54L223.6 28H366.4L380 54A12.1 12.1 0 0 1 355.7 54A12.1 12.1 0 0 1 331.4 54A12.1 12.1 0 0 1 307.1 54A12.1 12.1 0 0 1 282.9 54A12.1 12.1 0 0 1 258.6 54A12.1 12.1 0 0 1 234.3 54A12.1 12.1 0 0 1 210.0 54Z"/>
+          <rect x="218.5" y="54" width="4" height="66"/>
+          <rect x="367.5" y="54" width="4" height="66"/>
+          <rect x="210" y="90" width="170" height="30"/>
+          <path d="M400 54L418.4 28H611.6L630 54A12.8 12.8 0 0 1 604.4 54A12.8 12.8 0 0 1 578.9 54A12.8 12.8 0 0 1 553.3 54A12.8 12.8 0 0 1 527.8 54A12.8 12.8 0 0 1 502.2 54A12.8 12.8 0 0 1 476.7 54A12.8 12.8 0 0 1 451.1 54A12.8 12.8 0 0 1 425.6 54A12.8 12.8 0 0 1 400.0 54Z"/>
+          <rect x="411.5" y="54" width="4" height="66"/>
+          <rect x="614.5" y="54" width="4" height="66"/>
+          <rect x="400" y="90" width="230" height="30"/>
+          <path d="M650 54L665.2 28H824.8L840 54A13.6 13.6 0 0 1 812.9 54A13.6 13.6 0 0 1 785.7 54A13.6 13.6 0 0 1 758.6 54A13.6 13.6 0 0 1 731.4 54A13.6 13.6 0 0 1 704.3 54A13.6 13.6 0 0 1 677.1 54A13.6 13.6 0 0 1 650.0 54Z"/>
+          <rect x="659.5" y="54" width="4" height="66"/>
+          <rect x="826.5" y="54" width="4" height="66"/>
+          <rect x="650" y="90" width="190" height="30"/>
+          <path d="M860 54L877.6 28H1062.4L1080 54A13.8 13.8 0 0 1 1052.5 54A13.8 13.8 0 0 1 1025.0 54A13.8 13.8 0 0 1 997.5 54A13.8 13.8 0 0 1 970.0 54A13.8 13.8 0 0 1 942.5 54A13.8 13.8 0 0 1 915.0 54A13.8 13.8 0 0 1 887.5 54A13.8 13.8 0 0 1 860.0 54Z"/>
+          <rect x="871" y="54" width="4" height="66"/>
+          <rect x="1065" y="54" width="4" height="66"/>
+          <rect x="860" y="90" width="220" height="30"/>
+          <path d="M1100 54L1114.4 28H1265.6L1280 54A12.9 12.9 0 0 1 1254.3 54A12.9 12.9 0 0 1 1228.6 54A12.9 12.9 0 0 1 1202.9 54A12.9 12.9 0 0 1 1177.1 54A12.9 12.9 0 0 1 1151.4 54A12.9 12.9 0 0 1 1125.7 54A12.9 12.9 0 0 1 1100.0 54Z"/>
+          <rect x="1109" y="54" width="4" height="66"/>
+          <rect x="1267" y="54" width="4" height="66"/>
+          <rect x="1100" y="90" width="180" height="30"/>
+          <path d="M1300 54L1314.4 28H1465.6L1480 54A12.9 12.9 0 0 1 1454.3 54A12.9 12.9 0 0 1 1428.6 54A12.9 12.9 0 0 1 1402.9 54A12.9 12.9 0 0 1 1377.1 54A12.9 12.9 0 0 1 1351.4 54A12.9 12.9 0 0 1 1325.7 54A12.9 12.9 0 0 1 1300.0 54Z"/>
+          <rect x="1309" y="54" width="4" height="66"/>
+          <rect x="1467" y="54" width="4" height="66"/>
+          <rect x="1300" y="90" width="180" height="30"/>
+        </g>
+        <rect x="123.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
+        <rect x="488.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
+        <rect x="988.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
+        <rect x="1386.0" y="54" width="8" height="11" rx="2" fill="#ffcf7a" class="farol"/>
+      </svg>
+    </section>
+
+    <!-- Los puestos -->
+    <section id="puestos" class="market">
+      <header class="market__head">
+        <h2 class="section-title">Proyectos</h2>
+        <p>Cada proyecto es un puesto con su foco: se prende cuando llegas a él. El número de cada cartulina son los commits de su repositorio.</p>
+      </header>
+
+      <!-- Akora -->
+      <article class="stall" id="akora">
+        <div class="awning"><h3 class="awning__sign">Akora Repostería</h3></div>
+        <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/akora-portada.png" width="1080" height="675" loading="lazy" alt="Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate.">
+            <img class="goods__sticker casts" data-shadow="img" src="img/akora-gatita.png" width="227" height="283" loading="lazy" alt="">
+            <figcaption>Captura de akora.mx en vivo</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag tag--sticker casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Una repostería de Navojoa</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">267</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v tag__v--hot">En producción</span></span>
+            </div>
+            <p>Tienda web y punto de venta: catálogo, carrito, pago en línea con Openpay (BBVA), panel administrativo y POS para tablet. Cobra de verdad. Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta, con respaldo de la base antes de cada despliegue.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li><li>Caddy</li><li>GitHub Actions</li></ul>
+            <a class="daylight" href="https://akora.mx" target="_blank" rel="noopener">Visitar akora.mx</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POS -->
+      <article class="stall stall--flip" id="pos">
+        <div class="awning"><h3 class="awning__sign">POS de taquería</h3></div>
+        <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/pos-comanda.jpg" width="1120" height="1000" loading="lazy" alt="Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar.">
+            <figcaption>La caja corriendo en local, con el menú real del cartel</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag tag--comanda casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">El mostrador de una taquería</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">29</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v tag__v--hot">En producción</span></span>
+            </div>
+            <p>La caja con la que cobra una taquería de barbacoa. Toma comandas por asiento en tablet o teléfono, sincroniza entre aparatos en tiempo real y guarda todo en el servidor. Es la segunda versión: reescribí el sistema original para que aguantara el ritmo del mostrador un sábado en la noche.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sistema de Leche -->
+      <article class="stall" id="sistema-de-leche">
+        <div class="awning"><h3 class="awning__sign">Sistema de Leche</h3></div>
+        <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/leche-hoy.jpg" width="1440" height="900" loading="lazy" alt="Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho.">
+            <figcaption>La app corriendo en local, con un hato de demostración</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag tag--arete casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Un rancho lechero</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">25</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">Rediseño en curso</span></span>
+            </div>
+            <p>App de escritorio para Windows que administra un hato lechero: padrón animal, reproducción, producción, sanidad con control de retiros, insumos y costos. Funciona sin internet, con la base en la computadora del rancho.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Electron</li><li>TypeScript</li><li>Drizzle ORM</li><li>SQLite</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Orchestrator -->
+      <article class="stall stall--flip" id="ai-orchestrator">
+        <div class="awning"><h3 class="awning__sign">AI Orchestrator</h3></div>
+        <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
+          <figure class="goods goods--made">
+            <div class="term casts" data-shadow="box" role="img" aria-label="Terminal de ejemplo: una orden lanza el equipo; Codex implementa, corren las pruebas, Claude audita y da el veredicto aprobado.">
+              <div class="term__bar"><span class="term__tab">PowerShell</span><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
+<div class="term__body">
+                <p class="term__cmd"><span class="t-p">PS&gt;</span> .\ai-team.ps1 -Project akora -Task cupones</p>
+                <ol class="term__pasos">
+                  <li><span class="t-d">1</span><span>Codex implementa</span><b class="t-ok">listo</b></li>
+                  <li><span class="t-d">2</span><span>Pruebas del proyecto</span><b class="t-ok">42 ok</b></li>
+                  <li><span class="t-d">3</span><span>Claude audita</span><b class="t-w">2 hallazgos</b></li>
+                  <li><span class="t-d">4</span><span>Codex corrige</span><b class="t-ok">listo</b></li>
+                  <li class="term__fin"><span class="t-d">5</span><span>Veredicto</span><b class="t-ok">APROBADO<span class="caret"></span></b></li>
+                </ol>
+              </div>
+            </div>
+            <figcaption>Corrida ilustrativa: la orden es la real</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag tag--masking casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Mi propia máquina</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__v">Aún no sale de casa</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">En uso diario</span></span>
+            </div>
+            <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. Quién sigue y cuándo parar lo decide un script de PowerShell; los modelos solo trabajan.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hacker Tycoon -->
+      <article class="stall" id="hacker-tycoon">
+        <div class="awning"><h3 class="awning__sign">Hacker Tycoon</h3></div>
+        <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
+          <figure class="goods goods--cutouts">
+            <img class="cut cut--poster casts" data-shadow="img" src="img/ht-poster-0day.png" width="512" height="716" loading="lazy" alt="Póster del juego: un candado cian roto sobre salpicaduras rojas.">
+            <img class="cut cut--mask casts" data-shadow="img" src="img/ht-mascara-oni.png" width="512" height="256" loading="lazy" alt="Máscara oni del juego, con cuernos y ojos rojos encendidos.">
+            <figcaption>Arte final del juego</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag tag--gafete casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">La Ciudad de Neón, en Roblox</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">61</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">En desarrollo</span></span>
+            </div>
+            <p>Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras máquinas que producen y sales a robar la bóveda de otros jugadores mientras defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li></ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- El comerciante -->
+    <section id="comerciante" class="merchant">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="merchant__body">
+        <p class="merchant__quote">Me importa que el sistema aguante el sábado a las nueve de la noche, con fila en el mostrador.</p>
+        <div class="merchant__text">
+          <p>Soy Ricardo Orduño Camacho. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso diseño la interfaz y también todo lo que la sostiene: la base de datos, el backend, el servidor y el despliegue.</p>
+          <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo: los focos los prendes tú.</p>
+          <p>Trabajo con agentes de IA como parte de mi equipo, con reglas claras: todo cambio va en rama, con pull request y con pruebas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inventario -->
+    <section id="inventario" class="inventory">
+      <h2 class="section-title">Habilidades</h2>
+      <div class="ledger casts" data-shadow="box">
+        <p class="ledger__note">Precios a tratar</p>
+        <dl>
+          <div class="ledger__row"><dt>Interfaz</dt><dd>TypeScript&nbsp;· React&nbsp;· Next.js&nbsp;· Angular&nbsp;· RxJS&nbsp;· Zustand&nbsp;· TanStack Query&nbsp;· Tailwind&nbsp;· Vite&nbsp;· HTML y CSS a mano</dd></div>
+          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript&nbsp;· luz y sombras calculadas en vivo&nbsp;· respeto a quien pide menos movimiento</dd></div>
+          <div class="ledger__row"><dt>Backend</dt><dd>Java con Spring Boot&nbsp;· Node.js&nbsp;· NestJS&nbsp;· Python&nbsp;· API REST&nbsp;· tiempo real con WebSockets y Socket.IO</dd></div>
+          <div class="ledger__row"><dt>Datos</dt><dd>PostgreSQL&nbsp;· SQLite&nbsp;· Prisma&nbsp;· Drizzle ORM&nbsp;· IndexedDB con Dexie para trabajar sin conexión&nbsp;· respaldos y recuperación</dd></div>
+          <div class="ledger__row"><dt>Seguridad y calidad</dt><dd>JWT y Passport&nbsp;· Argon2 y bcrypt&nbsp;· validación con Zod&nbsp;· pruebas con Jest, Vitest, Supertest y Karma&nbsp;· monitoreo con Sentry y Pino</dd></div>
+          <div class="ledger__row"><dt>Servicios</dt><dd>Pagos con Openpay&nbsp;· imágenes con Cloudinary&nbsp;· correo con Resend</dd></div>
+          <div class="ledger__row"><dt>Servidor</dt><dd>Docker&nbsp;· Caddy&nbsp;· nginx&nbsp;· GitHub Actions&nbsp;· Oracle Cloud&nbsp;· Vercel&nbsp;· Linux</dd></div>
+          <div class="ledger__row"><dt>Juegos y escritorio</dt><dd>Roblox con Luau&nbsp;· Rojo&nbsp;· Wally&nbsp;· Electron</dd></div>
+          <div class="ledger__row"><dt>Oficio</dt><dd>Git con ramas y PR&nbsp;· agentes de IA&nbsp;· PowerShell y Bash</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Cerrar trato -->
+    <section id="trato" class="deal">
+      <div class="awning awning--wide"><h2 class="awning__sign">Contacto</h2></div>
+      <div class="deal__body">
+        <p class="deal__lead">Busco un equipo donde el detalle de la interfaz importe.</p>
+        <p>Escríbeme por correo o por LinkedIn y platicamos.</p>
+        <div class="deal__actions">
+          <a class="ticket-btn casts" data-shadow="box" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
+          <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="line-btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Abierto de 9 p.m. hasta que compile. No se aceptan devoluciones.</p>
+    <p>© <span id="anio">2026</span> Ricardo Orduño Camacho · Hecho a mano, sin frameworks.</p>
+  </footer>
+
+  <div class="toast" id="logro" role="status" aria-live="polite" hidden>
+    <strong>Se fue la luz</strong>
+    <span>Logro desbloqueado. Vuelve a teclear el código para que regrese.</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

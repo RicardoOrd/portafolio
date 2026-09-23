@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T12:00:00.000Z",
+  "title": "Design System: Bazar de sombras",
+  "extensions": {
+    "colorMeta": {
+      "lane": { "role": "neutral", "displayName": "Callejón de medianoche", "canonical": "oklch(19.1% 0.027 261)", "tonalRamp": ["#050b16", "#1d2431", "#38404e", "#555e6d", "#747e8e", "#959fb0", "#bac5d6", "#e6effe"] },
+      "shadow-2": { "role": "neutral", "displayName": "Sombra honda", "canonical": "oklch(16.2% 0.012 254)", "tonalRamp": ["#080b10", "#20242a", "#3b4046", "#595e65", "#787e85", "#999fa6", "#bfc5cc", "#e9eff7"] },
+      "saffron": { "role": "primary", "displayName": "Lona azafrán", "canonical": "oklch(71.6% 0.110 79)", "tonalRamp": ["#120900", "#322000", "#553a02", "#7b5605", "#a07521", "#c39648", "#eabc6e", "#ffecce"] },
+      "saffron-hi": { "role": "primary", "displayName": "Azafrán encendido", "canonical": "oklch(80.3% 0.111 82)", "tonalRamp": ["#110a00", "#302101", "#533b02", "#795700", "#9d761e", "#c09746", "#e8bd6c", "#ffecca"] },
+      "bulb": { "role": "secondary", "displayName": "Luz de foco", "canonical": "oklch(86% 0.13 78)", "tonalRamp": ["#1a0e00", "#3a2600", "#5e4100", "#855e00", "#ad7d10", "#d69e3a", "#ffc766", "#ffeccb"] },
+      "hot": { "role": "secondary", "displayName": "Rojo de rotulista", "canonical": "oklch(46.5% 0.15 35)", "tonalRamp": ["#2a0500", "#4e1204", "#74220c", "#9c3218", "#c24f33", "#e3735a", "#fb9f89", "#ffd6cb"] },
+      "ticket": { "role": "tertiary", "displayName": "Cartulina", "canonical": "oklch(90.6% 0.035 87)", "tonalRamp": ["#110a00", "#2b230f", "#483f2a", "#665d47", "#867c66", "#a89d86", "#cec3ab", "#f9eed4"] },
+      "ticket-ink": { "role": "tertiary", "displayName": "Tinta café", "canonical": "oklch(25.9% 0.024 72)", "tonalRamp": ["#110902", "#2b2217", "#483e32", "#665c4f", "#867b6e", "#a89c8f", "#cec2b4", "#f9ecde"] },
+      "ticket-dim": { "role": "tertiary", "displayName": "Tinta desvaída", "canonical": "oklch(48.2% 0.047 77)", "tonalRamp": ["#130900", "#302106", "#4e3d22", "#6c5a3f", "#8d7a5e", "#af9b7e", "#d5c1a3", "#ffeccf"] },
+      "wire": { "role": "neutral", "displayName": "Cable", "canonical": "oklch(30% 0.018 260)", "tonalRamp": ["#0b0e13", "#2b313b", "#454b56", "#626874", "#818794", "#a2a8b5", "#c6ccd9", "#eef3ff"] },
+      "text": { "role": "neutral", "displayName": "Texto de noche", "canonical": "oklch(88.6% 0.016 257)", "tonalRamp": ["#070b12", "#1f242c", "#3b4048", "#585e67", "#777e87", "#989fa8", "#bec5ce", "#e8eff9"] },
+      "muted": { "role": "neutral", "displayName": "Texto apagado", "canonical": "oklch(71.1% 0.035 258)", "tonalRamp": ["#030b19", "#1a2435", "#354052", "#525e71", "#717e92", "#929fb4", "#b7c5db", "#e5effe"] },
+      "cast": { "role": "neutral", "displayName": "Sombra proyectada", "canonical": "rgb(2 4 8 / .72)", "tonalRamp": ["#070b11", "#1f242b", "#3b4048", "#585e66", "#787e86", "#989fa8", "#bec5ce", "#e8eff9"] },
+      "moon": { "role": "neutral", "displayName": "Blanco de foco", "canonical": "oklch(94.3% 0.013 252)", "tonalRamp": ["#070c11", "#1f252a", "#3b4047", "#585e65", "#787e85", "#999fa7", "#bec5cd", "#e8eff7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Rótulo mayor", "purpose": "Solo el nombre en la portada; Bungee con sombra pintada roja a .05em." },
+      "headline": { "displayName": "Rótulo de sección", "purpose": "Títulos de sección en azafrán encendido, sombra pintada a .06em." },
+      "title": { "displayName": "Letrero de toldo", "purpose": "Nombre de cada puesto sobre la lona, en sombra honda, sombra pintada a .07em." },
+      "quote": { "displayName": "Cita", "purpose": "Cita de Sobre mí y frase de Contacto; Archivo a 108 % de ancho, balanceada." },
+      "body": { "displayName": "Lectura", "purpose": "Texto corrido en Archivo; 17px bajo 640px." },
+      "label": { "displayName": "Etiqueta ancha", "purpose": "Claves de la cartulina y términos de la lista: Archivo a 125 % de ancho, mayúsculas." },
+      "action": { "displayName": "Acción", "purpose": "Botón de boleto: Archivo 700 a 112 % de ancho." },
+      "hand": { "displayName": "Plumón", "purpose": "Valores de la cartulina y nota de la lista; solo sobre cartulina." },
+      "numeral": { "displayName": "Commits a plumón", "purpose": "Número de commits reales en la cartulina." }
+    },
+    "shadows": [
+      { "name": "cast-box", "value": "calc(var(--sx) * 1px) calc(var(--sy) * 1px) calc(4px + var(--len) * .5px) var(--cast), calc(var(--sx) * 2.2px) calc(var(--sy) * 2.2px) calc(14px + var(--len) * 1.2px) rgb(2 4 8 / .35)", "purpose": "[data-shadow=box]: cartulinas, lista de habilidades, botón de boleto, terminal. main.js escribe --sx/--sy/--len desde el foco encendido más cercano; sin foco queda en 0/3/4." },
+      { "name": "cast-img", "value": "drop-shadow(calc(var(--sx) * 1.4px) calc(var(--sy) * 1.4px) calc(3px + var(--len) * .4px) var(--cast))", "purpose": "[data-shadow=img]: capturas y arte recortado." },
+      { "name": "cast-actions", "value": "drop-shadow(calc(var(--sx) * .8px) calc(var(--sy) * .8px) 6px rgb(2 4 8 / .6))", "purpose": "En el contenedor de acciones: la muesca del botón de boleto corta su box-shadow." },
+      { "name": "painted-sign", "value": ".05em–.07em .05em–.07em 0 var(--hot)", "purpose": "Sombra pintada de rotulista en todo texto Bungee; fija, sin difuminado, no la mueven los focos." },
+      { "name": "bulb-glow", "value": "0 0 10px 3px rgb(255 196 100 / .75), 0 0 70px 26px rgb(255 176 80 / .2)", "purpose": "Resplandor del foco encendido." },
+      { "name": "light-pool", "value": "radial-gradient(closest-side, rgb(255 186 96 / .12), transparent)", "purpose": "Charco de luz cálida bajo el foco del puesto encendido (.stall__body::before)." },
+      { "name": "toast", "value": "0 18px 40px rgb(0 0 0 / .5)", "purpose": "Única sombra de caja fija: aviso de logro del apagón." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Curva de todas las transiciones." },
+      { "name": "garland-arrival", "value": "350ms + 170ms por foco, siete focos", "purpose": "Único momento orquestado: la guirnalda se prende foco por foco. Con reduced-motion se prenden todos a la vez." },
+      { "name": "bulb-toggle", "value": "vidrio .35s, resplandor .6s", "purpose": "Paso de foco apagado a encendido, por clic en la guirnalda o al prenderse el puesto." },
+      { "name": "stall-lit", "value": "--b/--s 1s; charco .8s", "purpose": "La mercancía sube de brightness(.42) saturate(.3) a luz plena cuando el puesto cruza la franja central (-38 %) o recibe el cursor." },
+      { "name": "tag-sway", "value": "5.5s ease-in-out infinite alternate, -3deg a 2.5deg", "purpose": "Cartulina colgada de portada; solo sin reduced-motion." },
+      { "name": "caret-blink", "value": "1.1s steps(1) infinite", "purpose": "Cursor de la terminal; solo sin reduced-motion." },
+      { "name": "toast-in", "value": ".6s", "purpose": "Entrada del aviso de logro; visible 4.2s." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "900px", "purpose": "Una columna; la mercancía va primero; filas de la lista a una columna." },
+      { "name": "sm", "value": "640px", "purpose": "Navegación reducida a Proyectos y Contacto, cartulina de portada a 210px, estampa oculta, acciones a todo el ancho, cuerpo a 17px." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón de boleto",
+      "kind": "button",
+      "refersTo": "button-ticket",
+      "description": "Acción primaria con muescas de boleto, azafrán plano; la sombra la da su contenedor porque la máscara corta el box-shadow.",
+      "html": "<div class=\"ds-ticket-wrap\"><a class=\"ds-ticket-btn\" href=\"#\">Ver proyectos</a></div>",
+      "css": ".ds-ticket-wrap{display:inline-block;filter:drop-shadow(0 2.4px 6px rgb(2 4 8 / .6))}.ds-ticket-btn{--notch:9px;display:inline-flex;align-items:center;min-height:52px;padding:0 28px;text-decoration:none;font:700 17px Archivo,system-ui,sans-serif;font-stretch:112%;color:#2b2217;background:#e2b867;-webkit-mask:radial-gradient(var(--notch) at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(var(--notch) at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;mask:radial-gradient(var(--notch) at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(var(--notch) at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;transition:transform .35s cubic-bezier(.16,1,.3,1),background-color .35s cubic-bezier(.16,1,.3,1)}.ds-ticket-btn:hover{transform:translateY(-2px) rotate(-.6deg);background:#f0c878}.ds-ticket-btn:active{transform:translateY(0)}.ds-ticket-btn:focus-visible{outline:2px solid #e6edf5;outline-offset:4px}"
+    },
+    {
+      "name": "Botón de línea",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Acción secundaria (LinkedIn, GitHub): solo borde, se enciende en azafrán.",
+      "html": "<a class=\"ds-line-btn\" href=\"#\">LinkedIn</a>",
+      "css": ".ds-line-btn{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;font:600 16px Archivo,system-ui,sans-serif;color:#d3dae4;text-decoration:none;border:1px solid rgb(211 218 228 / .35);background:#0d1420;transition:border-color .3s cubic-bezier(.16,1,.3,1),color .3s cubic-bezier(.16,1,.3,1)}.ds-line-btn:hover{border-color:#e2b867;color:#e2b867}.ds-line-btn:focus-visible{outline:2px solid #e6edf5;outline-offset:4px;border-radius:2px}"
+    },
+    {
+      "name": "Riel de navegación",
+      "kind": "nav",
+      "refersTo": "nav-rail",
+      "description": "Banda pegajosa sólida de 64px con marca en Bungee y sombra pintada; Contacto es un bloque azafrán.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail-brand\" href=\"#\">Ricardo</a><span class=\"ds-rail-nav\"><a href=\"#\">Proyectos</a><a href=\"#\">Sobre mí</a><a href=\"#\">Habilidades</a><a class=\"ds-rail-deal\" href=\"#\">Contacto</a></span></nav>",
+      "css": ".ds-rail{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:#0a0e13;border-bottom:1px solid rgb(200 155 77 / .22)}.ds-rail-brand{font:400 22px/1 Bungee,\"Arial Black\",sans-serif;color:#e2b867;text-decoration:none;text-shadow:.06em .06em 0 #9c3218}.ds-rail-nav{display:flex;gap:2px;align-items:center}.ds-rail-nav a{font:500 15px Archivo,system-ui,sans-serif;color:#95a3b8;text-decoration:none;padding:8px 12px;transition:color .25s cubic-bezier(.16,1,.3,1)}.ds-rail-nav a:hover{color:#e2b867}.ds-rail-nav .ds-rail-deal{color:#0a0e13;background:#e2b867;font-weight:700;margin-left:8px}.ds-rail-nav .ds-rail-deal:hover{color:#0a0e13;background:#f0c878}.ds-rail a:focus-visible{outline:2px solid #e6edf5;outline-offset:4px;border-radius:2px}"
+    },
+    {
+      "name": "Chip de tecnología",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Lista de tecnologías de un puesto; sin estado.",
+      "html": "<ul class=\"ds-chips\"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li></ul>",
+      "css": ".ds-chips{list-style:none;margin:0;padding:12px;display:flex;flex-wrap:wrap;gap:8px;background:#0d1420}.ds-chips li{font:500 14px Archivo,system-ui,sans-serif;color:#d3dae4;padding:3px 10px;background:rgb(149 163 184 / .12);border-radius:3px}"
+    },
+    {
+      "name": "Foco",
+      "kind": "custom",
+      "refersTo": "foco",
+      "description": "Foco pelón colgado de su cable; el hover simula .on (encendido). Fuente de luz de las sombras.",
+      "html": "<div class=\"ds-foco-stage\"><span class=\"ds-foco\"><i></i></span></div>",
+      "css": ".ds-foco-stage{display:grid;place-items:start center;height:90px;width:120px;background:#0d1420}.ds-foco{display:grid;justify-items:center;cursor:pointer}.ds-foco::before{content:\"\";width:2px;height:26px;background:#2b313b}.ds-foco i{position:relative;display:block;width:16px;height:21px;margin-top:7px;border-radius:50% 50% 46% 46%;background:#3b414b;transition:background .35s cubic-bezier(.16,1,.3,1),box-shadow .6s cubic-bezier(.16,1,.3,1)}.ds-foco i::before{content:\"\";position:absolute;top:-7px;left:4px;width:8px;height:8px;background:#23272e;border-radius:1px}.ds-foco:hover i{background:radial-gradient(circle at 42% 34%,#fff7dc,#ffc766 62%);box-shadow:0 0 10px 3px rgb(255 196 100 / .75),0 0 70px 26px rgb(255 176 80 / .2)}"
+    },
+    {
+      "name": "Cartulina de precio",
+      "kind": "card",
+      "refersTo": "tag-price",
+      "description": "Ficha de cada puesto: origen, commits reales a plumón y estado; proyecta sombra de caja desde el foco (aquí congelada).",
+      "html": "<div class=\"ds-tag\"><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Origen</span><span class=\"ds-tag-v\">Una repostería de Navojoa</span></span><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Commits</span><span class=\"ds-tag-num\">267</span></span><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Estado</span><span class=\"ds-tag-v ds-hot\">En producción</span></span></div>",
+      "css": ".ds-tag{position:relative;display:grid;gap:12px;width:280px;padding:32px 22px 20px;background:#eadfc6;color:#2b2217;border-radius:2px;transform:rotate(-1.5deg);box-shadow:2px 8px 8px rgb(2 4 8 / .72),4.4px 17.6px 24px rgb(2 4 8 / .35)}.ds-tag::before{content:\"\";position:absolute;top:12px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#0d1420;box-shadow:inset 0 0 0 2px #6d5b40}.ds-tag-row{display:grid;text-align:center}.ds-tag-k{font:600 12px Archivo,system-ui,sans-serif;font-stretch:125%;text-transform:uppercase;letter-spacing:.02em;color:#6d5b40}.ds-tag-v{font:400 25px/1.1 \"Caveat Brush\",\"Comic Sans MS\",cursive}.ds-hot{color:#9c3218}.ds-tag-num{font:400 52px/1 \"Caveat Brush\",\"Comic Sans MS\",cursive}"
+    },
+    {
+      "name": "Toldo con letrero",
+      "kind": "custom",
+      "refersTo": "awning",
+      "description": "Encabezado de cada puesto: lona rayada plana con festón y letrero en Bungee con sombra pintada roja. Siempre a plena luz.",
+      "html": "<div class=\"ds-awning\"><h3 class=\"ds-awning-sign\">Akora Repostería</h3></div>",
+      "css": ".ds-awning{padding:22px 28px 42px;background:repeating-linear-gradient(90deg,#e2b867 0 64px,#c89b4d 64px 128px);-webkit-mask:radial-gradient(22px 18px at 50% 100%,#0000 98%,#000) 0 0/64px 100% round;mask:radial-gradient(22px 18px at 50% 100%,#0000 98%,#000) 0 0/64px 100% round}.ds-awning-sign{margin:0;font:400 44px/1.05 Bungee,\"Arial Black\",sans-serif;color:#0a0e13;text-shadow:.07em .07em 0 #9c3218}"
+    },
+    {
+      "name": "Lista de habilidades",
+      "kind": "card",
+      "refersTo": "ledger",
+      "description": "Cartulina con nota a plumón y filas de término ancho y descripción separadas por línea punteada.",
+      "html": "<div class=\"ds-ledger\"><p class=\"ds-ledger-note\">Precios a tratar</p><div class=\"ds-ledger-row\"><b>Interfaz</b><span>TypeScript · React · Next.js · Angular</span></div><div class=\"ds-ledger-row\"><b>Datos</b><span>PostgreSQL · SQLite · Drizzle ORM</span></div></div>",
+      "css": ".ds-ledger{padding:28px 32px;background:#eadfc6;color:#2b2217;font:400 18px/1.6 Archivo,system-ui,sans-serif}.ds-ledger-note{margin:0 0 10px;font:400 30px/1.1 \"Caveat Brush\",\"Comic Sans MS\",cursive;color:#6d5b40;rotate:-1.5deg}.ds-ledger-row{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:16px 0;border-top:1px dashed rgb(109 91 64 / .45)}.ds-ledger-row b{font:700 15px/1.6 Archivo,system-ui,sans-serif;font-stretch:125%;text-transform:uppercase;letter-spacing:.02em}.ds-ledger-row span{color:#4a3d2b}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El tianguis de los focos",
+    "overview": "Un tianguis nocturno sonorense. Cada proyecto es un puesto con toldo de lona azafrán rayada, un foco pelón colgado al centro y una cartulina de precio escrita con plumón: origen, commits reales y estado. La mercancía (capturas reales, arte del juego, una terminal) espera en penumbra y sale a la luz cuando se prende el foco de su puesto. El sistema no es un modo oscuro con acento: es una calle de noche iluminada por focos, y lo que está bajo un foco proyecta su sombra desde él.\n\nLa luz la dan los focos, no la luna. En la portada cuelga de lado a lado una guirnalda de siete focos sobre un cable con vuelos; al llegar se prenden uno por uno, y cada uno se prende o se apaga al tocarlo. Cada puesto tiene su propio foco, que se enciende cuando el puesto cruza el centro de la pantalla o cuando el cursor pasa por él, y deja en el suelo un charco de luz cálida. `main.js` escribe en cada elemento `.casts` las variables `--sx`, `--sy` (dirección y largo) y `--len` desde el foco encendido más cercano: el del puesto, o el más cercano de la guirnalda en la portada. Sin foco, la sombra queda corta y plana (0, 3, 4). Solo se recalculan los elementos en pantalla. La luna es una foto tenue y quieta en el cielo de la portada, nada más.\n\nLa personalidad es de rotulista y de mercado, con humor: letreros pintados en Bungee con sombra plana roja, texto en Archivo con su eje de ancho, precios a plumón en cartulina. Hay un solo momento orquestado (la guirnalda que se prende) y un secreto (el código Konami tumba la luz: \"Se fue la luz\").",
+    "keyCharacteristics": [
+      "La luz viene de focos que el visitante puede prender y apagar; toda sombra de `.casts` sale del foco encendido más cercano.",
+      "El puesto activo se prende: foco encendido, charco de luz y mercancía a plena luz.",
+      "Materiales de tianguis: lona azafrán rayada, cartulina crema, tinta café, cable oscuro, noche azul marino.",
+      "Tres familias con papeles fijos: rótulo (Bungee), texto con eje de ancho (Archivo) y plumón (Caveat Brush) solo en cartulinas.",
+      "Todo lo ilustrativo se etiqueta; toda cifra es real."
+    ],
+    "rules": [
+      { "name": "La Regla del Foco", "body": "La luz cálida (`bulb`) solo existe donde hay un foco encendido: su vidrio, su resplandor y su charco. No se usa como relleno, texto ni acento de interfaz.", "section": "colors" },
+      { "name": "La Regla de la Lona", "body": "El azafrán es material del tianguis (lona, rótulo, botón de boleto) y el tono al que llegan los hovers. No se usa para éxito, error o alerta; el único otro tono cálido fuera de la terminal es el rojo de rotulista.", "section": "colors" },
+      { "name": "La Regla del Rótulo", "body": "Bungee solo rotula: marca del riel, nombre, títulos de sección, letreros de toldo y el título del aviso de logro. Siempre lleva su sombra plana de un color en `hot`, desplazada hacia abajo a la derecha (.05–.07em, sin difuminado). Esa sombra está pintada y no se mueve con los focos.", "section": "typography" },
+      { "name": "La Regla del Plumón", "body": "Caveat Brush vive solo en cartulina: valores y números de la cartulina de precio y la nota de la lista de habilidades. Nunca en párrafos, botones ni navegación.", "section": "typography" },
+      { "name": "La Regla del Ancho", "body": "Las etiquetas se ensanchan (`font-stretch: 125%`, mayúsculas) y los botones de acción a 112 %; el cuerpo queda en ancho normal.", "section": "typography" },
+      { "name": "La Regla del Foco Más Cercano", "body": "Toda sombra proyectada nueva se engancha a las variables de `main.js` (agregando `.casts` y un `data-shadow`). Una sombra con dirección fija contradice a los focos; la única excepción es la sombra pintada de los letreros.", "section": "elevation" },
+      { "name": "La Regla del Puesto Encendido", "body": "Un puesto se prende cuando cruza la franja central de la pantalla (margen de -38 % arriba y abajo) o cuando el cursor está sobre él; solo entonces su mercancía está a plena luz y su foco proyecta.", "section": "elevation" },
+      { "name": "La Regla del Apagón", "body": "Con `body.apagon` (código Konami) todos los focos se apagan, la luna baja a .15, desaparecen los charcos, la mercancía cae a `brightness(.2) saturate(0)` y las sombras quedan planas. Se vuelve a teclear el código para que regrese la luz.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do conectar toda sombra proyectada nueva a los focos con `.casts` y `data-shadow` = `box` o `img`.",
+      "Do darle a cada puesto nuevo su propio foco (`.foco` como primer hijo de `.stall__body`).",
+      "Do pintar la sombra de los letreros en Bungee con `hot`, plana y sin difuminado.",
+      "Do reservar Caveat Brush para la cartulina y la nota de la lista.",
+      "Do reservar `moon` para el anillo de foco del teclado.",
+      "Do etiquetar en el `figcaption` toda mercancía ilustrativa y preferir capturas reales de las apps corriendo.",
+      "Do usar commits reales en las cartulinas; si no hay cifra, decirlo con palabras (\"Aún no sale de casa\").",
+      "Do incrustar el origen en los metadatos de cada imagen raster que se publique.",
+      "Do darle el `drop-shadow` al contenedor cuando el elemento lleve máscara.",
+      "Do dejar la mercancía a plena luz sin JavaScript y prender la guirnalda sin animación bajo `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't fijar sombras proyectadas con dirección constante; solo la sombra pintada de los letreros es fija.",
+      "Don't volver a la luna como fuente de luz: es una foto tenue y quieta en la portada.",
+      "Don't usar estrellas, desenfoque de fondo, degradados en botones, texturas de rayitas de 1px ni sombras de texto dinámicas.",
+      "Don't oscurecer los toldos apagados; solo la mercancía espera en penumbra.",
+      "Don't usar texto con degradado.",
+      "Don't usar glifos unicode como íconos; los íconos van en SVG en línea.",
+      "Don't usar Bungee fuera de los rótulos ni plumón fuera de la cartulina.",
+      "Don't tratar la silueta plana del callejón de portada como diseño final: es un marcador de posición de una sola fila."
+    ]
+  }
+}
