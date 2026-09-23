@@ -257,11 +257,14 @@ Formas de papel y lona, casi sin redondeo. El boleto tiene esquinas de 3px, ojal
 - **Don't** usar el script fuera de los rótulos.
 - **Don't** tratar la silueta plana del callejón de portada como diseño final: es un marcador de posición de una sola fila hasta que exista un callejón en raster.
 
-## Excepción: pantallas ilustrativas
+## Excepción: la terminal ilustrativa
 
-La comanda del POS (`.comanda`), el panel de Sistema de Leche (`.hato`) y la
-terminal de AI Orchestrator (`.term`) reproducen la interfaz de **otros**
-productos, no la del bazar. Llevan sus propios colores, radios de 6–8 px y la
-fuente monoespaciada del sistema (Cascadia Mono / Consolas) a propósito, y no
-toman tokens de este sistema. Siempre van con pie de foto que dice que son
-ilustrativas. El detector los marca como deriva del sistema: es esperado.
+La terminal de AI Orchestrator (`.term`) reproduce la interfaz de **otro**
+producto (Windows Terminal), no la del bazar: lleva sus propios colores, radios
+de 8 px y la fuente monoespaciada del sistema (Cascadia Mono / Consolas) a
+propósito. Su pie de foto dice que la corrida es ilustrativa. El detector la
+marca como deriva del sistema: es esperado.
+
+El POS y Sistema de Leche se muestran con **capturas reales** de las apps
+corriendo en local (`img/pos-comanda.jpg`, `img/leche-hoy.jpg`), no con
+maquetas.

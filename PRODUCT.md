@@ -43,8 +43,8 @@ solemne. Español de México.
 
 - Akora Repostería, en producción en https://akora.mx (se puede capturar en vivo).
   Fotos propias en `C:\proyectos\akora\src\assets\images\` (hero-main, about-us, og-cover).
-- POS para taquería, en producción, detrás de NIP: sin capturas públicas.
-- Sistema de Leche, app de escritorio Electron: sin capturas todavía.
+- POS para taquería, en producción, detrás de NIP. Captura real tomada en local con el menú de fábrica (el del cartel): `img/pos-comanda.jpg`.
+- Sistema de Leche, app de escritorio Electron. Captura real tomada en local con un hato de demostración (Rancho El Mezquite, ficticio): `img/leche-hoy.jpg`.
 - Hacker Tycoon (Roblox): arte final del juego en
   `C:\proyectos\HackerTycoon\assets\final\` (pósters, máscaras, letreros, graffiti).
 - AI Orchestrator: herramienta de línea de comandos, sin capturas.

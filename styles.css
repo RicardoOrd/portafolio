@@ -315,7 +315,7 @@ main, .footer { position: relative; z-index: 1; }
 .js .stall:not(.is-lit) .goods > :not(figcaption) { --b: .3; --s: .15; }
 .stall.is-lit .awning, body:not(.js) .awning { filter: none; }
 .stall.is-lit .goods--screen > img:first-child,
-.stall.is-lit .comanda, .stall.is-lit .hato, .stall.is-lit .term { outline-color: rgb(230 237 245 / .55); }
+.stall.is-lit .term { outline-color: rgb(230 237 245 / .55); }
 
 .goods--screen > img:first-child { display: block; width: 100%; height: auto; border-radius: 4px; }
 .goods__sticker { position: absolute; width: 22%; right: -4%; bottom: 3.5rem; rotate: 8deg; }
@@ -325,37 +325,6 @@ main, .footer { position: relative; z-index: 1; }
 .cut--poster { width: 92%; rotate: -3deg; }
 .cut--mask { align-self: center; translate: -10% 0; rotate: 4deg; }
 .goods--cutouts figcaption { grid-column: 1 / -1; }
-
-/* Comanda del POS */
-.comanda {
-  width: min(340px, 100%); margin-inline: auto; padding: 22px 22px 30px;
-  background: #fbfaf5; color: #1d1a16; font: 500 17px/1.4 var(--f-body);
-  -webkit-mask: radial-gradient(7px 6px at 7px 100%, #0000 97%, #000) 0 0/14px 100% repeat-x;
-          mask: radial-gradient(7px 6px at 7px 100%, #0000 97%, #000) 0 0/14px 100% repeat-x;
-}
-.comanda__head { display: flex; justify-content: space-between; font: 700 22px var(--f-num); letter-spacing: .02em; border-bottom: 2px solid #1d1a16; padding-bottom: 8px; }
-.comanda ul { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 6px; }
-.comanda li, .comanda__total { display: flex; justify-content: space-between; gap: 12px; }
-.comanda li span:last-child, .comanda__total span:last-child { font-variant-numeric: tabular-nums; }
-.comanda__total { border-top: 1px dashed #1d1a16; padding-top: 10px; font: 700 26px var(--f-num); }
-.comanda__sync { margin-top: 12px; font: italic 15px var(--f-body); color: #2f5a3d; display: flex; align-items: center; gap: 8px; }
-.comanda__sync .dot { width: 8px; height: 8px; border-radius: 50%; background: #3f8b5a; }
-
-/* Pantalla del sistema de leche */
-.hato { background: #f4f1ea; color: #22261f; border-radius: 8px; overflow: hidden; font: 16px/1.35 var(--f-body); }
-.hato__bar, .term__bar { display: flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 0 0 14px; background: #e3ded2; }
-.hato__bar b { font: 500 13px var(--f-caps); letter-spacing: .06em; color: #4e493d; }
-.win { margin-left: auto; display: flex; align-self: stretch; }
-.win svg { width: 44px; padding: 0 17px; fill: none; stroke: currentColor; stroke-width: 1; color: #4e493d; }
-.term__bar .win svg { color: #9aa6b8; }
-.hato__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px; }
-.hato__kpi { background: #fff; border-radius: 6px; padding: 12px 14px; }
-.hato__kpi small { display: block; font: 500 12px var(--f-caps); letter-spacing: .08em; color: #5f594c; }
-.hato__kpi strong { font: 700 34px/1.1 var(--f-num); font-variant-numeric: tabular-nums; }
-.hato__alert { grid-column: 1 / -1; background: #fbe9dc; color: #6e2a12; border-radius: 6px; padding: 10px 14px; font-size: 15px; }
-.hato__bars { grid-column: 1 / -1; display: flex; align-items: end; gap: 8px; height: 90px; padding: 0 4px; }
-.hato__bars i { flex: 1; height: var(--h); background: #7b9a6a; border-radius: 3px 3px 0 0; }
-.hato__bars i:last-child { background: #3f6b33; }
 
 /* Terminal del orquestador */
 .term { background: #0b0f14; border-radius: 8px; overflow: hidden; }
@@ -489,4 +458,3 @@ body.eclipse .awning { filter: brightness(.35) saturate(.5); }
   .goods__sticker { right: 0; width: 24%; }
   .hero__actions > *, .deal__actions > * { flex: 1 1 100%; justify-content: center; }
 }
-.hato__alert strong { font: 700 18px var(--f-num); letter-spacing: .02em; }

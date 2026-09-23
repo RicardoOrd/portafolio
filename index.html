@@ -133,18 +133,9 @@
       <article class="stall stall--flip" id="pos">
         <div class="awning"><h3 class="awning__sign casts" data-shadow="text">POS de taquería</h3></div>
         <div class="stall__body">
-          <figure class="goods goods--made">
-            <div class="comanda casts" data-shadow="box" role="img" aria-label="Comanda de ejemplo: mesa 4, tres tacos de asada, una quesadilla y una horchata grande, total 214 pesos.">
-              <div class="comanda__head"><span>Mesa 4</span><span>9:07 p.m.</span></div>
-              <ul>
-                <li><span>3 × Taco de asada</span><span>$96</span></li>
-                <li><span>1 × Quesadilla</span><span>$68</span></li>
-                <li><span>1 × Horchata grande</span><span>$50</span></li>
-              </ul>
-              <div class="comanda__total"><span>Total</span><span>$214</span></div>
-              <div class="comanda__sync"><span class="dot"></span>Sincronizada en 3 aparatos</div>
-            </div>
-            <figcaption>Comanda ilustrativa: la caja real vive detrás de un NIP</figcaption>
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/pos-comanda.jpg" width="1120" height="1000" loading="lazy" alt="Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar.">
+            <figcaption>La caja corriendo en local, con el menú real del cartel</figcaption>
           </figure>
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
@@ -152,48 +143,19 @@
               <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">29<small> commits</small></span></span>
               <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v tag__v--hot">Caliente: cobra hoy</span></span>
             </div>
-            <p>La caja con la que cobra una taquería. Toma comandas en tablet o teléfono, sincroniza entre aparatos en tiempo real y guarda todo en el servidor. Es la segunda versión: reescribí el sistema original para que aguantara el ritmo del mostrador un sábado en la noche.</p>
+            <p>La caja con la que cobra una taquería de barbacoa. Toma comandas por asiento en tablet o teléfono, sincroniza entre aparatos en tiempo real y guarda todo en el servidor. Es la segunda versión: reescribí el sistema original para que aguantara el ritmo del mostrador un sábado en la noche.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li></ul>
           </div>
         </div>
       </article>
 
-      <!-- Hacker Tycoon -->
-      <article class="stall" id="hacker-tycoon">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Hacker Tycoon</h3></div>
-        <div class="stall__body">
-          <figure class="goods goods--cutouts">
-            <img class="cut cut--poster casts" data-shadow="img" src="img/ht-poster-0day.png" width="512" height="716" loading="lazy" alt="Póster del juego: un candado cian roto sobre salpicaduras rojas.">
-            <img class="cut cut--mask casts" data-shadow="img" src="img/ht-mascara-oni.png" width="512" height="256" loading="lazy" alt="Máscara oni del juego, con cuernos y ojos rojos encendidos.">
-            <figcaption>Arte final del juego</figcaption>
-          </figure>
-          <div class="stall__info">
-            <div class="tag casts" data-shadow="box">
-              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">La Ciudad de Neón, en Roblox</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">61<small> commits</small></span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en desarrollo</span></span>
-            </div>
-            <p>Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras máquinas que producen y sales a robar la bóveda de otros jugadores mientras defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.</p>
-            <ul class="tech-tags" aria-label="Tecnologías"><li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li></ul>
-          </div>
-        </div>
-      </article>
-
       <!-- Sistema de Leche -->
-      <article class="stall stall--flip" id="sistema-de-leche">
+      <article class="stall" id="sistema-de-leche">
         <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Sistema de Leche</h3></div>
         <div class="stall__body">
-          <figure class="goods goods--made">
-            <div class="hato casts" data-shadow="box" role="img" aria-label="Pantalla de ejemplo: ordeña del día, 1,284 litros, y vaca 214 en retiro por tratamiento hasta el jueves.">
-              <div class="hato__bar"><b>Sistema de Leche · rancho sin internet</b><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
-              <div class="hato__grid">
-                <div class="hato__kpi"><small>Ordeña de hoy</small><strong>1,284 L</strong></div>
-                <div class="hato__kpi"><small>Vacas en línea</small><strong>96</strong></div>
-                <div class="hato__alert"><strong>Vaca 214</strong> en retiro por tratamiento. Su leche no va al tanque hasta el jueves.</div>
-                <div class="hato__bars" aria-hidden="true"><i style="--h:62%"></i><i style="--h:70%"></i><i style="--h:58%"></i><i style="--h:81%"></i><i style="--h:77%"></i><i style="--h:88%"></i><i style="--h:84%"></i></div>
-              </div>
-            </div>
-            <figcaption>Pantalla ilustrativa, con datos de ejemplo</figcaption>
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/leche-hoy.jpg" width="1440" height="900" loading="lazy" alt="Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho.">
+            <figcaption>La app corriendo en local, con un hato de demostración</figcaption>
           </figure>
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
@@ -208,7 +170,7 @@
       </article>
 
       <!-- AI Orchestrator -->
-      <article class="stall" id="ai-orchestrator">
+      <article class="stall stall--flip" id="ai-orchestrator">
         <div class="awning"><h3 class="awning__sign casts" data-shadow="text">AI Orchestrator</h3></div>
         <div class="stall__body">
           <figure class="goods goods--made">
@@ -231,6 +193,27 @@
             </div>
             <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. El control lo lleva código determinista, no un modelo.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hacker Tycoon -->
+      <article class="stall" id="hacker-tycoon">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Hacker Tycoon</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--cutouts">
+            <img class="cut cut--poster casts" data-shadow="img" src="img/ht-poster-0day.png" width="512" height="716" loading="lazy" alt="Póster del juego: un candado cian roto sobre salpicaduras rojas.">
+            <img class="cut cut--mask casts" data-shadow="img" src="img/ht-mascara-oni.png" width="512" height="256" loading="lazy" alt="Máscara oni del juego, con cuernos y ojos rojos encendidos.">
+            <figcaption>Arte final del juego</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">La Ciudad de Neón, en Roblox</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">61<small> commits</small></span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en desarrollo</span></span>
+            </div>
+            <p>Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras máquinas que producen y sales a robar la bóveda de otros jugadores mientras defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li></ul>
           </div>
         </div>
       </article>
