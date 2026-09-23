@@ -75,9 +75,9 @@ export function Portada() {
       <div className="hero__copy">
         <h1 className="hero__name">Ricardo<br />Orduño</h1>
         <p className="hero__lead">
-          Desarrollador frontend y UI/UX en Sonora, México. Hago las tiendas, cajas y apps
-          con las que cobran negocios de aquí: una repostería en Navojoa vende con mi tienda
-          y una taquería cobra con mi caja.
+          Desarrollador full stack en Sonora, México. Hago de principio a fin, de la
+          interfaz al servidor, las tiendas, cajas y apps con las que cobran negocios de
+          aquí: una repostería en Navojoa vende con mi tienda y una taquería cobra con mi caja.
         </p>
         <div className="hero__actions" ref={casts}>
           <a className="ticket-btn casts" data-shadow="box" href="#puestos" ref={casts}>Ver proyectos</a>

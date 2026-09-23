@@ -55,7 +55,7 @@ export function Comerciante() {
           <figcaption className="merchant__pista">Prende el foco.</figcaption>
         </figure>
         <div className="merchant__text">
-          <p>Soy Ricardo Orduño Camacho. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso diseño la interfaz y también todo lo que la sostiene: la base de datos, el backend, el servidor y el despliegue.</p>
+          <p>Soy Ricardo Orduño Camacho, desarrollador full stack. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso no me quedo en la interfaz: también hago lo que la sostiene, la base de datos, el backend, el servidor y el despliegue, y me quedo a mantenerlo cuando ya está cobrando.</p>
           <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo: los focos los prendes tú.</p>
         </div>
       </div>
