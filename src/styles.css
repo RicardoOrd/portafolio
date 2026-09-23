@@ -1,8 +1,10 @@
 /* Bazar de sombras
    La luz la dan los focos del tianguis: la guirnalda de la portada y un foco
-   pelón por puesto. main.js escribe en cada .casts las variables --sx, --sy y
-   --len (dirección y largo de su sombra) desde el foco encendido más cercano.
-   Los letreros llevan sombra pintada, como los rotulistas: esa no se mueve. */
+   pelón por puesto. src/luz/motor.ts escribe en cada .casts las variables --sx,
+   --sy y --len (dirección y largo de su sombra) desde el foco encendido más cercano.
+   Los letreros llevan sombra pintada, como los rotulistas: esa no se mueve.
+   Lo que se mueve con el scroll lo anima GSAP desde los componentes; aquí solo
+   está su estado final, que es el que se ve sin JavaScript. */
 
 :root {
   color-scheme: dark;
@@ -58,6 +60,8 @@ body {
 a { color: inherit; text-underline-offset: 4px; }
 
 :focus-visible { outline: 2px solid var(--moon); outline-offset: 4px; border-radius: 2px; }
+/* Las secciones reciben el foco al llegar a ellas desde un enlace: no se enmarcan */
+[tabindex="-1"]:focus { outline: none; }
 
 .skip {
   position: absolute; left: 16px; top: -60px; z-index: 50;
@@ -235,6 +239,12 @@ button.foco:focus-visible i { outline: 2px solid var(--moon); outline-offset: 4p
   border-radius: 50%; opacity: .5; pointer-events: none;
   filter: brightness(1.4) saturate(0);
 }
+/* Al bajar, lo lejano se queda atrás: GSAP escribe cuánto en --atras-* y --tenue.
+   Sin JavaScript o con menos movimiento valen 0 y la portada no se mueve. */
+.hero__luna { z-index: -1; translate: 0 var(--atras-luna, 0px); }  /* la luna pasa por detrás de todo */
+.guirnalda { translate: -50% var(--atras-cable, 0px); }
+.hero__tag { translate: 0 var(--atras-cable, 0px); }
+.hero__copy { translate: 0 var(--atras-letrero, 0px); opacity: calc(1 - var(--tenue, 0) * .55); }
 .hero__name {
   margin: 0 0 22px;
   font: 400 clamp(50px, 8.2vw, 116px)/.98 var(--f-sign);
@@ -251,13 +261,14 @@ button.foco:focus-visible i { outline: 2px solid var(--moon); outline-offset: 4p
 .hero__tag .tag { width: min(250px, 70vw); }
 /* Sin JavaScript, un vaivén suave; con JS la mueve un péndulo que puedes agarrar */
 @media (prefers-reduced-motion: no-preference) {
-  body:not(.js) .hero__tag { animation: mecer 5.5s ease-in-out infinite alternate; }
+  html:not(.js) .hero__tag { animation: mecer 5.5s ease-in-out infinite alternate; }
 }
 @keyframes mecer { from { rotate: -3deg; } to { rotate: 2.5deg; } }
 
 /* La calle: los cinco puestos en miniatura. Su farol se prende cuando ya pasaste por él */
+/* Va al frente: la cartulina que se rezaga pasa por detrás de la calle */
 .calle {
-  position: absolute; left: var(--gutter); right: var(--gutter); bottom: 22px;
+  position: absolute; z-index: 3; left: var(--gutter); right: var(--gutter); bottom: 22px;
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(8px, 1.4vw, 16px);
 }
 .calle__cuenta {
@@ -369,19 +380,6 @@ button.ticket-btn { border: 0; cursor: pointer; }
   -webkit-mask: radial-gradient(22px 18px at 50% 100%, #0000 98%, #000) 0 0/64px 100% round;
           mask: radial-gradient(22px 18px at 50% 100%, #0000 98%, #000) 0 0/64px 100% round;
 }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .stall .awning {
-      animation: desenrolla linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 90%;
-    }
-  }
-}
-@keyframes desenrolla {
-  from { clip-path: inset(0 0 100% 0); }
-  to { clip-path: inset(0 0 -10% 0); }
-}
 .awning__sign {
   margin: 0; font: 400 clamp(28px, 3.6vw, 48px)/1.05 var(--f-sign);
   color: var(--shadow-2);
@@ -444,6 +442,7 @@ button.ticket-btn { border: 0; cursor: pointer; }
 /* Sistema de Leche: arete de ganado, el número grande como en el corral */
 .stall__info .tag--arete {
   width: 210px; gap: 2px; padding: 44px 18px 22px; transform: rotate(-3deg);
+  transform-origin: 50% 24px;  /* cuelga de su ojal */
   background: var(--saffron-hi);
   border-radius: 46% 46% 22px 22px / 30% 30% 22px 22px;
 }
