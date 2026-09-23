@@ -1,13 +1,22 @@
-// Los puestos del tianguis. Los commits son reales: se sacan de git de cada repo, no se inventan.
+// Los puestos del tianguis. Los commits son reales: `git rev-list --all --count` en cada
+// repo (todas sus ramas), no se inventan. Último conteo: 2026-09-23.
 
 export type Objeto = "sticker" | "comanda" | "arete" | "gafete";
 
 export interface Imagen {
+  /** El ancho más grande: es el que abre el visor */
   src: string;
+  srcSet?: string;
   width: number;
   height: number;
   alt: string;
 }
+
+/** Una captura en WebP con sus anchos (los genera scripts/imagenes.mjs) */
+const webp = (nombre: string, anchos: number[]) => ({
+  src: `img/${nombre}-${Math.max(...anchos)}.webp`,
+  srcSet: anchos.map((a) => `img/${nombre}-${a}.webp ${a}w`).join(", "),
+});
 
 export type Mercancia =
   | { tipo: "captura"; imagen: Imagen; lupa: string; pie: string; estampa?: Imagen }
@@ -39,7 +48,7 @@ export const puestos: Puesto[] = [
     objeto: "sticker",
     flip: false,
     origen: "Una repostería de Navojoa",
-    commits: 267,
+    commits: 273,
     estado: "En producción",
     caliente: true,
     descripcion:
@@ -48,14 +57,14 @@ export const puestos: Puesto[] = [
     mercancia: {
       tipo: "captura",
       imagen: {
-        src: "img/akora-portada.png",
+        ...webp("akora-portada", [560, 1080]),
         width: 1080,
         height: 675,
         alt: "Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate.",
       },
       lupa: "Ampliar la captura de akora.mx",
       pie: "Captura de akora.mx en vivo",
-      estampa: { src: "img/akora-gatita.png", width: 227, height: 283, alt: "" },
+      estampa: { src: "img/akora-gatita-227.webp", width: 227, height: 283, alt: "" },
     },
     enlace: { href: "https://akora.mx", texto: "Visitar akora.mx" },
   },
@@ -75,7 +84,7 @@ export const puestos: Puesto[] = [
     mercancia: {
       tipo: "captura",
       imagen: {
-        src: "img/pos-comanda.jpg",
+        ...webp("pos-comanda", [560, 1120]),
         width: 1120,
         height: 1000,
         alt: "Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar.",
@@ -100,7 +109,7 @@ export const puestos: Puesto[] = [
     mercancia: {
       tipo: "captura",
       imagen: {
-        src: "img/leche-hoy.jpg",
+        ...webp("leche-hoy", [720, 1440]),
         width: 1440,
         height: 900,
         alt: "Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho.",
@@ -116,7 +125,7 @@ export const puestos: Puesto[] = [
     objeto: "gafete",
     flip: true,
     origen: "La Ciudad de Neón, en Roblox",
-    commits: 61,
+    commits: 64,
     estado: "En desarrollo",
     caliente: false,
     descripcion:
@@ -127,14 +136,14 @@ export const puestos: Puesto[] = [
       recortes: [
         {
           clase: "cut--poster",
-          src: "img/ht-poster-0day.png",
+          src: "img/ht-poster-0day-512.webp",
           width: 512,
           height: 716,
           alt: "Póster del juego: un candado cian roto sobre salpicaduras rojas.",
         },
         {
           clase: "cut--mask",
-          src: "img/ht-mascara-oni.png",
+          src: "img/ht-mascara-oni-512.webp",
           width: 512,
           height: 256,
           alt: "Máscara oni del juego, con cuernos y ojos rojos encendidos.",

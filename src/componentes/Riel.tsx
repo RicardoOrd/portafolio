@@ -67,7 +67,8 @@ export function Riel() {
         <a className="rail__brand" href="#inicio" aria-label="Ricardo Orduño, volver al inicio">
           <span className="rail__lampara" aria-hidden="true" />
           <span className="rail__placa" aria-hidden="true">
-            <span className="rail__nombre">Ricardo</span>
+            {/* El espacio no se ve (el flex lo ignora), pero hace que el texto diga "Ricardo Orduño" */}
+            <span className="rail__nombre">Ricardo</span>{" "}
             <span className="rail__apellido">Orduño</span>
           </span>
         </a>

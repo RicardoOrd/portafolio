@@ -31,7 +31,11 @@ relativas (`base: "./"`) porque el sitio vive en `/portafolio/`.
 
 - Proyectos: `src/datos/puestos.ts`. Los commits de cada cartulina son reales.
 - Secciones: `src/componentes/`, una por archivo.
-- Colores, tipografía y materiales: variables al inicio de `src/styles.css`.
+- Colores, tipografía y materiales: variables al inicio de `src/styles.css`. Las
+  fuentes (Archivo, Bungee y Caveat Brush) se sirven desde el sitio con Fontsource.
+- Imágenes: los originales viven en `imagenes/`; `npm run imagenes` genera los WebP
+  de `public/img/` en los anchos que usa la página. `public/og.jpg` es la captura de
+  la portada que se ve al compartir el enlace.
 - Luz y sombras: `src/luz/`. Todo elemento con la clase `casts`, un `data-shadow`
   (`box` o `img`) y el ref de `useCasts()` proyecta sombra desde el foco
   encendido más cercano.

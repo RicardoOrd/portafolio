@@ -29,7 +29,8 @@ export function VisorProvider({ children }: { children: ReactNode }) {
       const d = dialogo.current, f = foto.current;
       if (!img || !d || !f) return;
       origen.current = boton;
-      f.src = img.currentSrc || img.src;
+      // El src es la versión más grande; la de la página puede ser una chica del srcset
+      f.src = img.src;
       f.alt = img.alt;
       f.width = Number(img.getAttribute("width")) || img.naturalWidth;
       f.height = Number(img.getAttribute("height")) || img.naturalHeight;

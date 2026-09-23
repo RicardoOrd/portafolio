@@ -70,7 +70,7 @@ export function Portada() {
   return (
     <section id="inicio" className="hero" ref={hero} tabIndex={-1}>
       <Guirnalda />
-      <img className="hero__luna" src="img/luna-lro.jpg" width={500} height={500} alt="" aria-hidden="true" />
+      <img className="hero__luna" src="img/luna-lro-168.webp" width={168} height={168} alt="" aria-hidden="true" />
 
       <div className="hero__copy">
         <h1 className="hero__name">Ricardo<br />Orduño</h1>
