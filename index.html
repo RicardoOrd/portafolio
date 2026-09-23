@@ -5,17 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ricardo Orduño Camacho · Desarrollador de software</title>
   <meta name="description" content="Portafolio de Ricardo Orduño Camacho: software que cobra de verdad para negocios reales — tiendas en línea, puntos de venta, apps de escritorio y juegos.">
-  <meta name="theme-color" content="#0e1116">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ricardo Orduño Camacho · Desarrollador de software">
+  <meta property="og:description" content="Hago software que usan negocios de verdad: tiendas en línea, puntos de venta, apps de escritorio y juegos.">
+  <meta property="og:locale" content="es_MX">
+  <meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1116'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23f5a524'%3ERO%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#proyectos">Saltar a los proyectos</a>
+
   <header class="nav">
     <div class="wrap nav__inner">
-      <a class="nav__logo" href="#inicio">ricardo<span>.orduño</span></a>
-      <nav class="nav__links">
+      <a class="nav__logo" href="#inicio">Ricardo Orduño<span>.</span></a>
+      <nav class="nav__links" aria-label="Secciones">
         <a href="#proyectos">Proyectos</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#habilidades">Lo que sé</a>
@@ -26,32 +34,27 @@
 
   <main>
     <section id="inicio" class="hero wrap">
-      <p class="eyebrow">Ricardo Orduño Camacho · Desarrollador full-stack · Sonora, México</p>
       <h1>Hago software que<br><span class="accent">usan negocios de verdad.</span></h1>
       <p class="lead">
-        Soy Ricardo. Construyo y opero de punta a punta: la tienda en línea que cobra con tarjeta,
+        Soy Ricardo Orduño Camacho, desarrollador full-stack en Sonora, México.
+        Construyo y opero de punta a punta: la tienda en línea que cobra con tarjeta,
         la caja con la que atienden el mostrador, la app que lleva un rancho sin internet
         y el servidor donde todo eso corre.
       </p>
-      <div class="hero__cta">
+      <div class="actions">
         <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
         <a class="btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <ul class="stats">
-        <li><strong>2</strong><span>sistemas en producción cobrando a diario</span></li>
-        <li><strong>5</strong><span>proyectos activos</span></li>
-        <li><strong>380+</strong><span>commits entre mis proyectos</span></li>
-      </ul>
     </section>
 
-    <section id="proyectos" class="section wrap">
-      <h2 class="section__title"><span>01</span> Proyectos</h2>
+    <section id="proyectos" class="section wrap rule">
+      <h2 class="section__title">Proyectos</h2>
 
       <article class="project project--featured">
         <div class="project__head">
           <h3>Akora Repostería</h3>
-          <span class="badge badge--live">En producción</span>
+          <span class="status">En producción</span>
         </div>
         <p>
           Tienda web y punto de venta de una repostería: catálogo, carrito, checkout con pago
@@ -59,19 +62,17 @@
           Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta,
           con respaldo de la base antes de cada despliegue.
         </p>
-        <ul class="tags">
+        <ul class="tags" aria-label="Tecnologías">
           <li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li>
           <li>Caddy</li><li>GitHub Actions</li><li>Oracle Cloud</li>
         </ul>
-        <div class="project__links">
-          <a href="https://akora.mx" target="_blank" rel="noopener">akora.mx ↗</a>
-        </div>
+        <a class="project__link" href="https://akora.mx" target="_blank" rel="noopener">Visitar akora.mx</a>
       </article>
 
       <article class="project project--featured">
         <div class="project__head">
           <h3>POS para taquería</h3>
-          <span class="badge badge--live">En producción</span>
+          <span class="status">En producción</span>
         </div>
         <p>
           La caja con la que cobra una taquería. Toma comandas en tablet o teléfono,
@@ -79,66 +80,63 @@
           Es la segunda versión: reescribí el sistema original para que aguantara el ritmo
           del mostrador, con historial de cambios, combos y cierre de caja automático.
         </p>
-        <ul class="tags">
+        <ul class="tags" aria-label="Tecnologías">
           <li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li>
         </ul>
       </article>
 
-      <div class="grid">
-        <article class="project">
-          <div class="project__head">
-            <h3>Sistema de Leche</h3>
-            <span class="badge">Escritorio</span>
-          </div>
+      <div class="more">
+        <article class="more__item">
+          <p class="more__kind">Escritorio</p>
+          <h3>Sistema de Leche</h3>
           <p>
             App de escritorio para Windows que administra un hato lechero: padrón animal,
             reproducción, producción, sanidad con control de retiros, insumos y costos.
             Funciona sin internet, con la base en la computadora del rancho.
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tecnologías">
             <li>Electron</li><li>TypeScript</li><li>Drizzle ORM</li><li>SQLite</li>
           </ul>
         </article>
 
-        <article class="project">
-          <div class="project__head">
-            <h3>Hacker Tycoon</h3>
-            <span class="badge">Roblox</span>
-          </div>
+        <article class="more__item">
+          <p class="more__kind">Roblox</p>
+          <h3>Hacker Tycoon</h3>
           <p>
             Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras
             máquinas que producen, y sales a robar la bóveda de otros jugadores mientras
             defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tecnologías">
             <li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li>
           </ul>
         </article>
 
-        <article class="project">
-          <div class="project__head">
-            <h3>AI Orchestrator</h3>
-            <span class="badge">Herramienta</span>
-          </div>
+        <article class="more__item">
+          <p class="more__kind">Herramienta</p>
+          <h3>AI Orchestrator</h3>
           <p>
             Un equipo de desarrollo de IA que corre en local con una sola orden: un agente
             implementa, se corren las pruebas, otro audita, el primero corrige y el segundo
             da el veredicto. El control lo lleva código determinista, no un modelo.
           </p>
-          <ul class="tags">
+          <ul class="tags" aria-label="Tecnologías">
             <li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section id="sobre-mi" class="section wrap">
-      <h2 class="section__title"><span>02</span> Sobre mí</h2>
+    <section id="sobre-mi" class="section wrap rule">
+      <h2 class="section__title">Sobre mí</h2>
       <div class="about">
-        <p>
+        <p class="about__lead">
           Trabajo con negocios pequeños que necesitan que su sistema funcione el sábado a las
-          nueve de la noche, no solo en la demo. Por eso me importa tanto lo que pasa después
-          de escribir el código: cómo se despliega, cómo se respalda y qué se rompe si falla.
+          nueve de la noche, no solo en la demo.
+        </p>
+        <p>
+          Por eso me importa tanto lo que pasa después de escribir el código: cómo se despliega,
+          cómo se respalda y qué se rompe si falla.
         </p>
         <p>
           Me muevo cómodo en todo el camino: diseño la base de datos, escribo el backend y el
@@ -153,48 +151,48 @@
       </div>
     </section>
 
-    <section id="habilidades" class="section wrap">
-      <h2 class="section__title"><span>03</span> Lo que sé</h2>
-      <div class="skills">
-        <div class="skill">
-          <h3>Frontend</h3>
-          <ul><li>TypeScript</li><li>React · Next.js</li><li>Angular</li><li>Tailwind CSS</li><li>HTML · CSS</li></ul>
+    <section id="habilidades" class="section wrap rule">
+      <h2 class="section__title">Lo que sé</h2>
+      <dl class="skills">
+        <div class="skills__row">
+          <dt>Frontend</dt>
+          <dd>TypeScript, React, Next.js, Angular, Tailwind CSS, HTML y CSS</dd>
         </div>
-        <div class="skill">
-          <h3>Backend</h3>
-          <ul><li>Node.js</li><li>NestJS</li><li>API REST</li><li>Pagos en línea (Openpay)</li><li>Sincronización entre dispositivos</li></ul>
+        <div class="skills__row">
+          <dt>Backend</dt>
+          <dd>Node.js, NestJS, API REST, pagos en línea con Openpay, sincronización entre dispositivos</dd>
         </div>
-        <div class="skill">
-          <h3>Datos</h3>
-          <ul><li>PostgreSQL</li><li>SQLite</li><li>Drizzle ORM</li><li>Respaldos y recuperación</li></ul>
+        <div class="skills__row">
+          <dt>Datos</dt>
+          <dd>PostgreSQL, SQLite, Drizzle ORM, respaldos y recuperación</dd>
         </div>
-        <div class="skill">
-          <h3>Infraestructura</h3>
-          <ul><li>Docker</li><li>Caddy · nginx · TLS</li><li>GitHub Actions</li><li>Oracle Cloud · Vercel</li><li>Linux</li></ul>
+        <div class="skills__row">
+          <dt>Infraestructura</dt>
+          <dd>Docker, Caddy, nginx y TLS, GitHub Actions, Oracle Cloud, Vercel, Linux</dd>
         </div>
-        <div class="skill">
-          <h3>Escritorio y juegos</h3>
-          <ul><li>Electron</li><li>Roblox · Luau</li><li>Rojo · Wally</li></ul>
+        <div class="skills__row">
+          <dt>Escritorio y juegos</dt>
+          <dd>Electron, Roblox con Luau, Rojo y Wally</dd>
         </div>
-        <div class="skill">
-          <h3>Forma de trabajo</h3>
-          <ul><li>Git · ramas y PR</li><li>Pruebas con Vitest</li><li>Agentes de IA</li><li>PowerShell · Bash</li></ul>
+        <div class="skills__row">
+          <dt>Forma de trabajo</dt>
+          <dd>Git con ramas y pull requests, pruebas con Vitest, agentes de IA, PowerShell y Bash</dd>
         </div>
-      </div>
+      </dl>
     </section>
 
-    <section id="contacto" class="section wrap contact">
-      <h2 class="section__title"><span>04</span> Contacto</h2>
-      <p class="lead">¿Tienes un negocio que necesita su propio sistema? Platiquemos.</p>
-      <div class="hero__cta">
+    <section id="contacto" class="section wrap rule contact">
+      <h2 class="section__title">¿Tienes un negocio que necesita su propio sistema?</h2>
+      <p class="lead">Platiquemos. Te respondo por correo o LinkedIn.</p>
+      <div class="actions">
         <a class="btn btn--primary" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
-        <a class="btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">github.com/RicardoOrd</a>
         <a class="btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
+  <footer class="footer wrap rule">
     <p>© <span id="anio">2026</span> Ricardo Orduño Camacho · Hecho a mano, sin frameworks.</p>
   </footer>
 
