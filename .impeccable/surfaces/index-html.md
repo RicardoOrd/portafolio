@@ -11,14 +11,14 @@ Proof: five real projects (commit counts are real: Akora 267, POS 29, Sistema de
 
 ## Direction contract
 
-THESIS: A moonlit night bazaar where Ricardo sells the shadows his software casts by day. Each project is a stall and its shadow is the goods, tagged with a ticket of origin and a length measured in commits. Refuses the dark bento dev portfolio with a neon accent and a grid of cards.
+THESIS: Un tianguis nocturno sonorense donde cada proyecto de Ricardo es un puesto con su foco pelón; la cartulina de cada puesto dice su origen, sus commits reales y su estado. Rechaza el portafolio oscuro con bento y acento neón, y también el "mercado encantado" de script dorado que genera un modelo de imágenes.
 
-OWN-WORLD: midnight lane blue-black ground (#0d1420), layered shadow blacks (#1a1f27, #0a0e13), saffron stall canvas (#c89b4d) for signs and tickets, one moon white (#e6edf5) edging only the active trade. Signpainter script for stall signs, engraved small caps for tickets and labels, condensed numerals for lengths, humanist serif body. Ticket-stock tags, canvas awnings, a chalk price board.
+OWN-WORLD: noche azul marino (#0d1420), lona azafrán rayada (#e2b867/#c89b4d), cartulina crema (#eadfc6) y rojo de rotulista (#9c3218) como sombra pintada de los letreros. Luz cálida de focos (#ffc766). Rotulación callejera en Bungee con sombra plana de un color, Archivo (eje de ancho) para texto, etiquetas y números, y plumón (Caveat Brush) solo en las cartulinas. Sin estrellas, sin vidrio, sin degradados de botón ni texturas de rayitas.
 
 STORY: the visitor learns who Ricardo is, walks the lane stall by stall seeing real work come out of shadow into light, reads the chalk inventory of skills, and closes the deal at the last stall: LinkedIn or email.
 
-FIRST VIEWPORT: full-bleed night lane. Moon upper right. Left two thirds: "Ricardo Orduño" in large gold signpainter script, then one plain line: frontend and UI/UX developer in Sonora whose software charges money in real businesses by day. Primary action "Recorrer el bazar" as a saffron ticket button plus LinkedIn. Right: the first stall's hanging ticket of origin swinging slightly. Signature interaction: the moon is the light source; the pointer (scroll on touch) moves it along its arc and every sign, ticket and shadow good recasts its long shadow live.
+FIRST VIEWPORT: guirnalda de siete focos colgada de lado a lado arriba; se prende foco por foco al llegar. Izquierda: "RICARDO / ORDUÑO" en rótulo azafrán con sombra roja, una línea llana de quién es y qué negocios cobran con su software, y los botones Ver proyectos y LinkedIn. Derecha: la cartulina colgada (origen, commits, estado, precio: una entrevista). Luna tenue y quieta, de fondo. Interacción: cada foco se prende o se apaga al tocarlo y las sombras se recalculan desde el foco encendido más cercano; en cada puesto, su foco se prende al llegar o al pasar el cursor.
 
-FORM: moon-shadow bazaar, adopted challenger chosen by the user over the assigned ticket direction; my ordered list had thermal receipt at 4. Seed key 8aedf08c.
+FORM: bazar nocturno adoptado por el usuario (seed 8aedf08c), refinado el 2026-09-22 tras la crítica "genérico de IA": la luz pasó de la luna a los focos del tianguis y la tipografía a rotulación y plumón; se conservaron colores y estructura por decisión del usuario.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

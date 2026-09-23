@@ -3,36 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ricardo Orduño Camacho · Bazar de sombras</title>
-  <meta name="description" content="Portafolio de Ricardo Orduño Camacho, desarrollador frontend y UI/UX en Sonora, México. De día su software cobra en negocios reales; de noche vende sus sombras.">
+  <title>Ricardo Orduño Camacho · Frontend y UI/UX</title>
+  <meta name="description" content="Portafolio de Ricardo Orduño Camacho, desarrollador frontend y UI/UX en Sonora, México. Hace las tiendas, cajas y apps con las que cobran negocios de aquí.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ricardo Orduño Camacho · Bazar de sombras">
-  <meta property="og:description" content="Desarrollador frontend y UI/UX. Pasa al bazar: cada proyecto es un puesto y la luna la mueves tú.">
+  <meta property="og:title" content="Ricardo Orduño Camacho · Frontend y UI/UX">
+  <meta property="og:description" content="Desarrollador frontend y UI/UX en Sonora. Cada proyecto es un puesto de tianguis con su foco.">
   <meta property="og:locale" content="es_MX">
   <meta name="theme-color" content="#0d1420">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1420'/%3E%3Cpath d='M20.5 6.5a10 10 0 1 0 5 16.6A8.5 8.5 0 0 1 20.5 6.5z' fill='%23e6edf5'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1420'/%3E%3Crect x='13' y='4' width='6' height='6' fill='%232b313b'/%3E%3Cellipse cx='16' cy='18' rx='7' ry='9' fill='%23ffc766'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya:ital,wght@0,400;0,500;1,400&family=Big+Shoulders+Display:wght@600;700&family=Mr+Dafoe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..800;1,62..125,400..800&family=Bungee&family=Caveat+Brush&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#puestos">Saltar a los proyectos</a>
 
-  <!-- El cielo: la luna es la única luz de la página -->
-  <div class="sky" aria-hidden="true">
-    <div class="sky__stars"></div>
-    <div class="moon" id="luna"><div class="moon__halo"></div><img src="img/luna-lro.jpg" width="500" height="500" alt=""></div>
-  </div>
+  <div class="sky" aria-hidden="true"></div>
 
   <header class="rail">
     <div class="rail__inner">
       <a class="rail__brand" href="#inicio">Ricardo</a>
       <nav class="rail__nav" aria-label="Secciones">
-        <a href="#puestos">Los puestos</a>
-        <a href="#comerciante">El comerciante</a>
-        <a href="#inventario">Inventario</a>
-        <a href="#trato" class="rail__deal">Cerrar trato</a>
+        <a href="#puestos" class="rail__first">Proyectos</a>
+        <a href="#comerciante">Sobre mí</a>
+        <a href="#inventario">Habilidades</a>
+        <a href="#trato" class="rail__deal">Contacto</a>
       </nav>
     </div>
   </header>
@@ -40,24 +36,36 @@
   <main>
     <!-- Portada -->
     <section id="inicio" class="hero">
+      <div class="guirnalda" aria-hidden="true">
+        <svg viewBox="0 0 1000 90" preserveAspectRatio="none" focusable="false"><path d="M0 20 Q125 70 250 20 Q375 70 500 20 Q625 70 750 20 Q875 70 1000 20"/></svg>
+        <span class="foco" style="left:12.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:25%;top:20px"><i></i></span>
+        <span class="foco" style="left:37.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:50%;top:20px"><i></i></span>
+        <span class="foco" style="left:62.5%;top:45px"><i></i></span>
+        <span class="foco" style="left:75%;top:20px"><i></i></span>
+        <span class="foco" style="left:87.5%;top:45px"><i></i></span>
+      </div>
+      <img class="hero__luna" src="img/luna-lro.jpg" width="500" height="500" alt="" aria-hidden="true">
+
       <div class="hero__copy">
-        <h1 class="hero__name casts" data-shadow="text">Ricardo Orduño</h1>
+        <h1 class="hero__name">Ricardo<br>Orduño</h1>
         <p class="hero__lead">
-          Desarrollador frontend y UI/UX en Sonora, México.
-          De día, mi software cobra en negocios reales. De noche, vendo sus sombras.
+          Desarrollador frontend y UI/UX en Sonora, México. Hago las tiendas, cajas y apps
+          con las que cobran negocios de aquí: una repostería en Navojoa vende con mi tienda
+          y una taquería cobra con mi caja.
         </p>
         <div class="hero__actions">
-          <a class="ticket-btn casts" data-shadow="box" href="#puestos">Recorrer el bazar</a>
+          <a class="ticket-btn casts" data-shadow="box" href="#puestos">Ver proyectos</a>
           <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
-        <p class="hero__hint"><span class="hint--pointer">Mueve el cursor: la luna te sigue y todo recalcula su sombra.</span><span class="hint--touch">Baja despacio: la luna cruza el cielo contigo.</span></p>
       </div>
 
-      <aside class="hero__tag" aria-label="Boleto de origen del comerciante">
+      <aside class="hero__tag" aria-label="Cartulina con mis datos">
         <div class="tag casts" data-shadow="box">
           <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Sonora, México</span></span>
-          <span class="tag__row"><span class="tag__k">Largo de sombra</span><span class="tag__num">380<small>+ commits</small></span></span>
-          <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia, con café</span></span>
+          <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">380+</span></span>
+          <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">Buscando equipo</span></span>
           <span class="tag__row"><span class="tag__k">Precio</span><span class="tag__v">Una entrevista</span></span>
         </div>
       </aside>
@@ -103,14 +111,15 @@
     <!-- Los puestos -->
     <section id="puestos" class="market">
       <header class="market__head">
-        <h2 class="script-title casts" data-shadow="text">Los puestos</h2>
-        <p>Cada proyecto es un puesto. La mercancía empieza en sombra y sale a la luz cuando llegas a ella. El largo de cada sombra se mide en commits reales.</p>
+        <h2 class="section-title">Proyectos</h2>
+        <p>Cada proyecto es un puesto con su foco: se prende cuando llegas a él. El número de cada cartulina son los commits de su repositorio.</p>
       </header>
 
       <!-- Akora -->
       <article class="stall" id="akora">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Akora Repostería</h3></div>
+        <div class="awning"><h3 class="awning__sign">Akora Repostería</h3></div>
         <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
             <img class="casts" data-shadow="img" src="img/akora-portada.png" width="1080" height="675" loading="lazy" alt="Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate.">
             <img class="goods__sticker casts" data-shadow="img" src="img/akora-gatita.png" width="227" height="283" loading="lazy" alt="">
@@ -119,20 +128,21 @@
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
               <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Una repostería de Navojoa</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">267<small> commits</small></span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v tag__v--hot">Caliente: cobra hoy</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">267</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v tag__v--hot">En producción</span></span>
             </div>
             <p>Tienda web y punto de venta: catálogo, carrito, pago en línea con Openpay (BBVA), panel administrativo y POS para tablet. Cobra de verdad. Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta, con respaldo de la base antes de cada despliegue.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li><li>Caddy</li><li>GitHub Actions</li></ul>
-            <a class="daylight" href="https://akora.mx" target="_blank" rel="noopener">Verla a la luz del día</a>
+            <a class="daylight" href="https://akora.mx" target="_blank" rel="noopener">Visitar akora.mx</a>
           </div>
         </div>
       </article>
 
       <!-- POS -->
       <article class="stall stall--flip" id="pos">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">POS de taquería</h3></div>
+        <div class="awning"><h3 class="awning__sign">POS de taquería</h3></div>
         <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
             <img class="casts" data-shadow="img" src="img/pos-comanda.jpg" width="1120" height="1000" loading="lazy" alt="Caja del POS tomando la orden de la mesa 2: menú de barbacoa, dorados y quesadillas a la izquierda; a la derecha la orden por asiento con total de 260 pesos y el botón Cobrar.">
             <figcaption>La caja corriendo en local, con el menú real del cartel</figcaption>
@@ -140,8 +150,8 @@
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
               <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">El mostrador de una taquería</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">29<small> commits</small></span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v tag__v--hot">Caliente: cobra hoy</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">29</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v tag__v--hot">En producción</span></span>
             </div>
             <p>La caja con la que cobra una taquería de barbacoa. Toma comandas por asiento en tablet o teléfono, sincroniza entre aparatos en tiempo real y guarda todo en el servidor. Es la segunda versión: reescribí el sistema original para que aguantara el ritmo del mostrador un sábado en la noche.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li></ul>
@@ -151,8 +161,9 @@
 
       <!-- Sistema de Leche -->
       <article class="stall" id="sistema-de-leche">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Sistema de Leche</h3></div>
+        <div class="awning"><h3 class="awning__sign">Sistema de Leche</h3></div>
         <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--screen">
             <img class="casts" data-shadow="img" src="img/leche-hoy.jpg" width="1440" height="900" loading="lazy" alt="Pantalla Hoy de Sistema de Leche: 679 litros al tanque en dos ordeños, aviso de la vaca 214 en retiro de medicamento, pendientes de reproducción y cómo va el rancho.">
             <figcaption>La app corriendo en local, con un hato de demostración</figcaption>
@@ -160,8 +171,8 @@
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
               <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Un rancho lechero</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">25<small> commits</small></span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: rediseño en curso</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">25</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">Rediseño en curso</span></span>
             </div>
             <p>App de escritorio para Windows que administra un hato lechero: padrón animal, reproducción, producción, sanidad con control de retiros, insumos y costos. Funciona sin internet, con la base en la computadora del rancho.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>Electron</li><li>TypeScript</li><li>Drizzle ORM</li><li>SQLite</li></ul>
@@ -171,8 +182,9 @@
 
       <!-- AI Orchestrator -->
       <article class="stall stall--flip" id="ai-orchestrator">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">AI Orchestrator</h3></div>
+        <div class="awning"><h3 class="awning__sign">AI Orchestrator</h3></div>
         <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--made">
             <div class="term casts" data-shadow="box" role="img" aria-label="Terminal de ejemplo: una orden lanza el equipo; Codex implementa, corren las pruebas, Claude audita y da el veredicto aprobado.">
               <div class="term__bar"><span class="term__tab">PowerShell</span><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
@@ -192,10 +204,10 @@
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
               <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Mi propia máquina</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__v">Sin medir: aún no sale de casa</span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en uso diario</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__v">Aún no sale de casa</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">En uso diario</span></span>
             </div>
-            <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. El control lo lleva código determinista, no un modelo.</p>
+            <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. Quién sigue y cuándo parar lo decide un script de PowerShell; los modelos solo trabajan.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li></ul>
           </div>
         </div>
@@ -203,8 +215,9 @@
 
       <!-- Hacker Tycoon -->
       <article class="stall" id="hacker-tycoon">
-        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Hacker Tycoon</h3></div>
+        <div class="awning"><h3 class="awning__sign">Hacker Tycoon</h3></div>
         <div class="stall__body">
+          <span class="foco" aria-hidden="true"><i></i></span>
           <figure class="goods goods--cutouts">
             <img class="cut cut--poster casts" data-shadow="img" src="img/ht-poster-0day.png" width="512" height="716" loading="lazy" alt="Póster del juego: un candado cian roto sobre salpicaduras rojas.">
             <img class="cut cut--mask casts" data-shadow="img" src="img/ht-mascara-oni.png" width="512" height="256" loading="lazy" alt="Máscara oni del juego, con cuernos y ojos rojos encendidos.">
@@ -213,8 +226,8 @@
           <div class="stall__info">
             <div class="tag casts" data-shadow="box">
               <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">La Ciudad de Neón, en Roblox</span></span>
-              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">61<small> commits</small></span></span>
-              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en desarrollo</span></span>
+              <span class="tag__row"><span class="tag__k">Commits</span><span class="tag__num">61</span></span>
+              <span class="tag__row"><span class="tag__k">Estado</span><span class="tag__v">En desarrollo</span></span>
             </div>
             <p>Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras máquinas que producen y sales a robar la bóveda de otros jugadores mientras defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.</p>
             <ul class="tech-tags" aria-label="Tecnologías"><li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li></ul>
@@ -225,12 +238,12 @@
 
     <!-- El comerciante -->
     <section id="comerciante" class="merchant">
-      <h2 class="script-title casts" data-shadow="text">El comerciante</h2>
+      <h2 class="section-title">Sobre mí</h2>
       <div class="merchant__body">
-        <p class="merchant__quote">Me importa que el sistema funcione el sábado a las nueve de la noche, no solo en la demo.</p>
+        <p class="merchant__quote">Me importa que el sistema aguante el sábado a las nueve de la noche, con fila en el mostrador.</p>
         <div class="merchant__text">
           <p>Soy Ricardo Orduño Camacho. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso diseño la interfaz y también todo lo que la sostiene: la base de datos, el backend, el servidor y el despliegue.</p>
-          <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo; la luna la mueves tú.</p>
+          <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo: los focos los prendes tú.</p>
           <p>Trabajo con agentes de IA como parte de mi equipo, con reglas claras: todo cambio va en rama, con pull request y con pruebas.</p>
         </div>
       </div>
@@ -238,12 +251,12 @@
 
     <!-- Inventario -->
     <section id="inventario" class="inventory">
-      <h2 class="script-title casts" data-shadow="text">Inventario</h2>
+      <h2 class="section-title">Habilidades</h2>
       <div class="ledger casts" data-shadow="box">
-        <p class="ledger__note">Lista de precios · a tratar · se surte todos los días</p>
+        <p class="ledger__note">Precios a tratar</p>
         <dl>
           <div class="ledger__row"><dt>Interfaz</dt><dd>TypeScript&nbsp;· React&nbsp;· Next.js&nbsp;· Angular&nbsp;· RxJS&nbsp;· Zustand&nbsp;· TanStack Query&nbsp;· Tailwind&nbsp;· Vite&nbsp;· HTML y CSS a mano</dd></div>
-          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript&nbsp;· sombras de luna en vivo&nbsp;· respeto a quien pide menos movimiento</dd></div>
+          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript&nbsp;· luz y sombras calculadas en vivo&nbsp;· respeto a quien pide menos movimiento</dd></div>
           <div class="ledger__row"><dt>Backend</dt><dd>Java con Spring Boot&nbsp;· Node.js&nbsp;· NestJS&nbsp;· Python&nbsp;· API REST&nbsp;· tiempo real con WebSockets y Socket.IO</dd></div>
           <div class="ledger__row"><dt>Datos</dt><dd>PostgreSQL&nbsp;· SQLite&nbsp;· Prisma&nbsp;· Drizzle ORM&nbsp;· IndexedDB con Dexie para trabajar sin conexión&nbsp;· respaldos y recuperación</dd></div>
           <div class="ledger__row"><dt>Seguridad y calidad</dt><dd>JWT y Passport&nbsp;· Argon2 y bcrypt&nbsp;· validación con Zod&nbsp;· pruebas con Jest, Vitest, Supertest y Karma&nbsp;· monitoreo con Sentry y Pino</dd></div>
@@ -257,10 +270,10 @@
 
     <!-- Cerrar trato -->
     <section id="trato" class="deal">
-      <div class="awning awning--wide"><h2 class="awning__sign casts" data-shadow="text">Cerrar trato</h2></div>
+      <div class="awning awning--wide"><h2 class="awning__sign">Contacto</h2></div>
       <div class="deal__body">
-        <p class="deal__lead">Esta sombra no se vende: se contrata.</p>
-        <p>Busco equipo donde el detalle de la interfaz importe. Escríbeme y platicamos.</p>
+        <p class="deal__lead">Busco un equipo donde el detalle de la interfaz importe.</p>
+        <p>Escríbeme por correo o por LinkedIn y platicamos.</p>
         <div class="deal__actions">
           <a class="ticket-btn casts" data-shadow="box" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
           <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
@@ -271,14 +284,13 @@
   </main>
 
   <footer class="footer">
-    <p>Bazar abierto de 9 p.m. hasta que compile. No se aceptan devoluciones de sombras.</p>
+    <p>Abierto de 9 p.m. hasta que compile. No se aceptan devoluciones.</p>
     <p>© <span id="anio">2026</span> Ricardo Orduño Camacho · Hecho a mano, sin frameworks.</p>
   </footer>
 
   <div class="toast" id="logro" role="status" aria-live="polite" hidden>
-    <span class="toast__k">Logro desbloqueado</span>
-    <strong>Eclipse</strong>
-    <span>Apagaste la luna. Vuelve a teclear el código para prenderla.</span>
+    <strong>Se fue la luz</strong>
+    <span>Logro desbloqueado. Vuelve a teclear el código para que regrese.</span>
   </div>
 
   <script src="main.js"></script>

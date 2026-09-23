@@ -1,11 +1,14 @@
 ---
 name: Bazar de sombras
-description: Portafolio de Ricardo Orduño como un bazar nocturno a la luz de la luna, donde cada proyecto es un puesto y su sombra es la mercancía.
+description: Portafolio de Ricardo Orduño como un tianguis nocturno sonorense, donde cada proyecto es un puesto con su foco pelón y su cartulina de precio.
 colors:
   lane: "#0d1420"
   shadow-2: "#0a0e13"
   saffron: "#c89b4d"
   saffron-hi: "#e2b867"
+  bulb: "#ffc766"
+  wire: "#2b313b"
+  hot: "#9c3218"
   moon: "#e6edf5"
   ticket: "#eadfc6"
   ticket-ink: "#2b2217"
@@ -13,90 +16,95 @@ colors:
   text: "#d3dae4"
   muted: "#95a3b8"
   cast: "rgb(2 4 8 / .72)"
-  hot: "#9c3218"
 typography:
   display:
-    fontFamily: "Mr Dafoe, Brush Script MT, cursive"
-    fontSize: "clamp(64px, 11.5vw, 168px)"
+    fontFamily: "Bungee, Arial Black, sans-serif"
+    fontSize: "clamp(50px, 8.2vw, 116px)"
     fontWeight: 400
-    lineHeight: 0.95
-    letterSpacing: "normal"
+    lineHeight: 0.98
   headline:
-    fontFamily: "Mr Dafoe, Brush Script MT, cursive"
-    fontSize: "clamp(60px, 8vw, 112px)"
+    fontFamily: "Bungee, Arial Black, sans-serif"
+    fontSize: "clamp(40px, 5.6vw, 76px)"
     fontWeight: 400
-    lineHeight: 1
+    lineHeight: 1.15
   title:
-    fontFamily: "Mr Dafoe, Brush Script MT, cursive"
-    fontSize: "clamp(44px, 5.4vw, 76px)"
+    fontFamily: "Bungee, Arial Black, sans-serif"
+    fontSize: "clamp(28px, 3.6vw, 48px)"
     fontWeight: 400
     lineHeight: 1.05
   quote:
-    fontFamily: "Alegreya, Georgia, serif"
-    fontSize: "clamp(26px, 3vw, 38px)"
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "clamp(23px, 2.5vw, 32px)"
     fontWeight: 500
     lineHeight: 1.3
+    fontVariation: "'wdth' 108"
   body:
-    fontFamily: "Alegreya, Georgia, serif"
-    fontSize: "19px"
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "18px"
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily: "Alegreya SC, Georgia, serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "12px"
-    fontWeight: 700
-    letterSpacing: "0.14em"
+    fontWeight: 600
+    letterSpacing: "0.02em"
+    fontVariation: "'wdth' 125"
   action:
-    fontFamily: "Alegreya SC, Georgia, serif"
-    fontSize: "18px"
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "17px"
     fontWeight: 700
-    letterSpacing: "0.06em"
+    fontVariation: "'wdth' 112"
+  hand:
+    fontFamily: "Caveat Brush, Comic Sans MS, cursive"
+    fontSize: "25px"
+    fontWeight: 400
+    lineHeight: 1.1
   numeral:
-    fontFamily: "Big Shoulders Display, Arial Narrow, sans-serif"
-    fontSize: "38px"
-    fontWeight: 700
+    fontFamily: "Caveat Brush, Comic Sans MS, cursive"
+    fontSize: "52px"
+    fontWeight: 400
     lineHeight: 1
-    letterSpacing: "0.01em"
-    fontFeature: "tnum"
 rounded:
-  hairline: "2px"
-  ticket: "3px"
-  focus: "4px"
+  tag: "2px"
+  chip: "3px"
+  screen: "4px"
   window: "8px"
 spacing:
   gutter: "clamp(16px, 4vw, 48px)"
   maxw: "1180px"
   rail: "64px"
   stall-gap: "clamp(88px, 13vh, 150px)"
+  stall-top: "clamp(64px, 6vw, 80px)"
 components:
   button-ticket:
-    backgroundColor: "{colors.saffron}"
+    backgroundColor: "{colors.saffron-hi}"
     textColor: "{colors.ticket-ink}"
     typography: "{typography.action}"
     padding: "0 28px"
     height: "52px"
   button-ticket-hover:
-    backgroundColor: "{colors.saffron-hi}"
+    backgroundColor: "#f0c878"
   button-line:
     textColor: "{colors.text}"
     padding: "0 22px"
     height: "52px"
   button-line-hover:
     textColor: "{colors.saffron-hi}"
-  tag-origin:
+  tag-price:
     backgroundColor: "{colors.ticket}"
     textColor: "{colors.ticket-ink}"
-    rounded: "{rounded.ticket}"
-    padding: "32px 20px 18px"
+    rounded: "{rounded.tag}"
+    padding: "32px 22px 20px"
   chip-tech:
-    textColor: "{colors.muted}"
-    rounded: "{rounded.hairline}"
+    backgroundColor: "rgb(149 163 184 / .12)"
+    textColor: "{colors.text}"
+    rounded: "{rounded.chip}"
     padding: "3px 10px"
   awning:
-    backgroundColor: "{colors.saffron}"
+    backgroundColor: "{colors.saffron-hi}"
     textColor: "{colors.shadow-2}"
     typography: "{typography.title}"
-    padding: "22px 28px 40px"
+    padding: "22px 28px 42px"
   ledger:
     backgroundColor: "{colors.ticket}"
     textColor: "{colors.ticket-ink}"
@@ -104,166 +112,189 @@ components:
     backgroundColor: "{colors.shadow-2}"
     textColor: "{colors.muted}"
     height: "64px"
+  nav-contact:
+    backgroundColor: "{colors.saffron-hi}"
+    textColor: "{colors.shadow-2}"
 ---
 
 # Design System: Bazar de sombras
 
 ## Overview
 
-**Creative North Star: "El bazar de sombras"**
+**Creative North Star: "El tianguis de los focos"**
 
-Un callejón de mercado a medianoche donde la luna es la única fuente de luz. Cada proyecto es un puesto con toldo de lona azafrán; su mercancía (capturas, arte, pantallas) espera en sombra y sale a la luz cuando el visitante llega a ella. Cada puesto trae un boleto de origen en papel, con el largo de su sombra medido en commits reales. El sistema no es un modo oscuro con acento: es una escena iluminada desde un solo punto, y todo lo que la habita proyecta una sombra coherente con esa luz.
+Un tianguis nocturno sonorense. Cada proyecto es un puesto con toldo de lona azafrán rayada, un foco pelón colgado al centro y una cartulina de precio escrita con plumón: origen, commits reales y estado. La mercancía (capturas reales, arte del juego, una terminal) espera en penumbra y sale a la luz cuando se prende el foco de su puesto. El sistema no es un modo oscuro con acento: es una calle de noche iluminada por focos, y lo que está bajo un foco proyecta su sombra desde él.
 
-La luna vive en el cielo de la portada. Con ratón, el cursor la mueve de lado a lado sobre una altura fija; en pantallas táctiles cruza el cielo conforme se baja por la página; con `prefers-reduced-motion` se queda quieta en su reposo (80 % del ancho). Al bajar, la luna sale por arriba de la pantalla y sigue alumbrando desde fuera: `main.js` limita el origen de la luz a 260 px sobre el borde superior. Cada elemento `.casts` recibe, según la posición de la luna, las variables `--sx`, `--sy` (dirección y largo), `--len`, `--rx`, `--ry` (canto iluminado) y, si es texto, `--ts` (una sombra larga en capas). Solo se recalculan los elementos visibles.
+La luz la dan los focos, no la luna. En la portada cuelga de lado a lado una guirnalda de siete focos sobre un cable con vuelos; al llegar se prenden uno por uno, y cada uno se prende o se apaga al tocarlo. Cada puesto tiene su propio foco, que se enciende cuando el puesto cruza el centro de la pantalla o cuando el cursor pasa por él, y deja en el suelo un charco de luz cálida. `main.js` escribe en cada elemento `.casts` las variables `--sx`, `--sy` (dirección y largo) y `--len` desde el foco encendido más cercano: el del puesto, o el más cercano de la guirnalda en la portada. Sin foco, la sombra queda corta y plana (0, 3, 4). Solo se recalculan los elementos en pantalla. La luna es una foto tenue y quieta en el cielo de la portada, nada más.
 
-La personalidad es artesanal y con humor: rótulo de pintor de letreros, versalitas grabadas, papel de boleto con textura de líneas, una lista de precios. Hay un solo momento orquestado (la llegada: sale la luna, se pinta el nombre) y un secreto (el código Konami provoca un eclipse).
+La personalidad es de rotulista y de mercado, con humor: letreros pintados en Bungee con sombra plana roja, texto en Archivo con su eje de ancho, precios a plumón en cartulina. Hay un solo momento orquestado (la guirnalda que se prende) y un secreto (el código Konami tumba la luz: "Se fue la luz").
 
 **Key Characteristics:**
-- Una sola fuente de luz; toda sombra sale de la posición real de la luna.
-- La venta activa se ilumina: el puesto que cruza el centro de la pantalla recibe `.is-lit`.
-- Materiales de mercado: lona azafrán, papel de boleto, tinta café, noche azul negra.
-- Cuatro familias con papeles fijos: rótulo, versalitas, números condensados y una serif humanista para leer.
+- La luz viene de focos que el visitante puede prender y apagar; toda sombra de `.casts` sale del foco encendido más cercano.
+- El puesto activo se prende: foco encendido, charco de luz y mercancía a plena luz.
+- Materiales de tianguis: lona azafrán rayada, cartulina crema, tinta café, cable oscuro, noche azul marino.
+- Tres familias con papeles fijos: rótulo (Bungee), texto con eje de ancho (Archivo) y plumón (Caveat Brush) solo en cartulinas.
 - Todo lo ilustrativo se etiqueta; toda cifra es real.
 
 ## Colors
 
-Una noche azul negra con una sola familia cálida (lona y papel) y un blanco de luna que casi nunca aparece.
+Una noche azul marino con una sola familia cálida (lona, cartulina y la luz de los focos) y un rojo de rotulista que pinta sombras.
 
 ### Primary
-- **Lona azafrán** (`saffron`): toldos, cordel del boleto colgante, bordes del riel y del pie de página, filetes de la cita. Es el material de los puestos, no un acento de interfaz.
-- **Azafrán encendido** (`saffron-hi`): rótulos en script (nombre, títulos de sección, marca del riel), el botón de boleto, enlaces "a la luz del día", hover de la navegación y de los botones de línea, y el prompt del terminal.
+- **Lona azafrán** (`saffron`) y **Azafrán encendido** (`saffron-hi`): las dos franjas de 64px de cada toldo. `saffron-hi` además es el color de los rótulos (nombre, títulos de sección, marca del riel), del botón de boleto, del enlace "Contacto" del riel, de los enlaces a sitios en vivo, de los hovers y del prompt de la terminal.
 
 ### Secondary
-- **Blanco de luna** (`moon`): reservado. Solo el anillo de foco (`:focus-visible`) y el filo de la mercancía activa (`outline` a .55 de opacidad en `.stall.is-lit`), además del canto iluminado que `main.js` pone en las sombras de texto.
+- **Luz de foco** (`bulb`): solo el vidrio del foco encendido (degradado radial de `#fff7dc` a `bulb`) y el tono de su resplandor y del charco de luz.
+- **Rojo de rotulista** (`hot`): la sombra pintada de todos los letreros, el estado "En producción" de la cartulina y el título del aviso de logro.
 
 ### Tertiary
-- **Papel de boleto** (`ticket`) con **tinta café** (`ticket-ink`) y **tinta desvaída** (`ticket-dim`): boletos de origen, lista de precios, enlace de salto y el aviso de logro. Superficie clara dentro de la noche, siempre con textura de líneas horizontales (1 px cada 3 px) y un filete interior punteado.
+- **Cartulina** (`ticket`) con **tinta café** (`ticket-ink`) y **tinta desvaída** (`ticket-dim`): cartulinas de precio, lista de habilidades, enlace de salto y aviso de logro. Papel liso, sin textura.
 
 ### Neutral
-- **Callejón de medianoche** (`lane`): fondo del cuerpo y del cielo; también el ojal perforado del boleto.
-- **Sombra honda** (`shadow-2`): texto sobre la lona, fondo del riel (a .94–.74 de opacidad) y de la selección.
-- **Texto de noche** (`text`): cuerpo de lectura sobre el callejón.
-- **Texto apagado** (`muted`): pies de figura, navegación en reposo, chips de tecnología, párrafos secundarios.
-- **Sombra proyectada** (`cast`): el color de toda sombra que la luna hace caer.
+- **Callejón de medianoche** (`lane`): fondo del cuerpo y del cielo (degradado de `#0a1120` a `lane` y a `#0b1019`); también el ojal de la cartulina.
+- **Sombra honda** (`shadow-2`): fondo sólido del riel, letreros sobre la lona, texto sobre el enlace "Contacto" y en la selección.
+- **Cable** (`wire`): cable de la guirnalda, cable de cada foco y cordel de la cartulina colgada. El foco apagado es `#3b414b` con casquillo `#23272e`.
+- **Texto de noche** (`text`): lectura, chips de tecnología, botones de línea.
+- **Texto apagado** (`muted`): pies de figura, navegación en reposo, párrafos secundarios, pie de página.
+- **Sombra proyectada** (`cast`): el color de toda sombra que un foco hace caer.
+- **Blanco de foco** (`moon`): solo el anillo de `:focus-visible`.
 
 ### Named Rules
-**La Regla de la Luna Única.** El blanco de luna es luz, no pintura: solo marca el foco del teclado y la venta activa. Nunca va en fondos, texto de cuerpo ni botones.
+**La Regla del Foco.** La luz cálida (`bulb`) solo existe donde hay un foco encendido: su vidrio, su resplandor y su charco. No se usa como relleno, texto ni acento de interfaz.
 
-**La Regla de la Lona.** El azafrán es material del bazar (lona, rótulo, cordel, boleto) y el tono al que se acercan los hovers. No se usa para éxito, error o alerta: esos colores viven dentro de la mercancía ilustrativa, y el único otro tono cálido fuera de ella es el rojo ladrillo de «Caliente» en el boleto.
+**La Regla de la Lona.** El azafrán es material del tianguis (lona, rótulo, botón de boleto) y el tono al que llegan los hovers. No se usa para éxito, error o alerta; el único otro tono cálido fuera de la terminal es el rojo de rotulista.
 
 ## Typography
 
-**Display Font:** Mr Dafoe (con Brush Script MT, cursive)
-**Body Font:** Alegreya (con Georgia, serif)
-**Label Font:** Alegreya SC (con Georgia, serif)
-**Numeral Font:** Big Shoulders Display (con Arial Narrow, sans-serif)
+**Display Font:** Bungee (con Arial Black, sans-serif)
+**Body Font:** Archivo variable, pesos 400–800 y ancho 62–125 (con system-ui, sans-serif)
+**Hand Font:** Caveat Brush (con Comic Sans MS, cursive)
 
-**Character:** Rótulo pintado a mano para los letreros de los puestos, versalitas grabadas para boletos y etiquetas, números condensados de feria para los largos, y una serif humanista cálida que se lee de corrido. Todo el texto usa cifras alineadas (`lining-nums`); los números de boleto y de comanda son tabulares.
+**Character:** Rotulación callejera de pintor de letreros para lo que se lee desde lejos, una grotesca con eje de ancho que se ensancha para etiquetas y botones, y plumón grueso para lo que se escribe a mano en la cartulina.
 
 ### Hierarchy
-- **Display** (400, clamp(64px, 11.5vw, 168px), 0.95): solo el nombre en la portada. Lleva la sombra de texto más larga (escala 1.3).
-- **Headline** (400, clamp(60px, 8vw, 112px), 1): títulos de sección en script, en azafrán encendido.
-- **Title** (400, clamp(44px, 5.4vw, 76px), 1.05): el letrero de cada toldo, en sombra honda sobre la lona. En "Cerrar trato" sube a clamp(56px, 7vw, 100px).
-- **Quote** (itálica 500, clamp(26px, 3vw, 38px), 1.3): la cita del comerciante y la frase de cierre (hasta 42px), con `text-wrap: balance`.
-- **Body** (400, 19px, 1.6; 18px bajo 640px): lectura, con 34ch en la portada y hasta 62ch en la sección del comerciante.
-- **Label** (700, 12px, 0.14em, versalitas): claves del boleto ("Origen", "Largo", "Temperatura") y del aviso de logro.
-- **Action** (700, 18px, 0.06em, versalitas): botones y enlaces de acción; la navegación usa 500 a 16px con 0.04em.
-- **Numeral** (700, 38px, 1, tabular): el largo en commits del boleto, el total de la comanda y los KPI de las pantallas.
+- **Display** (Bungee 400, clamp(50px, 8.2vw, 116px), 0.98): solo el nombre en la portada, sombra pintada a .05em.
+- **Headline** (Bungee 400, clamp(40px, 5.6vw, 76px), 1.15): títulos de sección en azafrán encendido, sombra a .06em.
+- **Title** (Bungee 400, clamp(28px, 3.6vw, 48px), 1.05): el letrero de cada toldo, en sombra honda, sombra a .07em. En Contacto sube a clamp(40px, 5.4vw, 72px).
+- **Quote** (Archivo 500, ancho 108 %, clamp(23px, 2.5vw, 32px), 1.3): la cita de Sobre mí; la frase de Contacto usa 600 a clamp(24px, 3vw, 36px). Ambas con `text-wrap: balance`.
+- **Body** (Archivo 400, 18px, 1.6; 17px bajo 640px): lectura; 36ch en la portada, hasta 62ch en Sobre mí.
+- **Label** (Archivo 600, 12px, ancho 125 %, mayúsculas, 0.02em): claves de la cartulina ("Origen", "Commits", "Estado", "Precio"). Los términos de la lista de habilidades usan la misma receta a 700 y 15px.
+- **Action** (Archivo 700, 17px, ancho 112 %): botón de boleto. El botón de línea es 600 a 16px; la navegación, 500 a 15px.
+- **Hand** (Caveat Brush 400, 25px, 1.1): valores de la cartulina; la nota "Precios a tratar" de la lista va a 30px, en tinta desvaída y girada -1.5°.
+- **Numeral** (Caveat Brush 400, 52px, 1): los commits de la cartulina.
 
 ### Named Rules
-**La Regla del Rótulo.** El script solo rotula: nombre, títulos de sección, toldos, la marca del riel y el título del logro. Nunca en párrafos, botones ni etiquetas. Los rótulos llevan `word-spacing: .2em` para que las palabras no se peguen.
+**La Regla del Rótulo.** Bungee solo rotula: marca del riel, nombre, títulos de sección, letreros de toldo y el título del aviso de logro. Siempre lleva su sombra plana de un color en `hot`, desplazada hacia abajo a la derecha (.05–.07em, sin difuminado). Esa sombra está pintada y no se mueve con los focos.
 
-**La Regla del Número Medido.** Los largos de sombra van en numeral condensado con su unidad en versalitas pequeñas, y son commits reales. Si no hay medida, el boleto lo dice con palabras ("Sin medir").
+**La Regla del Plumón.** Caveat Brush vive solo en cartulina: valores y números de la cartulina de precio y la nota de la lista de habilidades. Nunca en párrafos, botones ni navegación.
+
+**La Regla del Ancho.** Las etiquetas se ensanchan (`font-stretch: 125%`, mayúsculas) y los botones de acción a 112 %; el cuerpo queda en ancho normal.
 
 ## Layout
 
-Una sola columna de lectura centrada con ancho máximo de 1180px y márgenes laterales de clamp(16px, 4vw, 48px). El riel de navegación es pegajoso y mide 64px; `scroll-padding-top` es 80px.
+Una sola columna centrada con ancho máximo de 1180px y márgenes de clamp(16px, 4vw, 48px). El riel es pegajoso y mide 64px; `scroll-padding-top` es 80px.
 
-La portada ocupa el alto de la pantalla menos el riel, en rejilla de 1.55fr / 1fr: nombre, línea y acciones a la izquierda; el boleto colgante a la derecha, meciéndose de -3° a 2.5°. Al pie corre el callejón: una hilera plana de toldos en silueta (`#111722`) con cuatro faroles, un SVG de una sola fila que sirve de marcador de posición hasta que exista un callejón en raster.
+La portada ocupa el alto de la pantalla menos el riel, en rejilla de 1.55fr / 1fr, con 128px arriba para la guirnalda: nombre, línea y acciones a la izquierda; la cartulina colgada a la derecha, meciéndose de -3° a 2.5°. La guirnalda cruza todo el ancho de la ventana (un cable SVG con cuatro vuelos y siete focos alternando entre 45px y 20px de altura). La luna, de 56 a 84px, queda arriba a la derecha. Al pie corre el callejón: una hilera plana de toldos en silueta (`#111722`) con cuatro faroles, marcador de posición de una sola fila.
 
-Cada puesto es un toldo a todo el ancho y debajo una rejilla de dos columnas (1.1fr mercancía / 1fr información); los puestos alternan lado con `.stall--flip`. Entre puestos hay clamp(88px, 13vh, 150px). El boleto de cada puesto va ligeramente girado (-1.5° o 1.2°) y la mercancía también se inclina cuando es recorte (póster -3°, máscara 4°, estampa 8°).
+Cada puesto es un toldo a todo el ancho y debajo una rejilla de dos columnas (1.1fr mercancía / 1fr información) con clamp(64px, 6vw, 80px) arriba para el foco, que cuelga del toldo al centro con 26px de cable. Los puestos alternan lado con `.stall--flip`. Entre puestos hay clamp(88px, 13vh, 150px). La cartulina de cada puesto va girada (-1.5° o 1.2°); el arte recortado también (póster -3°, máscara 4°, estampa 8°).
 
-A 900px todo pasa a una columna y la mercancía va primero. A 640px la navegación deja solo "Cerrar trato", el boleto colgante se encoge a 210px y los botones de acción ocupan el ancho completo.
+A 900px todo pasa a una columna con la mercancía primero y las filas de la lista a una columna. A 640px la navegación deja solo "Proyectos" y "Contacto", la cartulina colgada se encoge a 210px, la estampa de Akora se oculta y los botones de acción ocupan el ancho completo.
 
 ## Elevation & Depth
 
-La profundidad viene de una sola luz. No hay escala de elevación: cada elemento que proyecta sombra la calcula desde la luna, así que la dirección cambia con el cursor o el scroll y el largo crece con la distancia (de 3 a 18). Las sombras siempre son `cast` (casi negro azulado), nunca de color. El cielo lleva un resplandor radial frío que sigue a la luna y un campo de estrellas fijo.
+La profundidad viene de los focos. No hay escala de elevación: cada `.casts` calcula su sombra desde el foco encendido más cercano, con largo de 4 a 22 según la distancia (distancia / 40). Las sombras siempre son `cast`, nunca de color. No hay desenfoque de fondo ni vidrio.
 
-Además de la sombra, la luz se expresa con brillo: la mercancía de un puesto no activo baja a `brightness(.3) saturate(.15)` y los toldos a `brightness(.55) saturate(.7)`; al volverse la venta activa, ambos suben a luz plena en 1.1s y 0.8s. Sin JavaScript todo queda a plena luz.
+La luz también se expresa con brillo: con JavaScript, la mercancía de un puesto apagado baja a `brightness(.42) saturate(.3)` y sube a luz plena en 1s al prenderse su foco; el charco de luz aparece en 0.8s. Los toldos no se oscurecen nunca. Sin JavaScript toda la mercancía queda a plena luz.
 
 ### Shadow Vocabulary
-- **Sombra de caja** (`data-shadow="box"`): dos capas proyectadas (`--sx`,`--sy` a 1× y 2.2×) más un canto interior blanco del lado de la luna (`--rx`,`--ry`). Boletos, lista de precios, botón de boleto, pantallas ilustrativas.
-- **Sombra de imagen** (`data-shadow="img"`): un `drop-shadow` que respeta la silueta del recorte. Capturas y arte con transparencia.
-- **Sombra de texto** (`data-shadow="text"`): `--ts`, una pila de capas de 1 px en la dirección de la luz que se desvanecen, más un difuminado final y un filo claro de luna del lado contrario. Rótulos en script.
-- **Sombra de contenedor de botones**: la máscara del boleto recorta cualquier `box-shadow`, así que las acciones de portada y de cierre llevan un `drop-shadow` en su contenedor.
-- **Aviso de logro** (`0 18px 40px rgb(0 0 0 / .5)`): la única sombra fija, para el aviso flotante del eclipse.
+- **Sombra de caja** (`data-shadow="box"`): dos capas proyectadas (`--sx`, `--sy` a 1× y 2.2×). Cartulinas, lista de habilidades, botón de boleto, terminal.
+- **Sombra de imagen** (`data-shadow="img"`): un `drop-shadow` que respeta la silueta. Capturas y arte recortado; en la mercancía se combina con el filtro de brillo.
+- **Sombra de contenedor de botones**: la muesca del botón de boleto recorta su `box-shadow`, así que las acciones de portada y de Contacto llevan un `drop-shadow` en su contenedor.
+- **Sombra pintada**: la de los letreros en Bungee (ver Tipografía); fija, de un color, sin difuminado.
+- **Resplandor del foco** (`0 0 10px 3px rgb(255 196 100 / .75), 0 0 70px 26px rgb(255 176 80 / .2)`): solo en el foco encendido.
+- **Charco de luz**: un degradado radial `rgb(255 186 96 / .12)` bajo el foco del puesto encendido.
+- **Aviso de logro** (`0 18px 40px rgb(0 0 0 / .5)`): la única sombra de caja fija.
 
 ### Named Rules
-**La Regla de la Fuente Única.** Toda sombra nueva se engancha a las variables que escribe `main.js` (agregando `.casts` y un `data-shadow`). Una sombra con dirección fija contradice la luna.
+**La Regla del Foco Más Cercano.** Toda sombra proyectada nueva se engancha a las variables de `main.js` (agregando `.casts` y un `data-shadow`). Una sombra con dirección fija contradice a los focos; la única excepción es la sombra pintada de los letreros.
 
-**La Regla de la Venta Activa.** Solo el puesto que cruza la franja central de la pantalla (margen de -38 % arriba y abajo) está a plena luz y lleva el filo de luna.
+**La Regla del Puesto Encendido.** Un puesto se prende cuando cruza la franja central de la pantalla (margen de -38 % arriba y abajo) o cuando el cursor está sobre él; solo entonces su mercancía está a plena luz y su foco proyecta.
+
+**La Regla del Apagón.** Con `body.apagon` (código Konami) todos los focos se apagan, la luna baja a .15, desaparecen los charcos, la mercancía cae a `brightness(.2) saturate(0)` y las sombras quedan planas. Se vuelve a teclear el código para que regrese la luz.
 
 ## Shapes
 
-Formas de papel y lona, casi sin redondeo. El boleto tiene esquinas de 3px, ojal perforado y filete interior punteado; el botón de boleto tiene muescas semicirculares de 9px a los lados hechas con máscara; el toldo termina en festón (arcos de 22×18px cada 64px); la comanda termina en borde dentado. Los chips tienen 2px. Solo las pantallas ilustrativas (ventana de escritorio y terminal) llevan 8px y sus tarjetas internas 6px, porque imitan software real. Los separadores internos son líneas punteadas de 1px en tinta desvaída.
+Formas de papel, lona y lámina, casi sin redondeo. La cartulina tiene esquinas de 2px y un ojal centrado arriba; el botón de boleto tiene muescas semicirculares de 9px a los lados, hechas con máscara; el toldo termina en festón (arcos de 22×18px cada 64px). El foco es una gota de 16×21px con casquillo cuadrado. Los chips tienen 3px, las capturas 4px. Solo la terminal lleva 8px (y 6px su pestaña) porque imita software real. Los separadores de la lista son líneas punteadas de 1px en tinta desvaída.
 
 ## Components
 
 ### Botones
-- **Boleto (primario):** papel azafrán con degradado vertical de `saffron-hi` a `saffron`, tinta café, versalitas 700 a 18px, 52px de alto, muescas laterales. Hover: sube 2px y gira -0.6°, el papel se aclara; activo: regresa a su lugar. Uno por grupo: "Recorrer el bazar" y el correo.
-- **Línea (secundario):** sin relleno, borde de 1px en texto a .35, versalitas 500 a 17px, 52px de alto. Hover: borde y texto en azafrán encendido. LinkedIn y GitHub.
-- **Foco:** anillo de 2px en blanco de luna con separación de 4px, en todo elemento interactivo.
+- **Boleto (primario):** azafrán encendido plano, tinta café, Archivo 700 a 17px con ancho 112 %, 52px de alto, muescas laterales. Hover: sube 2px, gira -0.6° y el papel se aclara a `#f0c878`; activo: regresa a su lugar. Uno por grupo: "Ver proyectos" y el correo.
+- **Línea (secundario):** sin relleno, borde de 1px en texto a .35, Archivo 600 a 16px, 52px de alto. Hover: borde y texto en azafrán encendido. LinkedIn y GitHub.
+- **Foco de teclado:** anillo de 2px en `moon` con separación de 4px y esquinas de 2px, en todo elemento interactivo.
 
-### Boleto de origen
-- **Estilo:** papel de boleto con textura, esquinas de 3px, filete interior a -7px, ojal centrado arriba. Filas separadas por línea punteada: clave en versalitas pequeñas desvaídas, valor en versalitas o en numeral.
-- **Temperatura caliente:** el valor "Caliente: cobra hoy" va en rojo ladrillo para los proyectos que cobran en producción.
-- **Colgante:** solo el de portada lleva cordel azafrán de 64px y se mece.
+### Foco
+- **Estilo:** cable de 2px en `wire` (12px por defecto, 6px en la guirnalda, 26px en el puesto), casquillo y vidrio en gota. Apagado: vidrio gris `#3b414b`. Encendido (`.on`): vidrio de `#fff7dc` a `bulb` con resplandor; transiciones de .35s y .6s.
+- **Guirnalda:** siete focos; se prenden uno por uno (350ms + 170ms por foco) salvo con `prefers-reduced-motion`, donde se prenden todos a la vez. Cada uno se alterna al tocarlo.
+- **Del puesto:** decorativo (`aria-hidden`); lo prende el puesto, no un clic.
+
+### Cartulina de precio
+- **Estilo:** cartulina lisa, esquinas de 2px, ojal arriba. Filas centradas sin separador: clave en etiqueta ancha desvaída, valor a plumón. Proyecta sombra de caja.
+- **Estado caliente:** "En producción" va en rojo de rotulista para los proyectos que cobran.
+- **Colgada:** solo la de portada lleva cordel de 64px en `wire` y se mece.
 
 ### Chips de tecnología
-- **Estilo:** versalitas 500 a 14px en texto apagado, borde de 1px a .3, esquinas de 2px. Sin estado; son una lista, no filtros.
+- **Estilo:** Archivo 500 a 14px en texto de noche sobre un velo `rgb(149 163 184 / .12)`, esquinas de 3px, sin borde. Sin estado; son una lista, no filtros.
 
 ### Toldo y letrero
-- **Estilo:** lona azafrán con tramado y franjas de 64px, festón inferior, letrero en script en sombra honda. En sombra hasta que su puesto es la venta activa; el toldo de "Cerrar trato" siempre está encendido.
+- **Estilo:** franjas planas de 64px en `saffron-hi` y `saffron`, festón inferior, letrero en Bungee en sombra honda con sombra pintada roja. Siempre a plena luz.
 
 ### Mercancía
-- **Real:** capturas y arte con sombra de imagen. La captura de akora.mx lleva una estampa encima.
-- **Ilustrativa:** comanda de ticket térmico, ventana de Windows y terminal de PowerShell, construidas en HTML con `role="img"` y descripción. Las apps de Windows llevan cromo de Windows (botones de minimizar, maximizar y cerrar en SVG a la derecha). El pie de figura dice que es ilustrativa.
+- **Real:** capturas de las apps corriendo y arte del juego, con sombra de imagen. La captura de akora.mx lleva una estampa encima.
+- **Ilustrativa:** solo la terminal de AI Orchestrator (ver la excepción al final), con `role="img"` y descripción; su pie dice que la corrida es ilustrativa.
+- **Pie de figura:** Archivo itálica 14px en texto apagado.
 
 ### Navegación
-- **Riel:** banda pegajosa de 64px en sombra honda translúcida con desenfoque de 8px y filete inferior azafrán. Marca "Ricardo" en script a 36px. Enlaces en versalitas apagadas; hover en azafrán encendido. "Cerrar trato" siempre en azafrán con borde; es el único enlace que queda en móvil.
+- **Riel:** banda pegajosa de 64px en sombra honda sólida con filete inferior azafrán a .22. Marca "Ricardo" en Bungee a 22px (20px en móvil) con sombra pintada. Enlaces en Archivo 500 a 15px, apagados; hover en azafrán encendido. "Contacto" es un bloque relleno de azafrán encendido con texto en sombra honda (hover `#f0c878`). Secciones: Proyectos / Sobre mí / Habilidades / Contacto.
 
-### Lista de precios
-- **Estilo:** papel de boleto a todo el ancho con filete interior a -10px y sombra de caja. Filas de dos columnas (220px / resto) separadas por línea punteada; el término en versalitas 700 a 20px.
+### Lista de habilidades
+- **Estilo:** cartulina a todo el ancho con sombra de caja y la nota "Precios a tratar" a plumón. Filas de dos columnas (220px / resto) separadas por línea punteada; el término en etiqueta ancha 700 a 15px, la descripción en `#4a3d2b`.
 
 ### Aviso de logro
-- **Estilo:** papel de boleto fijo abajo al centro, título en script café. Aparece 4.2s al alternar el eclipse con el código Konami; entra con 0.6s solo si se permite movimiento.
+- **Estilo:** cartulina fija abajo al centro, hasta 360px, título en Bungee a 28px en rojo de rotulista. Aparece 4.2s al alternar el apagón; entra en 0.6s solo si se permite movimiento.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** conectar toda sombra nueva a la luna con `.casts` y `data-shadow` = `text`, `box` o `img`.
-- **Do** reservar el blanco de luna (`moon`) para el anillo de foco y el filo de la venta activa.
-- **Do** etiquetar en el `figcaption` toda mercancía ilustrativa ("Comanda ilustrativa", "Pantalla ilustrativa, con datos de ejemplo").
-- **Do** usar commits reales en los boletos; si no hay cifra, decirlo con palabras.
-- **Do** vestir las pantallas de apps de Windows con cromo de Windows.
-- **Do** incrustar el origen en los metadatos de cada imagen raster que se publique (captura, arte preexistente o foto de dominio público de la NASA).
-- **Do** darle el `drop-shadow` al contenedor cuando el elemento lleve máscara, porque la máscara corta su `box-shadow`.
-- **Do** dejar todo a plena luz sin JavaScript y con la luna quieta bajo `prefers-reduced-motion`.
+- **Do** conectar toda sombra proyectada nueva a los focos con `.casts` y `data-shadow` = `box` o `img`.
+- **Do** darle a cada puesto nuevo su propio foco (`.foco` como primer hijo de `.stall__body`).
+- **Do** pintar la sombra de los letreros en Bungee con `hot`, plana y sin difuminado.
+- **Do** reservar Caveat Brush para la cartulina y la nota de la lista.
+- **Do** reservar `moon` para el anillo de foco del teclado.
+- **Do** etiquetar en el `figcaption` toda mercancía ilustrativa y preferir capturas reales de las apps corriendo.
+- **Do** usar commits reales en las cartulinas; si no hay cifra, decirlo con palabras ("Aún no sale de casa").
+- **Do** incrustar el origen en los metadatos de cada imagen raster que se publique.
+- **Do** darle el `drop-shadow` al contenedor cuando el elemento lleve máscara.
+- **Do** dejar la mercancía a plena luz sin JavaScript y prender la guirnalda sin animación bajo `prefers-reduced-motion`.
 
 ### Don't:
-- **Don't** fijar sombras con dirección constante en elementos que viven bajo la luna.
+- **Don't** fijar sombras proyectadas con dirección constante; solo la sombra pintada de los letreros es fija.
+- **Don't** volver a la luna como fuente de luz: es una foto tenue y quieta en la portada.
+- **Don't** usar estrellas, desenfoque de fondo, degradados en botones, texturas de rayitas de 1px ni sombras de texto dinámicas.
+- **Don't** oscurecer los toldos apagados; solo la mercancía espera en penumbra.
 - **Don't** usar texto con degradado.
 - **Don't** usar glifos unicode como íconos; los íconos van en SVG en línea.
-- **Don't** usar el script fuera de los rótulos.
-- **Don't** tratar la silueta plana del callejón de portada como diseño final: es un marcador de posición de una sola fila hasta que exista un callejón en raster.
+- **Don't** usar Bungee fuera de los rótulos ni plumón fuera de la cartulina.
+- **Don't** tratar la silueta plana del callejón de portada como diseño final: es un marcador de posición de una sola fila.
 
 ## Excepción: la terminal ilustrativa
 
 La terminal de AI Orchestrator (`.term`, con sus pasos en `.term__pasos`) reproduce la interfaz de **otro**
-producto (Windows Terminal), no la del bazar: lleva sus propios colores, radios
-de 8 px y la fuente monoespaciada del sistema (Cascadia Mono / Consolas) a
-propósito. Su pie de foto dice que la corrida es ilustrativa. El detector la
-marca como deriva del sistema: es esperado.
+producto (Windows Terminal), no la del tianguis: lleva sus propios colores
+(`#0b0f14`, `#151b24`, verde `#7fd6a0`, ámbar `#f0b86a`), radios de 8 px, cromo
+de Windows en SVG y la fuente monoespaciada del sistema (Cascadia Mono /
+Consolas) a propósito. Su pie de foto dice que la corrida es ilustrativa. El
+detector la marca como deriva del sistema: es esperado.
 
 El POS y Sistema de Leche se muestran con **capturas reales** de las apps
 corriendo en local (`img/pos-comanda.jpg`, `img/leche-hoy.jpg`), no con
