@@ -299,3 +299,19 @@ detector la marca como deriva del sistema: es esperado.
 El POS y Sistema de Leche se muestran con **capturas reales** de las apps
 corriendo en local (`img/pos-comanda.jpg`, `img/leche-hoy.jpg`), no con
 maquetas.
+
+## Un objeto por puesto
+
+Los puestos no repiten la cartulina de la portada: cada uno trae un objeto de su
+propio mundo con los mismos datos (origen, commits, estado).
+
+| Puesto | Clase | Objeto |
+|---|---|---|
+| Akora | `.tag--sticker` | Etiqueta redonda de caja de pastelería, con borde punteado |
+| POS | `.tag--comanda` | Comanda térmica de 58 mm: monoespaciada, renglones punteados, borde dentado |
+| Sistema de Leche | `.tag--arete` | Arete de ganado en azafrán; el número en Archivo al 62 % de ancho y 900 |
+| AI Orchestrator | `.tag--masking` | Tira de cinta masking escrita a plumón |
+| Hacker Tycoon | `.tag--gafete` | Gafete del juego: fondo oscuro, filete azafrán, texto en Bungee |
+
+Un proyecto nuevo elige su objeto de lo que su gente toca de verdad; no se copia
+otro.
