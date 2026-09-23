@@ -147,7 +147,7 @@ function recorrer(id) {
   recorridos.add(id);
   try { sessionStorage.setItem("recorridos", JSON.stringify([...recorridos])); } catch {}
   pintarCuenta();
-  if (recorridos.size === calle.size) avisar("Recorriste el tianguis", "Logro desbloqueado: pasaste por todos los puestos.");
+  if (recorridos.size === calle.size) avisar("Terminaste el mercado", "Logro desbloqueado: pasaste por todos los puestos.");
 }
 pintarCuenta();
 
