@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T03:11:36.977Z",
+  "title": "Design System: Bazar de sombras",
+  "extensions": {
+    "colorMeta": {
+      "lane": {
+        "role": "neutral",
+        "displayName": "Callejón de medianoche",
+        "canonical": "oklch(19.1% 0.027 261)",
+        "tonalRamp": [
+          "#050b16",
+          "#1d2431",
+          "#38404e",
+          "#555e6d",
+          "#747e8e",
+          "#959fb0",
+          "#bac5d6",
+          "#e6effe"
+        ]
+      },
+      "shadow-2": {
+        "role": "neutral",
+        "displayName": "Sombra honda",
+        "canonical": "oklch(16.2% 0.012 254)",
+        "tonalRamp": [
+          "#080b10",
+          "#20242a",
+          "#3b4046",
+          "#595e65",
+          "#787e85",
+          "#999fa6",
+          "#bfc5cc",
+          "#e9eff7"
+        ]
+      },
+      "saffron": {
+        "role": "primary",
+        "displayName": "Lona azafrán",
+        "canonical": "oklch(71.6% 0.110 79)",
+        "tonalRamp": [
+          "#120900",
+          "#322000",
+          "#553a02",
+          "#7b5605",
+          "#a07521",
+          "#c39648",
+          "#eabc6e",
+          "#ffecce"
+        ]
+      },
+      "saffron-hi": {
+        "role": "primary",
+        "displayName": "Azafrán encendido",
+        "canonical": "oklch(80.3% 0.111 82)",
+        "tonalRamp": [
+          "#110a00",
+          "#302101",
+          "#533b02",
+          "#795700",
+          "#9d761e",
+          "#c09746",
+          "#e8bd6c",
+          "#ffecca"
+        ]
+      },
+      "moon": {
+        "role": "secondary",
+        "displayName": "Blanco de luna",
+        "canonical": "oklch(94.3% 0.013 252)",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252a",
+          "#3b4047",
+          "#585e65",
+          "#787e85",
+          "#999fa7",
+          "#bec5cd",
+          "#e8eff7"
+        ]
+      },
+      "ticket": {
+        "role": "tertiary",
+        "displayName": "Papel de boleto",
+        "canonical": "oklch(90.6% 0.035 87)",
+        "tonalRamp": [
+          "#110a00",
+          "#2b230f",
+          "#483f2a",
+          "#665d47",
+          "#867c66",
+          "#a89d86",
+          "#cec3ab",
+          "#f9eed4"
+        ]
+      },
+      "ticket-ink": {
+        "role": "tertiary",
+        "displayName": "Tinta café",
+        "canonical": "oklch(25.9% 0.024 72)",
+        "tonalRamp": [
+          "#110902",
+          "#2b2217",
+          "#483e32",
+          "#665c4f",
+          "#867b6e",
+          "#a89c8f",
+          "#cec2b4",
+          "#f9ecde"
+        ]
+      },
+      "ticket-dim": {
+        "role": "tertiary",
+        "displayName": "Tinta desvaída",
+        "canonical": "oklch(48.2% 0.047 77)",
+        "tonalRamp": [
+          "#130900",
+          "#302106",
+          "#4e3d22",
+          "#6c5a3f",
+          "#8d7a5e",
+          "#af9b7e",
+          "#d5c1a3",
+          "#ffeccf"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Texto de noche",
+        "canonical": "oklch(88.6% 0.016 257)",
+        "tonalRamp": [
+          "#070b12",
+          "#1f242c",
+          "#3b4048",
+          "#585e67",
+          "#777e87",
+          "#989fa8",
+          "#bec5ce",
+          "#e8eff9"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto apagado",
+        "canonical": "oklch(71.1% 0.035 258)",
+        "tonalRamp": [
+          "#030b19",
+          "#1a2435",
+          "#354052",
+          "#525e71",
+          "#717e92",
+          "#929fb4",
+          "#b7c5db",
+          "#e5effe"
+        ]
+      },
+      "cast": {
+        "role": "neutral",
+        "displayName": "Sombra proyectada",
+        "canonical": "rgb(2 4 8 / .72)",
+        "tonalRamp": [
+          "#070b11",
+          "#1f242b",
+          "#3b4048",
+          "#585e66",
+          "#787e86",
+          "#989fa8",
+          "#bec5ce",
+          "#e8eff9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Rótulo mayor",
+        "purpose": "Solo el nombre en la portada; sombra de texto a escala 1.3."
+      },
+      "headline": {
+        "displayName": "Rótulo de sección",
+        "purpose": "Títulos de sección en script, azafrán encendido."
+      },
+      "title": {
+        "displayName": "Letrero de toldo",
+        "purpose": "Nombre de cada puesto sobre la lona, en sombra honda."
+      },
+      "quote": {
+        "displayName": "Cita",
+        "purpose": "Cita del comerciante y frase de cierre, itálica balanceada."
+      },
+      "body": {
+        "displayName": "Lectura",
+        "purpose": "Texto corrido; 18px bajo 640px."
+      },
+      "label": {
+        "displayName": "Clave de boleto",
+        "purpose": "Claves del boleto y del aviso de logro, versalitas espaciadas."
+      },
+      "action": {
+        "displayName": "Acción",
+        "purpose": "Botones y enlaces de acción en versalitas."
+      },
+      "numeral": {
+        "displayName": "Largo",
+        "purpose": "Commits reales, totales y KPI; tabular."
+      }
+    },
+    "shadows": [
+      {
+        "name": "cast-box",
+        "value": "calc(var(--sx) * 1px) calc(var(--sy) * 1px) calc(4px + var(--len) * .5px) var(--cast), calc(var(--sx) * 2.2px) calc(var(--sy) * 2.2px) calc(14px + var(--len) * 1.2px) rgb(2 4 8 / .35), inset calc(var(--rx, -1) * 1px) calc(var(--ry, -1) * 1px) 0 rgb(255 255 255 / .35)",
+        "purpose": "[data-shadow=box]: boletos, lista de precios, botón de boleto, pantallas ilustrativas. main.js escribe --sx/--sy/--len/--rx/--ry desde la luna."
+      },
+      {
+        "name": "cast-img",
+        "value": "drop-shadow(calc(var(--sx) * 1.4px) calc(var(--sy) * 1.4px) calc(3px + var(--len) * .4px) var(--cast))",
+        "purpose": "[data-shadow=img]: capturas y recortes con transparencia."
+      },
+      {
+        "name": "cast-text",
+        "value": "var(--ts, 3px 4px 0 var(--cast))",
+        "purpose": "[data-shadow=text]: main.js genera una pila de capas de 1px en la dirección de la luz, un difuminado final y un filo de luna rgb(230 237 245 / .28) del lado contrario."
+      },
+      {
+        "name": "cast-actions",
+        "value": "drop-shadow(calc(var(--sx) * .8px) calc(var(--sy) * .8px) 6px rgb(2 4 8 / .6))",
+        "purpose": "En el contenedor de acciones: la máscara del botón de boleto corta su box-shadow."
+      },
+      {
+        "name": "moon-glow",
+        "value": "0 0 60px 12px rgb(214 226 244 / .22), 0 0 180px 60px rgb(120 150 200 / .12)",
+        "purpose": "Resplandor de la luna en el cielo."
+      },
+      {
+        "name": "toast",
+        "value": "0 18px 40px rgb(0 0 0 / .5)",
+        "purpose": "Única sombra fija: aviso de logro del eclipse."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Curva de todas las transiciones y de la llegada."
+      },
+      {
+        "name": "moon-follow",
+        "value": "interpolación 0.14 por cuadro",
+        "purpose": "La luna persigue al cursor (solo ratón). En táctil cruza el cielo con el scroll; con reduced-motion reposa al 80% del ancho."
+      },
+      {
+        "name": "stall-lit",
+        "value": "--b/--s 1.1s, toldo .8s",
+        "purpose": "Paso de sombra a luz cuando el puesto cruza la franja central (-38% arriba y abajo) y recibe .is-lit."
+      },
+      {
+        "name": "arrival",
+        "value": "luna 2.2s; nombre 1.6s tras .4s (clip-path); resto 1.2s tras 1s",
+        "purpose": "Único momento orquestado; solo sin reduced-motion."
+      },
+      {
+        "name": "tag-sway",
+        "value": "5.5s ease-in-out infinite alternate, -3deg a 2.5deg",
+        "purpose": "Boleto colgante de portada; solo sin reduced-motion."
+      },
+      {
+        "name": "toast-in",
+        "value": ".6s",
+        "purpose": "Entrada del aviso de logro; visible 4.2s."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "900px",
+        "purpose": "Una columna; la mercancía va primero."
+      },
+      {
+        "name": "sm",
+        "value": "640px",
+        "purpose": "Navegación reducida a 'Cerrar trato', boleto de portada a 210px, acciones a todo el ancho, cuerpo a 18px."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón de boleto",
+      "kind": "button",
+      "refersTo": "button-ticket",
+      "description": "Acción primaria con muescas de boleto; la sombra la da su contenedor porque la máscara corta el box-shadow.",
+      "html": "<div class=\"ds-ticket-wrap\"><a class=\"ds-ticket-btn\" href=\"#\">Recorrer el bazar</a></div>",
+      "css": ".ds-ticket-wrap{display:inline-block;filter:drop-shadow(5px 6px 6px rgb(2 4 8 / .6))}.ds-ticket-btn{--notch:9px;display:inline-flex;align-items:center;min-height:52px;padding:0 28px;text-decoration:none;font:700 18px \"Alegreya SC\",Georgia,serif;letter-spacing:.06em;color:#2b2217;background:linear-gradient(180deg,#e2b867,#c89b4d);-webkit-mask:radial-gradient(var(--notch) at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(var(--notch) at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;mask:radial-gradient(var(--notch) at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(var(--notch) at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s cubic-bezier(.16,1,.3,1)}.ds-ticket-btn:hover{transform:translateY(-2px) rotate(-.6deg);background:linear-gradient(180deg,#f0c878,#e2b867)}.ds-ticket-btn:active{transform:translateY(0)}.ds-ticket-btn:focus-visible{outline:2px solid #e6edf5;outline-offset:4px}"
+    },
+    {
+      "name": "Botón de línea",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Acción secundaria (LinkedIn, GitHub): solo borde, se enciende en azafrán.",
+      "html": "<a class=\"ds-line-btn\" href=\"#\">LinkedIn</a>",
+      "css": ".ds-line-btn{display:inline-flex;align-items:center;min-height:52px;padding:0 22px;font:500 17px \"Alegreya SC\",Georgia,serif;letter-spacing:.06em;color:#d3dae4;text-decoration:none;border:1px solid rgb(211 218 228 / .35);background:#0d1420;transition:border-color .3s cubic-bezier(.16,1,.3,1),color .3s cubic-bezier(.16,1,.3,1)}.ds-line-btn:hover{border-color:#e2b867;color:#e2b867}.ds-line-btn:focus-visible{outline:2px solid #e6edf5;outline-offset:4px;border-radius:4px}"
+    },
+    {
+      "name": "Riel de navegación",
+      "kind": "nav",
+      "refersTo": "nav-rail",
+      "description": "Banda pegajosa de 64px con marca en script; 'Cerrar trato' siempre en azafrán con borde.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail-brand\" href=\"#\">Ricardo</a><span class=\"ds-rail-nav\"><a href=\"#\">Los puestos</a><a href=\"#\">Inventario</a><a class=\"ds-rail-deal\" href=\"#\">Cerrar trato</a></span></nav>",
+      "css": ".ds-rail{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;background:linear-gradient(180deg,rgb(10 14 19 / .94),rgb(10 14 19 / .74));backdrop-filter:blur(8px);border-bottom:1px solid rgb(200 155 77 / .22)}.ds-rail-brand{font:36px/1 \"Mr Dafoe\",\"Brush Script MT\",cursive;color:#e2b867;text-decoration:none;padding-top:6px}.ds-rail-nav{display:flex;gap:4px}.ds-rail-nav a{font:500 16px \"Alegreya SC\",Georgia,serif;letter-spacing:.04em;color:#95a3b8;text-decoration:none;padding:8px 12px;transition:color .25s cubic-bezier(.16,1,.3,1)}.ds-rail-nav a:hover{color:#e2b867}.ds-rail-nav .ds-rail-deal{color:#e2b867;border:1px solid rgb(200 155 77 / .45)}.ds-rail-nav .ds-rail-deal:hover{border-color:#e2b867}.ds-rail a:focus-visible{outline:2px solid #e6edf5;outline-offset:4px;border-radius:4px}"
+    },
+    {
+      "name": "Chip de tecnología",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Lista de tecnologías de un puesto; sin estado.",
+      "html": "<ul class=\"ds-chips\"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li></ul>",
+      "css": ".ds-chips{list-style:none;margin:0;padding:12px;display:flex;flex-wrap:wrap;gap:8px;background:#0d1420}.ds-chips li{font:500 14px \"Alegreya SC\",Georgia,serif;letter-spacing:.06em;color:#95a3b8;padding:3px 10px;border:1px solid rgb(149 163 184 / .3);border-radius:2px}"
+    },
+    {
+      "name": "Boleto de origen",
+      "kind": "card",
+      "refersTo": "tag-origin",
+      "description": "Ficha de cada puesto: origen, largo en commits reales y temperatura; proyecta sombra de caja desde la luna (aquí congelada en una posición).",
+      "html": "<div class=\"ds-tag\"><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Origen</span><span class=\"ds-tag-v\">Una repostería de Navojoa</span></span><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Largo</span><span class=\"ds-tag-num\">267<small> commits</small></span></span><span class=\"ds-tag-row\"><span class=\"ds-tag-k\">Temperatura</span><span class=\"ds-tag-v ds-hot\">Caliente: cobra hoy</span></span></div>",
+      "css": ".ds-tag{position:relative;display:grid;gap:10px;width:280px;padding:32px 20px 18px;background:repeating-linear-gradient(0deg,rgb(120 90 40 / .05) 0 1px,transparent 1px 3px),#eadfc6;color:#2b2217;border-radius:3px;outline:1px solid rgb(109 91 64 / .5);outline-offset:-7px;transform:rotate(-1.5deg);box-shadow:6px 8px 9px rgb(2 4 8 / .72),13px 18px 26px rgb(2 4 8 / .35),inset -1px -1px 0 rgb(255 255 255 / .35)}.ds-tag::before{content:\"\";position:absolute;top:12px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#0d1420;box-shadow:inset 0 0 0 2px #6d5b40}.ds-tag-row{display:grid;gap:1px;text-align:center;border-top:1px dashed rgb(109 91 64 / .45);padding-top:8px}.ds-tag-row:first-child{border-top:0;padding-top:0}.ds-tag-k{font:700 12px \"Alegreya SC\",Georgia,serif;letter-spacing:.14em;color:#6d5b40}.ds-tag-v{font:500 17px/1.25 \"Alegreya SC\",Georgia,serif}.ds-hot{color:#9c3218}.ds-tag-num{font:700 38px/1 \"Big Shoulders Display\",\"Arial Narrow\",sans-serif;font-variant-numeric:tabular-nums}.ds-tag-num small{font:700 14px \"Alegreya SC\",Georgia,serif;letter-spacing:.06em;margin-left:4px;color:#6d5b40}"
+    },
+    {
+      "name": "Toldo con letrero",
+      "kind": "custom",
+      "refersTo": "awning",
+      "description": "Encabezado de cada puesto: lona azafrán con festón y letrero en script; en sombra hasta ser la venta activa (aquí el hover simula .is-lit).",
+      "html": "<div class=\"ds-awning\"><h3 class=\"ds-awning-sign\">Akora Repostería</h3></div>",
+      "css": ".ds-awning{padding:22px 28px 40px;background:repeating-linear-gradient(90deg,rgb(0 0 0 / .07) 0 1px,transparent 1px 4px),repeating-linear-gradient(0deg,rgb(255 255 255 / .05) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,transparent 0 64px,rgb(80 50 10 / .16) 64px 128px),linear-gradient(180deg,#e2b867,#c89b4d 70%,#a97d35);-webkit-mask:radial-gradient(22px 18px at 50% 100%,#0000 98%,#000) 0 0/64px 100% round;mask:radial-gradient(22px 18px at 50% 100%,#0000 98%,#000) 0 0/64px 100% round;filter:brightness(.55) saturate(.7);transition:filter .8s cubic-bezier(.16,1,.3,1)}.ds-awning:hover{filter:none}.ds-awning-sign{margin:0;font:400 56px/1.05 \"Mr Dafoe\",\"Brush Script MT\",cursive;word-spacing:.2em;color:#0a0e13}"
+    },
+    {
+      "name": "Lista de precios",
+      "kind": "card",
+      "refersTo": "ledger",
+      "description": "Lista de habilidades en papel de boleto, filas de término y descripción con separador punteado.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-ledger-row\"><b>Interfaz</b><span>TypeScript · React · Next.js · Angular</span></div><div class=\"ds-ledger-row\"><b>Datos</b><span>PostgreSQL · SQLite · Drizzle ORM</span></div></div>",
+      "css": ".ds-ledger{padding:28px 32px;background:repeating-linear-gradient(0deg,rgb(120 90 40 / .05) 0 1px,transparent 1px 3px),#eadfc6;color:#2b2217;outline:1px solid rgb(109 91 64 / .5);outline-offset:-10px;font:19px/1.6 Alegreya,Georgia,serif}.ds-ledger-row{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:16px 0;border-top:1px dashed rgb(109 91 64 / .45)}.ds-ledger-row:first-child{border-top:0}.ds-ledger-row b{font:700 20px \"Alegreya SC\",Georgia,serif;letter-spacing:.04em}.ds-ledger-row span{color:#4a3d2b}"
+    },
+    {
+      "name": "Ventana ilustrativa de Windows",
+      "kind": "custom",
+      "refersTo": "goods-window",
+      "description": "Mercancía ilustrativa para apps de Windows: cromo de Windows en SVG, filo de luna de venta activa y pie que la declara ilustrativa.",
+      "html": "<figure class=\"ds-goods\"><div class=\"ds-win-app\"><div class=\"ds-win-bar\"><b>Sistema de Leche</b><span class=\"ds-win\" aria-hidden=\"true\"><svg viewBox=\"0 0 10 10\"><path d=\"M1 5h8\"/></svg><svg viewBox=\"0 0 10 10\"><rect x=\"1.5\" y=\"1.5\" width=\"7\" height=\"7\"/></svg><svg viewBox=\"0 0 10 10\"><path d=\"M1.5 1.5l7 7M8.5 1.5l-7 7\"/></svg></span></div><div class=\"ds-win-body\"><small>Ordeña de hoy</small><strong>1,284 L</strong></div></div><figcaption>Pantalla ilustrativa, con datos de ejemplo</figcaption></figure>",
+      "css": ".ds-goods{margin:0;width:340px}.ds-win-app{background:#f4f1ea;color:#22261f;border-radius:8px;overflow:hidden;outline:1px solid rgb(230 237 245 / .55);outline-offset:6px;filter:drop-shadow(8px 10px 7px rgb(2 4 8 / .72))}.ds-win-bar{display:flex;align-items:center;min-height:36px;padding-left:14px;background:#e3ded2}.ds-win-bar b{font:500 13px \"Alegreya SC\",Georgia,serif;letter-spacing:.06em;color:#4e493d}.ds-win{margin-left:auto;display:flex;align-self:stretch}.ds-win svg{width:44px;padding:0 17px;fill:none;stroke:#4e493d;stroke-width:1}.ds-win-body{padding:16px}.ds-win-body small{display:block;font:500 12px \"Alegreya SC\",Georgia,serif;letter-spacing:.08em;color:#5f594c}.ds-win-body strong{font:700 34px/1.1 \"Big Shoulders Display\",\"Arial Narrow\",sans-serif;font-variant-numeric:tabular-nums}.ds-goods figcaption{margin-top:14px;font:italic 15px Alegreya,Georgia,serif;color:#95a3b8}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El bazar de sombras",
+    "overview": "Un callejón de mercado a medianoche donde la luna es la única fuente de luz. Cada proyecto es un puesto con toldo de lona azafrán; su mercancía (capturas, arte, pantallas) espera en sombra y sale a la luz cuando el visitante llega a ella. Cada puesto trae un boleto de origen en papel, con el largo de su sombra medido en commits reales. El sistema no es un modo oscuro con acento: es una escena iluminada desde un solo punto, y todo lo que la habita proyecta una sombra coherente con esa luz.\n\nLa luna vive en el cielo de la portada. Con ratón, el cursor la mueve de lado a lado sobre una altura fija; en pantallas táctiles cruza el cielo conforme se baja por la página; con `prefers-reduced-motion` se queda quieta en su reposo (80 % del ancho). Al bajar, la luna sale por arriba de la pantalla y sigue alumbrando desde fuera: `main.js` limita el origen de la luz a 260 px sobre el borde superior. Cada elemento `.casts` recibe, según la posición de la luna, las variables `--sx`, `--sy` (dirección y largo), `--len`, `--rx`, `--ry` (canto iluminado) y, si es texto, `--ts` (una sombra larga en capas). Solo se recalculan los elementos visibles.\n\nLa personalidad es artesanal y con humor: rótulo de pintor de letreros, versalitas grabadas, papel de boleto con textura de líneas, una lista de precios. Hay un solo momento orquestado (la llegada: sale la luna, se pinta el nombre) y un secreto (el código Konami provoca un eclipse).",
+    "keyCharacteristics": [
+      "Una sola fuente de luz; toda sombra sale de la posición real de la luna.",
+      "La venta activa se ilumina: el puesto que cruza el centro de la pantalla recibe `.is-lit`.",
+      "Materiales de mercado: lona azafrán, papel de boleto, tinta café, noche azul negra.",
+      "Cuatro familias con papeles fijos: rótulo, versalitas, números condensados y una serif humanista para leer.",
+      "Todo lo ilustrativo se etiqueta; toda cifra es real."
+    ],
+    "rules": [
+      {
+        "name": "La Regla de la Luna Única",
+        "body": "El blanco de luna es luz, no pintura: solo marca el foco del teclado y la venta activa. Nunca va en fondos, texto de cuerpo ni botones.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de la Lona",
+        "body": "El azafrán es material del bazar (lona, rótulo, cordel, boleto) y el tono al que se acercan los hovers. No se usa para éxito, error o alerta: esos colores viven dentro de la mercancía ilustrativa, y el único otro tono cálido fuera de ella es el rojo ladrillo de «Caliente» en el boleto.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Rótulo",
+        "body": "El script solo rotula: nombre, títulos de sección, toldos, la marca del riel y el título del logro. Nunca en párrafos, botones ni etiquetas. Los rótulos llevan `word-spacing: .2em` para que las palabras no se peguen.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Número Medido",
+        "body": "Los largos de sombra van en numeral condensado con su unidad en versalitas pequeñas, y son commits reales. Si no hay medida, el boleto lo dice con palabras (\"Sin medir\").",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Fuente Única",
+        "body": "Toda sombra nueva se engancha a las variables que escribe `main.js` (agregando `.casts` y un `data-shadow`). Una sombra con dirección fija contradice la luna.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla de la Venta Activa",
+        "body": "Solo el puesto que cruza la franja central de la pantalla (margen de -38 % arriba y abajo) está a plena luz y lleva el filo de luna.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do conectar toda sombra nueva a la luna con `.casts` y `data-shadow` = `text`, `box` o `img`.",
+      "Do reservar el blanco de luna (`moon`) para el anillo de foco y el filo de la venta activa.",
+      "Do etiquetar en el `figcaption` toda mercancía ilustrativa (\"Comanda ilustrativa\", \"Pantalla ilustrativa, con datos de ejemplo\").",
+      "Do usar commits reales en los boletos; si no hay cifra, decirlo con palabras.",
+      "Do vestir las pantallas de apps de Windows con cromo de Windows.",
+      "Do incrustar el origen en los metadatos de cada imagen raster que se publique (captura, arte preexistente o foto de dominio público de la NASA).",
+      "Do darle el `drop-shadow` al contenedor cuando el elemento lleve máscara, porque la máscara corta su `box-shadow`.",
+      "Do dejar todo a plena luz sin JavaScript y con la luna quieta bajo `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't fijar sombras con dirección constante en elementos que viven bajo la luna.",
+      "Don't usar texto con degradado.",
+      "Don't usar glifos unicode como íconos; los íconos van en SVG en línea.",
+      "Don't usar el script fuera de los rótulos.",
+      "Don't tratar la silueta plana del callejón de portada como diseño final: es un marcador de posición de una sola fila hasta que exista un callejón en raster."
+    ]
+  }
+}

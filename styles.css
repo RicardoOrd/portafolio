@@ -7,7 +7,6 @@
   color-scheme: dark;
 
   --lane: #0d1420;          /* callejón de medianoche */
-  --shadow-1: #1a1f27;      /* sombra en capas */
   --shadow-2: #0a0e13;      /* sombra más honda */
   --saffron: #c89b4d;       /* lona de puesto */
   --saffron-hi: #e2b867;
@@ -15,6 +14,7 @@
   --ticket: #eadfc6;        /* papel de boleto */
   --ticket-ink: #2b2217;
   --ticket-dim: #6d5b40;
+  --hot: #9c3218;           /* temperatura "caliente" en el boleto */
   --text: #d3dae4;
   --muted: #95a3b8;
 
@@ -128,7 +128,7 @@ a { color: inherit; text-underline-offset: 4px; }
   font: 500 16px var(--f-caps); letter-spacing: .04em; color: var(--muted);
   text-decoration: none; padding: 8px 12px; transition: color .25s var(--ease-out);
 }
-.rail__nav a:hover { color: var(--moon); }
+.rail__nav a:hover { color: var(--saffron-hi); }
 .rail__nav .rail__deal { color: var(--saffron-hi); border: 1px solid rgb(200 155 77 / .45); }
 .rail__nav .rail__deal:hover { border-color: var(--saffron-hi); color: var(--saffron-hi); }
 
@@ -151,7 +151,7 @@ main, .footer { position: relative; z-index: 1; }
 
 .hero {
   position: relative; min-height: calc(100svh - 64px);
-  max-width: var(--maxw); margin: 0 auto; padding: clamp(56px, 10vh, 120px) var(--gutter) 200px;
+  max-width: var(--maxw); margin: 0 auto; padding: clamp(40px, 7vh, 96px) var(--gutter) 150px;
   display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px);
   align-items: center;
 }
@@ -174,9 +174,10 @@ main, .footer { position: relative; z-index: 1; }
 }
 @keyframes mecer { from { transform: rotate(-3deg); } to { transform: rotate(2.5deg); } }
 
-/* Callejón al fondo: dos hileras de puestos y faroles de luz cálida */
+/* Callejón al fondo: una hilera plana de toldos con faroles */
+.lane .farol { filter: drop-shadow(0 0 6px rgb(255 190 100 / .8)); }
 .lane {
-  position: absolute; left: 50%; bottom: 0; width: 100vw; height: 200px;
+  position: absolute; left: 50%; bottom: 0; width: 100vw; height: 120px;
   translate: -50% 0; pointer-events: none; display: block;
 }
 
@@ -236,7 +237,7 @@ main, .footer { position: relative; z-index: 1; }
 .tag__row:first-child { border-top: 0; padding-top: 0; }
 .tag__k { font: 700 12px var(--f-caps); letter-spacing: .14em; color: var(--ticket-dim); }
 .tag__v { font: 500 17px/1.25 var(--f-caps); }
-.tag__v--hot { color: #9c3218; }
+.tag__v--hot { color: var(--hot); }
 .tag__num { font: 700 38px/1 var(--f-num); letter-spacing: .01em; font-variant-numeric: tabular-nums; }
 .tag__num small { font: 700 14px var(--f-caps); letter-spacing: .06em; margin-left: 4px; color: var(--ticket-dim); }
 
