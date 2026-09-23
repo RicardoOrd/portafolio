@@ -16,6 +16,9 @@ colors:
   text: "#d3dae4"
   muted: "#95a3b8"
   cast: "rgb(2 4 8 / .72)"
+  receipt: "#fbfaf5"
+  receipt-ink: "#1d1a16"
+  masking: "#e6d9b3"
 typography:
   display:
     fontFamily: "Bungee, Arial Black, sans-serif"
@@ -59,6 +62,11 @@ typography:
     fontSize: "25px"
     fontWeight: 400
     lineHeight: 1.1
+  receipt:
+    fontFamily: "Cascadia Mono, Consolas, monospace"
+    fontSize: "13px"
+    fontWeight: 600
+    lineHeight: 1.3
   numeral:
     fontFamily: "Caveat Brush, Comic Sans MS, cursive"
     fontSize: "52px"
@@ -66,13 +74,15 @@ typography:
     lineHeight: 1
 rounded:
   tag: "2px"
+  badge: "18px"
+  ear-tag: "22px"
   chip: "3px"
   screen: "4px"
   window: "8px"
 spacing:
   gutter: "clamp(16px, 4vw, 48px)"
   maxw: "1180px"
-  rail: "64px"
+  rail: "68px"
   stall-gap: "clamp(88px, 13vh, 150px)"
   stall-top: "clamp(64px, 6vw, 80px)"
 components:
@@ -192,13 +202,13 @@ Una noche azul marino con una sola familia cálida (lona, cartulina y la luz de 
 
 ## Layout
 
-Una sola columna centrada con ancho máximo de 1180px y márgenes de clamp(16px, 4vw, 48px). El riel es pegajoso y mide 64px; `scroll-padding-top` es 80px.
+Una sola columna centrada con ancho máximo de 1180px y márgenes de clamp(16px, 4vw, 48px). El riel es pegajoso y mide 68px; `scroll-padding-top` es 84px.
 
 La portada ocupa el alto de la pantalla menos el riel, en rejilla de 1.55fr / 1fr, con 128px arriba para la guirnalda: nombre, línea y acciones a la izquierda; la cartulina colgada a la derecha, meciéndose de -3° a 2.5°. La guirnalda cruza todo el ancho de la ventana (un cable SVG con cuatro vuelos y siete focos alternando entre 45px y 20px de altura). La luna, de 56 a 84px, queda arriba a la derecha. Al pie corre el callejón: una hilera plana de toldos en silueta (`#111722`) con cuatro faroles, marcador de posición de una sola fila.
 
 Cada puesto es un toldo a todo el ancho y debajo una rejilla de dos columnas (1.1fr mercancía / 1fr información) con clamp(64px, 6vw, 80px) arriba para el foco, que cuelga del toldo al centro con 26px de cable. Los puestos alternan lado con `.stall--flip`. Entre puestos hay clamp(88px, 13vh, 150px). La cartulina de cada puesto va girada (-1.5° o 1.2°); el arte recortado también (póster -3°, máscara 4°, estampa 8°).
 
-A 900px todo pasa a una columna con la mercancía primero y las filas de la lista a una columna. A 640px la navegación deja solo "Proyectos" y "Contacto", la cartulina colgada se encoge a 210px, la estampa de Akora se oculta y los botones de acción ocupan el ancho completo.
+A 900px todo pasa a una columna con la mercancía primero y las filas de la lista a una columna. A 640px la navegación se guarda en "Menú" (un toldo que se desenrolla), la cartulina colgada se encoge a 210px con su cordel corto, la estampa de Akora se achica al 20 % y los botones de acción ocupan el ancho completo.
 
 ## Elevation & Depth
 
@@ -338,3 +348,18 @@ secciones en Bungee; cierra con Escape, al elegir o al tocar fuera.
 
 Con `prefers-reduced-motion` no hay titubeo, columpio, péndulo, desenrollado ni
 odómetro; los focos, el scroll-spy y el progreso siguen, porque son estado.
+
+## Última ronda (2026-09-22)
+
+Tras la segunda crítica (23/32). Cada pieza tiene alternativa para `prefers-reduced-motion`.
+
+- **La calle** (`.calle`): en lugar del callejón vectorial, los cinco puestos en miniatura al pie de la portada, cada uno enlace a su puesto. Su farol se prende la primera vez que el puesto se prende (se guarda en `sessionStorage`) y al completar los cinco sale el logro "Recorriste el tianguis".
+- **El cordel sube al cable** en escritorio: `main.js` calcula `--cordel` con la fórmula del cable (`y = 20 + 100·t·(1−t)` por tramo de 250) y el péndulo gira desde ese punto, con `g/L` real.
+- **Guirnalda por teclado**: los focos son `<button aria-pressed>` con un solo tabulador (roving tabindex) y flechas.
+- **Visor** (`dialog.visor`): las capturas son botones (`.lupa`); al tocarlas salen del puesto con View Transitions (`view-transition-name: captura` solo durante el cambio). En celular la captura se abre a 1000px y se desliza. Sin soporte, abre directo.
+- **Sobre mí**: la frase en cartulina (`.merchant__quote.tag`) bajo un foco que se prende a mano; alumbra y proyecta sombra como un puesto.
+- **Habilidades**: marcas de plumón rojo (`.marcado`, `.marcado--raya` para frases largas) que se barren con `clip-path` la primera vez que se ve la lista.
+- **Contacto** es un puesto (`.deal.stall`) con foco. "Copiar correo" usa el portapapeles y un sello "Apartado" (`.sello`) cae sobre "Disponible" con la Web Animations API; si el portapapeles falla, el correo queda seleccionado y se avisa.
+- **Pie**: letrero de horario (`.horario`) con la hora real de Sonora (`America/Hermosillo`), ABIERTO de 9 p.m. a 3 a.m. con su foco prendido; se actualiza cada minuto y se pausa con la pestaña oculta.
+- **Tecnologías de cada puesto**: texto con puntos medios, sin chips.
+- **Rendimiento**: las sombras ya no se recalculan con el scroll (cada foco se mueve junto con lo que alumbra) y cada cuadro hace primero todas las lecturas y luego todas las escrituras.
