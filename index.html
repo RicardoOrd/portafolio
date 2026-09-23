@@ -3,198 +3,507 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ricardo Orduño Camacho · Desarrollador de software</title>
-  <meta name="description" content="Portafolio de Ricardo Orduño Camacho: software que cobra de verdad para negocios reales — tiendas en línea, puntos de venta, apps de escritorio y juegos.">
+  <title>Ricardo Orduño Camacho · Bazar de sombras</title>
+  <meta name="description" content="Portafolio de Ricardo Orduño Camacho, desarrollador frontend y UI/UX en Sonora, México. De día su software cobra en negocios reales; de noche vende sus sombras.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ricardo Orduño Camacho · Desarrollador de software">
-  <meta property="og:description" content="Hago software que usan negocios de verdad: tiendas en línea, puntos de venta, apps de escritorio y juegos.">
+  <meta property="og:title" content="Ricardo Orduño Camacho · Bazar de sombras">
+  <meta property="og:description" content="Desarrollador frontend y UI/UX. Pasa al bazar: cada proyecto es un puesto y la luna la mueves tú.">
   <meta property="og:locale" content="es_MX">
-  <meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1116'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23f5a524'%3ERO%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0d1420">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1420'/%3E%3Cpath d='M20.5 6.5a10 10 0 1 0 5 16.6A8.5 8.5 0 0 1 20.5 6.5z' fill='%23e6edf5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya:ital,wght@0,400;0,500;1,400&family=Big+Shoulders+Display:wght@600;700&family=Mr+Dafoe&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#proyectos">Saltar a los proyectos</a>
+  <a class="skip" href="#puestos">Saltar a los proyectos</a>
 
-  <header class="nav">
-    <div class="wrap nav__inner">
-      <a class="nav__logo" href="#inicio">Ricardo Orduño<span>.</span></a>
-      <nav class="nav__links" aria-label="Secciones">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#habilidades">Lo que sé</a>
-        <a href="#contacto">Contacto</a>
+  <!-- El cielo: la luna es la única luz de la página -->
+  <div class="sky" aria-hidden="true">
+    <div class="sky__stars"></div>
+    <div class="moon" id="luna"><div class="moon__halo"></div><img src="img/luna-lro.jpg" width="500" height="500" alt=""></div>
+  </div>
+
+  <header class="rail">
+    <div class="rail__inner">
+      <a class="rail__brand" href="#inicio">Ricardo</a>
+      <nav class="rail__nav" aria-label="Secciones">
+        <a href="#puestos">Los puestos</a>
+        <a href="#comerciante">El comerciante</a>
+        <a href="#inventario">Inventario</a>
+        <a href="#trato" class="rail__deal">Cerrar trato</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="inicio" class="hero wrap">
-      <h1>Hago software que<br><span class="accent">usan negocios de verdad.</span></h1>
-      <p class="lead">
-        Soy Ricardo Orduño Camacho, desarrollador full-stack en Sonora, México.
-        Construyo y opero de punta a punta: la tienda en línea que cobra con tarjeta,
-        la caja con la que atienden el mostrador, la app que lleva un rancho sin internet
-        y el servidor donde todo eso corre.
-      </p>
-      <div class="actions">
-        <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
-        <a class="btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- Portada -->
+    <section id="inicio" class="hero">
+      <div class="hero__copy">
+        <h1 class="hero__name casts" data-shadow="text">Ricardo Orduño</h1>
+        <p class="hero__lead">
+          Desarrollador frontend y UI/UX en Sonora, México.
+          De día, mi software cobra en negocios reales. De noche, vendo sus sombras.
+        </p>
+        <div class="hero__actions">
+          <a class="ticket-btn casts" data-shadow="box" href="#puestos">Recorrer el bazar</a>
+          <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="hero__hint"><span class="hint--pointer">Mueve el cursor: la luna te sigue y todo recalcula su sombra.</span><span class="hint--touch">Baja despacio: la luna cruza el cielo contigo.</span></p>
       </div>
+
+      <aside class="hero__tag" aria-label="Boleto de origen del comerciante">
+        <div class="tag casts" data-shadow="box">
+          <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Sonora, México</span></span>
+          <span class="tag__row"><span class="tag__k">Largo de sombra</span><span class="tag__num">380<small>+ commits</small></span></span>
+          <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia, con café</span></span>
+          <span class="tag__row"><span class="tag__k">Precio</span><span class="tag__v">Una entrevista</span></span>
+        </div>
+      </aside>
+
+      <svg class="lane" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="farol" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffc56b" stop-opacity=".55"/><stop offset=".45" stop-color="#f0a23e" stop-opacity=".18"/><stop offset="1" stop-color="#f0a23e" stop-opacity="0"/></radialGradient>
+          <radialGradient id="charco" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f2a94a" stop-opacity=".22"/><stop offset="1" stop-color="#f2a94a" stop-opacity="0"/></radialGradient>
+          <linearGradient id="suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1420" stop-opacity="0"/><stop offset="1" stop-color="#070a0f"/></linearGradient>
+        </defs>
+        <rect x="0" y="120" width="1440" height="120" fill="url(#suelo)"/>
+        <g fill="#161d2a">
+          <polygon points="28,106.88 55,80 175,80 202,106.88"/>
+          <circle cx="36.7" cy="106.9" r="8.7"/>
+          <circle cx="54.1" cy="106.9" r="8.7"/>
+          <circle cx="71.5" cy="106.9" r="8.7"/>
+          <circle cx="88.9" cy="106.9" r="8.7"/>
+          <circle cx="106.3" cy="106.9" r="8.7"/>
+          <circle cx="123.7" cy="106.9" r="8.7"/>
+          <circle cx="141.1" cy="106.9" r="8.7"/>
+          <circle cx="158.5" cy="106.9" r="8.7"/>
+          <circle cx="175.9" cy="106.9" r="8.7"/>
+          <circle cx="193.3" cy="106.9" r="8.7"/>
+          <rect x="46" y="106.88" width="3.75" height="69.12"/>
+          <rect x="180.25" y="106.88" width="3.75" height="69.12"/>
+          <rect x="40" y="143.36" width="150" height="32.64"/>
+        </g>
+        <ellipse cx="115" cy="182" rx="82.5" ry="14" fill="url(#charco)"/>
+        <circle cx="115" cy="126.08" r="40.32" fill="url(#farol)"/>
+        <line x1="115" y1="106.88" x2="115" y2="119.08" stroke="#161d2a" stroke-width="1.5"/>
+        <rect x="110.5" y="119.08" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#161d2a">
+          <polygon points="220.4,106.88 242,80 338,80 359.6,106.88"/>
+          <circle cx="228.1" cy="106.9" r="7.7"/>
+          <circle cx="243.6" cy="106.9" r="7.7"/>
+          <circle cx="259.1" cy="106.9" r="7.7"/>
+          <circle cx="274.5" cy="106.9" r="7.7"/>
+          <circle cx="290.0" cy="106.9" r="7.7"/>
+          <circle cx="305.5" cy="106.9" r="7.7"/>
+          <circle cx="320.9" cy="106.9" r="7.7"/>
+          <circle cx="336.4" cy="106.9" r="7.7"/>
+          <circle cx="351.9" cy="106.9" r="7.7"/>
+          <rect x="234.8" y="106.88" width="3" height="69.12"/>
+          <rect x="342.2" y="106.88" width="3" height="69.12"/>
+          <rect x="230" y="143.36" width="120" height="32.64"/>
+        </g>
+        <g fill="#161d2a">
+          <polygon points="386.4,106.88 417,80 553,80 583.6,106.88"/>
+          <circle cx="397.4" cy="106.9" r="11.0"/>
+          <circle cx="419.3" cy="106.9" r="11.0"/>
+          <circle cx="441.2" cy="106.9" r="11.0"/>
+          <circle cx="463.1" cy="106.9" r="11.0"/>
+          <circle cx="485.0" cy="106.9" r="11.0"/>
+          <circle cx="506.9" cy="106.9" r="11.0"/>
+          <circle cx="528.8" cy="106.9" r="11.0"/>
+          <circle cx="550.7" cy="106.9" r="11.0"/>
+          <circle cx="572.6" cy="106.9" r="11.0"/>
+          <rect x="406.8" y="106.88" width="4.25" height="69.12"/>
+          <rect x="558.95" y="106.88" width="4.25" height="69.12"/>
+          <rect x="400" y="143.36" width="170" height="32.64"/>
+        </g>
+        <ellipse cx="505.4" cy="182" rx="93.50000000000001" ry="14" fill="url(#charco)"/>
+        <circle cx="505.4" cy="126.08" r="40.32" fill="url(#farol)"/>
+        <line x1="505.4" y1="106.88" x2="505.4" y2="119.08" stroke="#161d2a" stroke-width="1.5"/>
+        <rect x="500.9" y="119.08" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#161d2a">
+          <polygon points="599.6,106.88 623,80 727,80 750.4,106.88"/>
+          <circle cx="608.0" cy="106.9" r="8.4"/>
+          <circle cx="624.7" cy="106.9" r="8.4"/>
+          <circle cx="641.5" cy="106.9" r="8.4"/>
+          <circle cx="658.2" cy="106.9" r="8.4"/>
+          <circle cx="675.0" cy="106.9" r="8.4"/>
+          <circle cx="691.8" cy="106.9" r="8.4"/>
+          <circle cx="708.5" cy="106.9" r="8.4"/>
+          <circle cx="725.3" cy="106.9" r="8.4"/>
+          <circle cx="742.0" cy="106.9" r="8.4"/>
+          <rect x="615.2" y="106.88" width="3.25" height="69.12"/>
+          <rect x="731.55" y="106.88" width="3.25" height="69.12"/>
+          <rect x="610" y="143.36" width="130" height="32.64"/>
+        </g>
+        <g fill="#161d2a">
+          <polygon points="777.2,106.88 806,80 934,80 962.8,106.88"/>
+          <circle cx="787.5" cy="106.9" r="10.3"/>
+          <circle cx="808.1" cy="106.9" r="10.3"/>
+          <circle cx="828.8" cy="106.9" r="10.3"/>
+          <circle cx="849.4" cy="106.9" r="10.3"/>
+          <circle cx="870.0" cy="106.9" r="10.3"/>
+          <circle cx="890.6" cy="106.9" r="10.3"/>
+          <circle cx="911.2" cy="106.9" r="10.3"/>
+          <circle cx="931.9" cy="106.9" r="10.3"/>
+          <circle cx="952.5" cy="106.9" r="10.3"/>
+          <rect x="796.4" y="106.88" width="4" height="69.12"/>
+          <rect x="939.6" y="106.88" width="4" height="69.12"/>
+          <rect x="790" y="143.36" width="160" height="32.64"/>
+        </g>
+        <ellipse cx="854" cy="182" rx="88" ry="14" fill="url(#charco)"/>
+        <circle cx="854" cy="126.08" r="40.32" fill="url(#farol)"/>
+        <line x1="854" y1="106.88" x2="854" y2="119.08" stroke="#161d2a" stroke-width="1.5"/>
+        <rect x="849.5" y="119.08" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#161d2a">
+          <polygon points="990.4,106.88 1012,80 1108,80 1129.6,106.88"/>
+          <circle cx="998.1" cy="106.9" r="7.7"/>
+          <circle cx="1013.6" cy="106.9" r="7.7"/>
+          <circle cx="1029.1" cy="106.9" r="7.7"/>
+          <circle cx="1044.5" cy="106.9" r="7.7"/>
+          <circle cx="1060.0" cy="106.9" r="7.7"/>
+          <circle cx="1075.5" cy="106.9" r="7.7"/>
+          <circle cx="1090.9" cy="106.9" r="7.7"/>
+          <circle cx="1106.4" cy="106.9" r="7.7"/>
+          <circle cx="1121.9" cy="106.9" r="7.7"/>
+          <rect x="1004.8" y="106.88" width="3" height="69.12"/>
+          <rect x="1112.2" y="106.88" width="3" height="69.12"/>
+          <rect x="1000" y="143.36" width="120" height="32.64"/>
+        </g>
+        <g fill="#161d2a">
+          <polygon points="1148,106.88 1175,80 1295,80 1322,106.88"/>
+          <circle cx="1156.7" cy="106.9" r="8.7"/>
+          <circle cx="1174.1" cy="106.9" r="8.7"/>
+          <circle cx="1191.5" cy="106.9" r="8.7"/>
+          <circle cx="1208.9" cy="106.9" r="8.7"/>
+          <circle cx="1226.3" cy="106.9" r="8.7"/>
+          <circle cx="1243.7" cy="106.9" r="8.7"/>
+          <circle cx="1261.1" cy="106.9" r="8.7"/>
+          <circle cx="1278.5" cy="106.9" r="8.7"/>
+          <circle cx="1295.9" cy="106.9" r="8.7"/>
+          <circle cx="1313.3" cy="106.9" r="8.7"/>
+          <rect x="1166" y="106.88" width="3.75" height="69.12"/>
+          <rect x="1300.25" y="106.88" width="3.75" height="69.12"/>
+          <rect x="1160" y="143.36" width="150" height="32.64"/>
+        </g>
+        <ellipse cx="1242.5" cy="182" rx="82.5" ry="14" fill="url(#charco)"/>
+        <circle cx="1242.5" cy="126.08" r="40.32" fill="url(#farol)"/>
+        <line x1="1242.5" y1="106.88" x2="1242.5" y2="119.08" stroke="#161d2a" stroke-width="1.5"/>
+        <rect x="1238" y="119.08" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#161d2a">
+          <polygon points="1329.6,106.88 1353,80 1457,80 1480.4,106.88"/>
+          <circle cx="1338.0" cy="106.9" r="8.4"/>
+          <circle cx="1354.7" cy="106.9" r="8.4"/>
+          <circle cx="1371.5" cy="106.9" r="8.4"/>
+          <circle cx="1388.2" cy="106.9" r="8.4"/>
+          <circle cx="1405.0" cy="106.9" r="8.4"/>
+          <circle cx="1421.8" cy="106.9" r="8.4"/>
+          <circle cx="1438.5" cy="106.9" r="8.4"/>
+          <circle cx="1455.3" cy="106.9" r="8.4"/>
+          <circle cx="1472.0" cy="106.9" r="8.4"/>
+          <rect x="1345.2" y="106.88" width="3.25" height="69.12"/>
+          <rect x="1461.55" y="106.88" width="3.25" height="69.12"/>
+          <rect x="1340" y="143.36" width="130" height="32.64"/>
+        </g>
+        <g fill="#0b1017">
+          <polygon points="-48.400000000000006,132 -7,90 177,90 218.4,132"/>
+          <circle cx="-35.1" cy="132.0" r="13.3"/>
+          <circle cx="-8.4" cy="132.0" r="13.3"/>
+          <circle cx="18.3" cy="132.0" r="13.3"/>
+          <circle cx="45.0" cy="132.0" r="13.3"/>
+          <circle cx="71.7" cy="132.0" r="13.3"/>
+          <circle cx="98.3" cy="132.0" r="13.3"/>
+          <circle cx="125.0" cy="132.0" r="13.3"/>
+          <circle cx="151.7" cy="132.0" r="13.3"/>
+          <circle cx="178.4" cy="132.0" r="13.3"/>
+          <circle cx="205.1" cy="132.0" r="13.3"/>
+          <rect x="-20.799999999999997" y="132" width="5.75" height="108"/>
+          <rect x="185.05" y="132" width="5.75" height="108"/>
+          <rect x="-30" y="189" width="230" height="51.00000000000001"/>
+        </g>
+        <ellipse cx="131" cy="246" rx="126.50000000000001" ry="14" fill="url(#charco)"/>
+        <circle cx="131" cy="162" r="63" fill="url(#farol)"/>
+        <line x1="131" y1="132" x2="131" y2="155" stroke="#0b1017" stroke-width="1.5"/>
+        <rect x="126.5" y="155" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#0b1017">
+          <polygon points="244,132 280,90 440,90 476,132"/>
+          <circle cx="256.9" cy="132.0" r="12.9"/>
+          <circle cx="282.7" cy="132.0" r="12.9"/>
+          <circle cx="308.4" cy="132.0" r="12.9"/>
+          <circle cx="334.2" cy="132.0" r="12.9"/>
+          <circle cx="360.0" cy="132.0" r="12.9"/>
+          <circle cx="385.8" cy="132.0" r="12.9"/>
+          <circle cx="411.6" cy="132.0" r="12.9"/>
+          <circle cx="437.3" cy="132.0" r="12.9"/>
+          <circle cx="463.1" cy="132.0" r="12.9"/>
+          <rect x="268" y="132" width="5" height="108"/>
+          <rect x="447" y="132" width="5" height="108"/>
+          <rect x="260" y="189" width="200" height="51.00000000000001"/>
+        </g>
+        <g fill="#0b1017">
+          <polygon points="500,132 545,90 745,90 790,132"/>
+          <circle cx="516.1" cy="132.0" r="16.1"/>
+          <circle cx="548.3" cy="132.0" r="16.1"/>
+          <circle cx="580.6" cy="132.0" r="16.1"/>
+          <circle cx="612.8" cy="132.0" r="16.1"/>
+          <circle cx="645.0" cy="132.0" r="16.1"/>
+          <circle cx="677.2" cy="132.0" r="16.1"/>
+          <circle cx="709.4" cy="132.0" r="16.1"/>
+          <circle cx="741.7" cy="132.0" r="16.1"/>
+          <circle cx="773.9" cy="132.0" r="16.1"/>
+          <rect x="530" y="132" width="6.25" height="108"/>
+          <rect x="753.75" y="132" width="6.25" height="108"/>
+          <rect x="520" y="189" width="250" height="51.00000000000001"/>
+        </g>
+        <ellipse cx="607.5" cy="246" rx="137.5" ry="14" fill="url(#charco)"/>
+        <circle cx="607.5" cy="162" r="63" fill="url(#farol)"/>
+        <line x1="607.5" y1="132" x2="607.5" y2="155" stroke="#0b1017" stroke-width="1.5"/>
+        <rect x="603" y="155" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#0b1017">
+          <polygon points="813.2,132 851,90 1019,90 1056.8,132"/>
+          <circle cx="826.7" cy="132.0" r="13.5"/>
+          <circle cx="853.8" cy="132.0" r="13.5"/>
+          <circle cx="880.9" cy="132.0" r="13.5"/>
+          <circle cx="907.9" cy="132.0" r="13.5"/>
+          <circle cx="935.0" cy="132.0" r="13.5"/>
+          <circle cx="962.1" cy="132.0" r="13.5"/>
+          <circle cx="989.1" cy="132.0" r="13.5"/>
+          <circle cx="1016.2" cy="132.0" r="13.5"/>
+          <circle cx="1043.3" cy="132.0" r="13.5"/>
+          <rect x="838.4" y="132" width="5.25" height="108"/>
+          <rect x="1026.35" y="132" width="5.25" height="108"/>
+          <rect x="830" y="189" width="210" height="51.00000000000001"/>
+        </g>
+        <g fill="#0b1017">
+          <polygon points="1070.8,132 1114,90 1306,90 1349.2,132"/>
+          <circle cx="1086.3" cy="132.0" r="15.5"/>
+          <circle cx="1117.2" cy="132.0" r="15.5"/>
+          <circle cx="1148.1" cy="132.0" r="15.5"/>
+          <circle cx="1179.1" cy="132.0" r="15.5"/>
+          <circle cx="1210.0" cy="132.0" r="15.5"/>
+          <circle cx="1240.9" cy="132.0" r="15.5"/>
+          <circle cx="1271.9" cy="132.0" r="15.5"/>
+          <circle cx="1302.8" cy="132.0" r="15.5"/>
+          <circle cx="1333.7" cy="132.0" r="15.5"/>
+          <rect x="1099.6" y="132" width="6" height="108"/>
+          <rect x="1314.4" y="132" width="6" height="108"/>
+          <rect x="1090" y="189" width="240" height="51.00000000000001"/>
+        </g>
+        <ellipse cx="1234" cy="246" rx="132" ry="14" fill="url(#charco)"/>
+        <circle cx="1234" cy="162" r="63" fill="url(#farol)"/>
+        <line x1="1234" y1="132" x2="1234" y2="155" stroke="#0b1017" stroke-width="1.5"/>
+        <rect x="1229.5" y="155" width="9" height="13" rx="2" fill="#ffcf7a"/>
+        <g fill="#0b1017">
+          <polygon points="1354,132 1390,90 1550,90 1586,132"/>
+          <circle cx="1366.9" cy="132.0" r="12.9"/>
+          <circle cx="1392.7" cy="132.0" r="12.9"/>
+          <circle cx="1418.4" cy="132.0" r="12.9"/>
+          <circle cx="1444.2" cy="132.0" r="12.9"/>
+          <circle cx="1470.0" cy="132.0" r="12.9"/>
+          <circle cx="1495.8" cy="132.0" r="12.9"/>
+          <circle cx="1521.6" cy="132.0" r="12.9"/>
+          <circle cx="1547.3" cy="132.0" r="12.9"/>
+          <circle cx="1573.1" cy="132.0" r="12.9"/>
+          <rect x="1378" y="132" width="5" height="108"/>
+          <rect x="1557" y="132" width="5" height="108"/>
+          <rect x="1370" y="189" width="200" height="51.00000000000001"/>
+        </g>
+      </svg>
     </section>
 
-    <section id="proyectos" class="section wrap rule">
-      <h2 class="section__title">Proyectos</h2>
+    <!-- Los puestos -->
+    <section id="puestos" class="market">
+      <header class="market__head">
+        <h2 class="script-title casts" data-shadow="text">Los puestos</h2>
+        <p>Cada proyecto es un puesto. La mercancía empieza en sombra y sale a la luz cuando llegas a ella. El largo de cada sombra se mide en commits reales.</p>
+      </header>
 
-      <article class="project project--featured">
-        <div class="project__head">
-          <h3>Akora Repostería</h3>
-          <span class="status">En producción</span>
+      <!-- Akora -->
+      <article class="stall" id="akora">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Akora Repostería</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--screen">
+            <img class="casts" data-shadow="img" src="img/akora-portada.png" width="1080" height="675" loading="lazy" alt="Portada de akora.mx: «Postres que enamoran», botones Ver menú y Pedir por WhatsApp, y una galleta con fresas y chocolate.">
+            <img class="goods__sticker casts" data-shadow="img" src="img/akora-gatita.png" width="227" height="283" loading="lazy" alt="">
+            <figcaption>Captura de akora.mx en vivo</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Una repostería de Navojoa</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">267<small> commits</small></span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v tag__v--hot">Caliente: cobra hoy</span></span>
+            </div>
+            <p>Tienda web y punto de venta: catálogo, carrito, pago en línea con Openpay (BBVA), panel administrativo y POS para tablet. Cobra de verdad. Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta, con respaldo de la base antes de cada despliegue.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li><li>Caddy</li><li>GitHub Actions</li></ul>
+            <a class="daylight" href="https://akora.mx" target="_blank" rel="noopener">Verla a la luz del día</a>
+          </div>
         </div>
-        <p>
-          Tienda web y punto de venta de una repostería: catálogo, carrito, checkout con pago
-          en línea (Openpay / BBVA), panel administrativo y POS para tablet. Cobra de verdad.
-          Las imágenes se construyen en GitHub Actions y el servidor solo las baja y las levanta,
-          con respaldo de la base antes de cada despliegue.
-        </p>
-        <ul class="tags" aria-label="Tecnologías">
-          <li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li>
-          <li>Caddy</li><li>GitHub Actions</li><li>Oracle Cloud</li>
-        </ul>
-        <a class="project__link" href="https://akora.mx" target="_blank" rel="noopener">Visitar akora.mx</a>
       </article>
 
-      <article class="project project--featured">
-        <div class="project__head">
-          <h3>POS para taquería</h3>
-          <span class="status">En producción</span>
+      <!-- POS -->
+      <article class="stall stall--flip" id="pos">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">POS de taquería</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--made">
+            <div class="comanda casts" data-shadow="box" role="img" aria-label="Comanda de ejemplo: mesa 4, tres tacos de asada, una quesadilla y una horchata grande, total 214 pesos.">
+              <div class="comanda__head"><span>Mesa 4</span><span>9:07 p.m.</span></div>
+              <ul>
+                <li><span>3 × Taco de asada</span><span>$96</span></li>
+                <li><span>1 × Quesadilla</span><span>$68</span></li>
+                <li><span>1 × Horchata grande</span><span>$50</span></li>
+              </ul>
+              <div class="comanda__total"><span>Total</span><span>$214</span></div>
+              <div class="comanda__sync"><span class="dot"></span>Sincronizada en 3 aparatos</div>
+            </div>
+            <figcaption>Comanda ilustrativa: la caja real vive detrás de un NIP</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">El mostrador de una taquería</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">29<small> commits</small></span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v tag__v--hot">Caliente: cobra hoy</span></span>
+            </div>
+            <p>La caja con la que cobra una taquería. Toma comandas en tablet o teléfono, sincroniza entre aparatos en tiempo real y guarda todo en el servidor. Es la segunda versión: reescribí el sistema original para que aguantara el ritmo del mostrador un sábado en la noche.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li></ul>
+          </div>
         </div>
-        <p>
-          La caja con la que cobra una taquería. Toma comandas en tablet o teléfono,
-          sincroniza entre aparatos en tiempo real y guarda todo en el servidor.
-          Es la segunda versión: reescribí el sistema original para que aguantara el ritmo
-          del mostrador, con historial de cambios, combos y cierre de caja automático.
-        </p>
-        <ul class="tags" aria-label="Tecnologías">
-          <li>Next.js</li><li>TypeScript</li><li>SQLite</li><li>Tailwind</li><li>Vitest</li>
-        </ul>
       </article>
 
-      <div class="more">
-        <article class="more__item">
-          <p class="more__kind">Escritorio</p>
-          <h3>Sistema de Leche</h3>
-          <p>
-            App de escritorio para Windows que administra un hato lechero: padrón animal,
-            reproducción, producción, sanidad con control de retiros, insumos y costos.
-            Funciona sin internet, con la base en la computadora del rancho.
-          </p>
-          <ul class="tags" aria-label="Tecnologías">
-            <li>Electron</li><li>TypeScript</li><li>Drizzle ORM</li><li>SQLite</li>
-          </ul>
-        </article>
+      <!-- Hacker Tycoon -->
+      <article class="stall" id="hacker-tycoon">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Hacker Tycoon</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--cutouts">
+            <img class="cut cut--poster casts" data-shadow="img" src="img/ht-poster-0day.png" width="512" height="716" loading="lazy" alt="Póster del juego: un candado cian roto sobre salpicaduras rojas.">
+            <img class="cut cut--mask casts" data-shadow="img" src="img/ht-mascara-oni.png" width="512" height="256" loading="lazy" alt="Máscara oni del juego, con cuernos y ojos rojos encendidos.">
+            <figcaption>Arte final del juego</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">La Ciudad de Neón, en Roblox</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">61<small> commits</small></span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en desarrollo</span></span>
+            </div>
+            <p>Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras máquinas que producen y sales a robar la bóveda de otros jugadores mientras defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li></ul>
+          </div>
+        </div>
+      </article>
 
-        <article class="more__item">
-          <p class="more__kind">Roblox</p>
-          <h3>Hacker Tycoon</h3>
-          <p>
-            Juego tycoon con tema de hackers: levantas un búnker de cuatro plantas, compras
-            máquinas que producen, y sales a robar la bóveda de otros jugadores mientras
-            defiendes la tuya. Economía, progresión y diseño documentados de principio a fin.
-          </p>
-          <ul class="tags" aria-label="Tecnologías">
-            <li>Luau</li><li>Rojo</li><li>Wally</li><li>Selene</li><li>StyLua</li>
-          </ul>
-        </article>
+      <!-- Sistema de Leche -->
+      <article class="stall stall--flip" id="sistema-de-leche">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">Sistema de Leche</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--made">
+            <div class="hato casts" data-shadow="box" role="img" aria-label="Pantalla de ejemplo: ordeña del día, 1,284 litros, y vaca 214 en retiro por tratamiento hasta el jueves.">
+              <div class="hato__bar"><b>Sistema de Leche · rancho sin internet</b><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
+              <div class="hato__grid">
+                <div class="hato__kpi"><small>Ordeña de hoy</small><strong>1,284 L</strong></div>
+                <div class="hato__kpi"><small>Vacas en línea</small><strong>96</strong></div>
+                <div class="hato__alert"><strong>Vaca 214</strong> en retiro por tratamiento. Su leche no va al tanque hasta el jueves.</div>
+                <div class="hato__bars" aria-hidden="true"><i style="--h:62%"></i><i style="--h:70%"></i><i style="--h:58%"></i><i style="--h:81%"></i><i style="--h:77%"></i><i style="--h:88%"></i><i style="--h:84%"></i></div>
+              </div>
+            </div>
+            <figcaption>Pantalla ilustrativa, con datos de ejemplo</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Un rancho lechero</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__num">25<small> commits</small></span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: rediseño en curso</span></span>
+            </div>
+            <p>App de escritorio para Windows que administra un hato lechero: padrón animal, reproducción, producción, sanidad con control de retiros, insumos y costos. Funciona sin internet, con la base en la computadora del rancho.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>Electron</li><li>TypeScript</li><li>Drizzle ORM</li><li>SQLite</li></ul>
+          </div>
+        </div>
+      </article>
 
-        <article class="more__item">
-          <p class="more__kind">Herramienta</p>
-          <h3>AI Orchestrator</h3>
-          <p>
-            Un equipo de desarrollo de IA que corre en local con una sola orden: un agente
-            implementa, se corren las pruebas, otro audita, el primero corrige y el segundo
-            da el veredicto. El control lo lleva código determinista, no un modelo.
-          </p>
-          <ul class="tags" aria-label="Tecnologías">
-            <li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li>
-          </ul>
-        </article>
+      <!-- AI Orchestrator -->
+      <article class="stall" id="ai-orchestrator">
+        <div class="awning"><h3 class="awning__sign casts" data-shadow="text">AI Orchestrator</h3></div>
+        <div class="stall__body">
+          <figure class="goods goods--made">
+            <div class="term casts" data-shadow="box" role="img" aria-label="Terminal de ejemplo: una orden lanza el equipo; Codex implementa, corren las pruebas, Claude audita y da el veredicto aprobado.">
+              <div class="term__bar"><span class="term__tab">PowerShell</span><span class="win" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 5h8"/></svg><svg viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7"/></svg><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span></div>
+<pre><span class="t-p">PS&gt;</span> .\ai-team.ps1 -Project "akora" -Task "cupones"
+<span class="t-d">[1/5]</span> Codex implementa ............ <span class="t-ok">listo</span>
+<span class="t-d">[2/5]</span> Pruebas del proyecto ........ <span class="t-ok">42 ok</span>
+<span class="t-d">[3/5]</span> Claude audita ............... <span class="t-w">2 hallazgos</span>
+<span class="t-d">[4/5]</span> Codex corrige ............... <span class="t-ok">listo</span>
+<span class="t-d">[5/5]</span> Veredicto ................... <span class="t-ok">APROBADO</span><span class="caret"></span></pre>
+            </div>
+            <figcaption>Corrida ilustrativa: la orden es la real</figcaption>
+          </figure>
+          <div class="stall__info">
+            <div class="tag casts" data-shadow="box">
+              <span class="tag__row"><span class="tag__k">Origen</span><span class="tag__v">Mi propia máquina</span></span>
+              <span class="tag__row"><span class="tag__k">Largo</span><span class="tag__v">Sin medir: aún no sale de casa</span></span>
+              <span class="tag__row"><span class="tag__k">Temperatura</span><span class="tag__v">Tibia: en uso diario</span></span>
+            </div>
+            <p>Un equipo de desarrollo de IA que corre en local con una sola orden: un agente implementa, se corren las pruebas, otro audita, el primero corrige y el segundo da el veredicto. El control lo lleva código determinista, no un modelo.</p>
+            <ul class="tech-tags" aria-label="Tecnologías"><li>PowerShell</li><li>Claude Code</li><li>Codex CLI</li></ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- El comerciante -->
+    <section id="comerciante" class="merchant">
+      <h2 class="script-title casts" data-shadow="text">El comerciante</h2>
+      <div class="merchant__body">
+        <p class="merchant__quote">Me importa que el sistema funcione el sábado a las nueve de la noche, no solo en la demo.</p>
+        <div class="merchant__text">
+          <p>Soy Ricardo Orduño Camacho. Me obsesiona el detalle: cuánto tarda una transición, dónde cae una sombra, qué siente alguien que cobra con prisa en un mostrador. Por eso diseño la interfaz y también todo lo que la sostiene: la base de datos, el backend, el servidor y el despliegue.</p>
+          <p>Vengo de los videojuegos, y se nota: pienso en ritmo, en recompensas y en que tocar algo se sienta bien. Esta página es un ejemplo; la luna la mueves tú.</p>
+          <p>Trabajo con agentes de IA como parte de mi equipo, con reglas claras: todo cambio va en rama, con pull request y con pruebas.</p>
+        </div>
       </div>
     </section>
 
-    <section id="sobre-mi" class="section wrap rule">
-      <h2 class="section__title">Sobre mí</h2>
-      <div class="about">
-        <p class="about__lead">
-          Trabajo con negocios pequeños que necesitan que su sistema funcione el sábado a las
-          nueve de la noche, no solo en la demo.
-        </p>
-        <p>
-          Por eso me importa tanto lo que pasa después de escribir el código: cómo se despliega,
-          cómo se respalda y qué se rompe si falla.
-        </p>
-        <p>
-          Me muevo cómodo en todo el camino: diseño la base de datos, escribo el backend y el
-          frontend, monto el servidor, automatizo el despliegue y me quedo a operarlo.
-          Cuando algo se pierde en producción, lo investigo hasta encontrar por qué y dejo
-          una defensa para que no vuelva a pasar.
-        </p>
-        <p>
-          También uso agentes de IA como parte de mi flujo de trabajo, con reglas claras:
-          todo cambio va en rama con pull request y con pruebas.
-        </p>
+    <!-- Inventario -->
+    <section id="inventario" class="inventory">
+      <h2 class="script-title casts" data-shadow="text">Inventario</h2>
+      <div class="ledger casts" data-shadow="box">
+        <p class="ledger__note">Lista de precios · a tratar · se surte todos los días</p>
+        <dl>
+          <div class="ledger__row"><dt>Interfaz</dt><dd>TypeScript · React · Next.js · Angular · Tailwind · HTML y CSS a mano</dd></div>
+          <div class="ledger__row"><dt>Movimiento</dt><dd>Transiciones y animación en CSS y JavaScript · sombras de luna en vivo · respeto a quien pide menos movimiento</dd></div>
+          <div class="ledger__row"><dt>Backend</dt><dd>Node.js · NestJS · API REST · pagos con Openpay · sincronización entre aparatos</dd></div>
+          <div class="ledger__row"><dt>Datos</dt><dd>PostgreSQL · SQLite · Drizzle ORM · respaldos y recuperación</dd></div>
+          <div class="ledger__row"><dt>Servidor</dt><dd>Docker · Caddy · nginx · GitHub Actions · Oracle Cloud · Vercel · Linux</dd></div>
+          <div class="ledger__row"><dt>Juegos y escritorio</dt><dd>Roblox con Luau · Rojo · Wally · Electron</dd></div>
+          <div class="ledger__row"><dt>Oficio</dt><dd>Git con ramas y PR · pruebas con Vitest · agentes de IA · PowerShell y Bash</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section id="habilidades" class="section wrap rule">
-      <h2 class="section__title">Lo que sé</h2>
-      <dl class="skills">
-        <div class="skills__row">
-          <dt>Frontend</dt>
-          <dd>TypeScript, React, Next.js, Angular, Tailwind CSS, HTML y CSS</dd>
+    <!-- Cerrar trato -->
+    <section id="trato" class="deal">
+      <div class="awning awning--wide"><h2 class="awning__sign casts" data-shadow="text">Cerrar trato</h2></div>
+      <div class="deal__body">
+        <p class="deal__lead">Esta sombra no se vende: se contrata.</p>
+        <p>Busco equipo donde el detalle de la interfaz importe. Escríbeme y platicamos.</p>
+        <div class="deal__actions">
+          <a class="ticket-btn casts" data-shadow="box" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
+          <a class="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="line-btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div class="skills__row">
-          <dt>Backend</dt>
-          <dd>Node.js, NestJS, API REST, pagos en línea con Openpay, sincronización entre dispositivos</dd>
-        </div>
-        <div class="skills__row">
-          <dt>Datos</dt>
-          <dd>PostgreSQL, SQLite, Drizzle ORM, respaldos y recuperación</dd>
-        </div>
-        <div class="skills__row">
-          <dt>Infraestructura</dt>
-          <dd>Docker, Caddy, nginx y TLS, GitHub Actions, Oracle Cloud, Vercel, Linux</dd>
-        </div>
-        <div class="skills__row">
-          <dt>Escritorio y juegos</dt>
-          <dd>Electron, Roblox con Luau, Rojo y Wally</dd>
-        </div>
-        <div class="skills__row">
-          <dt>Forma de trabajo</dt>
-          <dd>Git con ramas y pull requests, pruebas con Vitest, agentes de IA, PowerShell y Bash</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section id="contacto" class="section wrap rule contact">
-      <h2 class="section__title">¿Tienes un negocio que necesita su propio sistema?</h2>
-      <p class="lead">Platiquemos. Te respondo por correo o LinkedIn.</p>
-      <div class="actions">
-        <a class="btn btn--primary" href="mailto:ricardoordunoc@gmail.com">ricardoordunoc@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap rule">
+  <footer class="footer">
+    <p>Bazar abierto de 9 p.m. hasta que compile. No se aceptan devoluciones de sombras.</p>
     <p>© <span id="anio">2026</span> Ricardo Orduño Camacho · Hecho a mano, sin frameworks.</p>
   </footer>
+
+  <div class="toast" id="logro" role="status" aria-live="polite" hidden>
+    <span class="toast__k">Logro desbloqueado</span>
+    <strong>Eclipse</strong>
+    <span>Apagaste la luna. Vuelve a teclear el código para prenderla.</span>
+  </div>
 
   <script src="main.js"></script>
 </body>
