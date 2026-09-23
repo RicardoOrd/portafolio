@@ -1,8 +1,7 @@
 # Portafolio · Bazar de sombras
 
-Sitio personal de Ricardo Orduño Camacho. Un bazar nocturno: cada proyecto es un
-puesto, la luna es la única luz y todo recalcula su sombra en vivo según dónde
-esté la luna.
+Sitio personal de Ricardo Orduño Camacho. Un tianguis de noche: cada proyecto es
+un puesto con su foco, y la luz de los focos proyecta las sombras de la página.
 
 HTML, CSS y JS a mano, sin dependencias ni paso de build.
 
@@ -16,18 +15,15 @@ npx serve .
 
 ## Publicar
 
-Cualquier hosting estático sirve tal cual (Vercel, Netlify, GitHub Pages): la raíz
-del sitio es la raíz del repo. `.impeccable/` y `PRODUCT.md` son material de
-diseño y no hace falta publicarlos.
+GitHub Pages publica la rama `main` desde la raíz. Todas las rutas son relativas
+porque el sitio vive en `/portafolio/`.
 
 ## Editar
 
 - Textos y proyectos: `index.html`. Cada proyecto es un `<article class="stall">`.
 - Colores, tipografía y materiales: variables al inicio de `styles.css`.
-- La luna y las sombras: `main.js`. Todo elemento con la clase `casts` y un
-  `data-shadow` (`text`, `box` o `img`) proyecta sombra.
-- Imágenes en `img/`; cada PNG lleva su origen incrustado
-  (`impeccable embed-prompt --read img/<archivo>`).
+- Focos, sombras y animaciones: `main.js`. Todo elemento con la clase `casts` y un
+  `data-shadow` (`box` o `img`) proyecta sombra desde el foco encendido más cercano.
 
 ## Secreto
 

@@ -136,7 +136,7 @@ const puestos = $$(".stall");
 const calle = new Map($$(".calle__puesto").map((a) => [a.getAttribute("href").slice(1), a]));
 const cuenta = $(".calle__cuenta");
 let recorridos = new Set();
-try { recorridos = new Set(JSON.parse(sessionStorage.getItem("recorridos") || "[]")); } catch {}
+try { recorridos = new Set(JSON.parse(sessionStorage.getItem("recorridos") || "[]").filter((id) => calle.has(id))); } catch {}
 
 function pintarCuenta() {
   recorridos.forEach((id) => calle.get(id)?.classList.add("visto"));
@@ -147,7 +147,7 @@ function recorrer(id) {
   recorridos.add(id);
   try { sessionStorage.setItem("recorridos", JSON.stringify([...recorridos])); } catch {}
   pintarCuenta();
-  if (recorridos.size === calle.size) avisar("Recorriste el tianguis", "Logro desbloqueado: pasaste por los cinco puestos.");
+  if (recorridos.size === calle.size) avisar("Recorriste el tianguis", "Logro desbloqueado: pasaste por todos los puestos.");
 }
 pintarCuenta();
 
