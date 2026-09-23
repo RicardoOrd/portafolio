@@ -373,7 +373,7 @@ main, .footer { position: relative; z-index: 1; }
 .js .stall:not(.is-lit) .goods > :not(figcaption) { --b: .42; --s: .3; }
 
 .goods--screen > img:first-child { display: block; width: 100%; height: auto; border-radius: 4px; }
-.goods__sticker { position: absolute; width: 22%; right: -4%; bottom: 3.5rem; rotate: 8deg; }
+.goods__sticker { position: absolute; width: 22%; height: auto; right: -4%; bottom: 3.5rem; rotate: 8deg; }
 
 .goods--cutouts { display: grid; grid-template-columns: 1fr 1fr; align-items: end; }
 .cut { display: block; width: 100%; height: auto; }
@@ -502,6 +502,6 @@ body.apagon .stall .goods > :not(figcaption) { --b: .2; --s: 0; }
   .hero__tag .tag__num { font-size: 42px; }
   .lane { height: 130px; }
   .awning { padding: 18px 18px 34px; }
-  .goods__sticker { display: none; }
+  .goods__sticker { width: 20%; right: -2%; bottom: 2.8rem; }
   .hero__actions > *, .deal__actions > * { flex: 1 1 100%; justify-content: center; }
 }
