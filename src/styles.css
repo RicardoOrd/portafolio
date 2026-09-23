@@ -29,7 +29,7 @@
   --cast: rgb(2 4 8 / .72);
 
   --f-sign: "Bungee", "Arial Black", sans-serif;       /* rotulación callejera */
-  --f-text: "Archivo", system-ui, sans-serif;          /* texto, etiquetas y números */
+  --f-text: "Archivo Variable", "Archivo", system-ui, sans-serif;  /* texto, etiquetas y números */
   --f-hand: "Caveat Brush", "Comic Sans MS", cursive;  /* plumón sobre cartulina */
 
   --ease-out: cubic-bezier(.16, 1, .3, 1);

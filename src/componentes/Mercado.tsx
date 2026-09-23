@@ -12,6 +12,9 @@ import { useVisor } from "./Visor";
 // Los puestos del tianguis. Cada uno abre al llegar (toldo, foco, mercancía y su
 // objeto) y se prende al cruzar el centro de la pantalla.
 
+// Ancho de la columna de mercancía: toda la pantalla en una columna, 500px en dos
+const TAMANO_CAPTURA = "(max-width: 900px) calc(100vw - 32px), 500px";
+
 function Mercancia({ m }: { m: DatosMercancia }) {
   const casts = useCasts();
   const visor = useVisor();
@@ -29,7 +32,7 @@ function Mercancia({ m }: { m: DatosMercancia }) {
   return (
     <figure className="goods goods--screen">
       <button className="lupa casts" data-shadow="img" ref={casts} type="button" aria-label={m.lupa} onClick={(e) => visor.abrir(e.currentTarget)}>
-        <img src={m.imagen.src} width={m.imagen.width} height={m.imagen.height} loading="lazy" alt={m.imagen.alt} />
+        <img src={m.imagen.src} srcSet={m.imagen.srcSet} sizes={TAMANO_CAPTURA} width={m.imagen.width} height={m.imagen.height} loading="lazy" alt={m.imagen.alt} />
       </button>
       {m.estampa && (
         <img className="goods__sticker casts" data-shadow="img" ref={casts} src={m.estampa.src} width={m.estampa.width} height={m.estampa.height} loading="lazy" alt={m.estampa.alt} />
