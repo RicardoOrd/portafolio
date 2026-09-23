@@ -48,6 +48,9 @@ solemne. Español de México.
 - Hacker Tycoon (Roblox): arte final del juego en
   `C:\proyectos\HackerTycoon\assets\final\` (pósters, máscaras, letreros, graffiti).
 - AI Orchestrator: herramienta de línea de comandos, sin capturas.
+- Habilidades confirmadas por Ricardo el 2026-09-22 sin proyecto en `C:proyectos`
+  que las muestre: Java con Spring Boot y Python. El resto del inventario sale de
+  las dependencias de sus repos.
 - No hay testimonios, clientes nombrados aparte de los proyectos, cifras de
   negocio ni foto de Ricardo. No inventarlos.
 
