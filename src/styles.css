@@ -119,7 +119,7 @@ a { color: inherit; text-underline-offset: 4px; }
 }
 body.apagon .rail__lampara::after { opacity: 0; }
 
-.rail__nav { position: relative; align-self: stretch; display: flex; gap: 14px; padding: 0 6px; }
+.rail__nav { position: relative; align-self: stretch; display: flex; gap: 14px; padding: 0 6px; margin-left: auto; }
 .rail__cable {
   position: absolute; left: -14px; right: -14px; top: 11px; height: 2px;
   background: var(--wire); border-radius: 2px;
@@ -154,7 +154,7 @@ body.apagon .rail__lampara::after { opacity: 0; }
 .rail__nav a:focus-visible, .rail__menu:focus-visible { outline: none; }
 .rail__nav a:focus-visible .rail__tag, .rail__menu:focus-visible .rail__tag { outline: 2px solid var(--moon); outline-offset: 3px; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .rail__nav a:hover, .rail__menu:hover { animation: columpio .9s var(--ease-out); }
+  .rail__nav a:hover, .rail__menu:hover, .rail__idioma:hover { animation: columpio .9s var(--ease-out); }
 }
 @keyframes columpio {
   15% { rotate: 9deg; } 35% { rotate: -6deg; } 55% { rotate: 3.5deg; } 75% { rotate: -1.5deg; } 100% { rotate: 0deg; }
@@ -168,6 +168,27 @@ body.apagon .rail__lampara::after { opacity: 0; }
 }
 
 .rail__menu { display: none; border: 0; background: none; cursor: pointer; font: inherit; }
+
+/* Selector de idioma: cuelga aparte, del techo del riel, con un cordel largo. Es de
+   contorno para no confundirse con las secciones; se lee en su propio idioma. */
+.rail__idioma {
+  position: relative; align-self: stretch; display: grid; justify-items: center; align-content: start;
+  margin-left: 10px; text-decoration: none; color: var(--ticket); transform-origin: 50% 0;
+}
+/* Baja hasta la altura de las cartulinas de las secciones: cable (11) + cordel, foquito y margen (19) */
+.rail__idioma::before { content: ""; width: 2px; height: 30px; background: var(--wire); }
+.rail__idioma .rail__tag {
+  margin-top: 0; background: none; box-shadow: none; rotate: 2deg;
+  border: 1px solid rgb(234 223 198 / .5);
+  font-size: 12px; font-stretch: 125%; letter-spacing: .02em; text-transform: uppercase;
+  transition: border-color .25s var(--ease-out), color .25s var(--ease-out);
+}
+.rail__idioma:hover { color: var(--saffron-hi); }
+.rail__idioma:hover .rail__tag { border-color: var(--saffron-hi); }
+.rail__idioma:focus-visible { outline: none; }
+.rail__idioma:focus-visible .rail__tag { outline: 2px solid var(--moon); outline-offset: 3px; }
+/* En celular solo cabe el código: el nombre completo sigue ahí para el lector de pantalla */
+.rail__idioma-corto { display: none; }
 
 main, .footer { position: relative; z-index: 1; }
 
@@ -331,6 +352,15 @@ button.ticket-btn { border: 0; cursor: pointer; }
   transition: border-color .3s var(--ease-out), color .3s var(--ease-out);
 }
 .line-btn:hover { border-color: var(--saffron-hi); color: var(--saffron-hi); }
+/* Descargar CV: la flecha baja a la bandeja al pasar el cursor */
+.line-btn--cv { gap: 10px; }
+.line-btn--cv svg {
+  flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  transition: translate .3s var(--ease-out);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .line-btn--cv:hover svg { translate: 0 2px; }
+}
 
 /* ---------- Cartulina de precio ---------- */
 
@@ -634,7 +664,14 @@ body.apagon .stall .goods > :not(figcaption) { --b: .2; --s: 0; }
 @media (max-width: 640px) {
   body { font-size: 17px; }
   .rail__placa { font-size: 16px; padding: 5px 13px 6px; }
-  .rail__menu { display: flex; align-items: center; gap: 8px; padding-top: 0; }
+  .rail__menu { display: flex; align-items: center; gap: 8px; padding-top: 0; margin-left: auto; }
+  .rail__idioma { align-self: center; margin-left: 0; }
+  .rail__idioma::before { display: none; }
+  .rail__idioma .rail__tag { padding: 3px 8px 4px; }
+  .rail__idioma-largo {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .rail__idioma-corto { display: inline; }
   .rail__menu::before { display: none; }
   .rail__menu .rail__tag { margin: 0; }
   .rail__nav {

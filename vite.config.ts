@@ -26,9 +26,12 @@ function precargarFuentes(): Plugin {
 }
 
 // El sitio vive en /portafolio/ dentro de GitHub Pages: todas las rutas son relativas.
+// Dos páginas en la misma carpeta, así las rutas relativas sirven igual en las dos:
+// index.html en español y en.html en inglés.
 export default defineConfig({
   base: "./",
   plugins: [react(), precargarFuentes()],
+  build: { rolldownOptions: { input: ["index.html", "en.html"] } },
   // En el prerender, GSAP y Lenis van dentro del paquete: sus módulos no cargan sueltos en Node
   ssr: { noExternal: ["gsap", "@gsap/react", "lenis"] },
 });

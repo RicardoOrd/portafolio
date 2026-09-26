@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { crearMotor, type MotorDeLuz } from "./motor";
 import { useAviso } from "../componentes/Aviso";
+import { useT } from "../idioma";
 
 interface Luz {
   motor: MotorDeLuz;
@@ -16,6 +17,7 @@ export function LuzProvider({ children }: { children: ReactNode }) {
   const [motor] = useState(crearMotor);
   const [apagon, setApagon] = useState(false);
   const avisar = useAviso();
+  const t = useT();
 
   useEffect(() => {
     let avance = 0;
@@ -26,12 +28,12 @@ export function LuzProvider({ children }: { children: ReactNode }) {
       avance = 0;
       const ahora = !document.body.classList.contains("apagon");
       setApagon(ahora);
-      if (ahora) avisar("Se fue la luz", "Logro desbloqueado. Vuelve a teclear el código para que regrese.");
-      else avisar("Regresó la luz", "El tianguis vuelve a abrir.");
+      if (ahora) avisar(t("Se fue la luz", "Lights out"), t("Logro desbloqueado. Vuelve a teclear el código para que regrese.", "Achievement unlocked. Type the code again to bring it back."));
+      else avisar(t("Regresó la luz", "Power's back"), t("El tianguis vuelve a abrir.", "The market is open again."));
     };
     addEventListener("keydown", alTeclear);
     return () => removeEventListener("keydown", alTeclear);
-  }, [avisar]);
+  }, [avisar, t]);
 
   useEffect(() => {
     document.body.classList.toggle("apagon", apagon);

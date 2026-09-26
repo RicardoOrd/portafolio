@@ -10,31 +10,35 @@ import { Trato } from "./componentes/Trato";
 import { Pie } from "./componentes/Pie";
 import { LuzProvider } from "./luz/Luz";
 import { PaseoProvider } from "./movimiento/Paseo";
+import { IdiomaContext, traductores, type Idioma } from "./idioma";
 
 // Bazar de sombras: un tianguis de noche. La luz la dan los focos, y cada proyecto es un puesto.
 
-export function App() {
+export function App({ idioma }: { idioma: Idioma }) {
+  const t = traductores[idioma];
   return (
-    <AvisoProvider>
-      <LuzProvider>
-        <RecorridoProvider>
-          <PaseoProvider>
-            <VisorProvider>
-              <a className="skip" href="#puestos">Saltar a los proyectos</a>
-              <div className="sky" aria-hidden="true" />
-              <Riel />
-              <main>
-                <Portada />
-                <Mercado />
-                <Comerciante />
-                <Inventario />
-                <Trato />
-              </main>
-              <Pie />
-            </VisorProvider>
-          </PaseoProvider>
-        </RecorridoProvider>
-      </LuzProvider>
-    </AvisoProvider>
+    <IdiomaContext value={idioma}>
+      <AvisoProvider>
+        <LuzProvider>
+          <RecorridoProvider>
+            <PaseoProvider>
+              <VisorProvider>
+                <a className="skip" href="#puestos">{t("Saltar a los proyectos", "Skip to the projects")}</a>
+                <div className="sky" aria-hidden="true" />
+                <Riel />
+                <main>
+                  <Portada />
+                  <Mercado />
+                  <Comerciante />
+                  <Inventario />
+                  <Trato />
+                </main>
+                <Pie />
+              </VisorProvider>
+            </PaseoProvider>
+          </RecorridoProvider>
+        </LuzProvider>
+      </AvisoProvider>
+    </IdiomaContext>
   );
 }
