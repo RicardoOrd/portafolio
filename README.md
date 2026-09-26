@@ -29,7 +29,8 @@ relativas (`base: "./"`) porque el sitio vive en `/portafolio/`.
 
 ## Editar
 
-- Idiomas: `index.html` es la versión en español y `en.html` la de inglés. Cada
+- Idiomas: `index.html` es la versión en español y `en.html` la de inglés, que se
+  publica como `/portafolio/en` (GitHub Pages la sirve sin la extensión). Cada
   texto va junto a su traducción, `t("Proyectos", "Projects")` (`src/idioma.ts`);
   al cambiar un texto, cambia los dos.
 - CV: `public/ricardo-orduno-camacho-cv.pdf`. Para actualizarlo, reemplaza ese
