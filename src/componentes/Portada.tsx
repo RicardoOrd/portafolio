@@ -2,6 +2,9 @@ import { useRef } from "react";
 import { useCasts, usePedirLuz } from "../luz/Luz";
 import { CON_MOVIMIENTO, gsap, useGSAP } from "../movimiento/gsap";
 import { puestos } from "../datos/puestos";
+import { LINKEDIN } from "../datos/contacto";
+import { useIdioma, useT } from "../idioma";
+import { BotonCV } from "./BotonCV";
 import { Guirnalda } from "./Guirnalda";
 import { CartulinaColgada } from "./CartulinaColgada";
 import { useRecorrido } from "./Recorrido";
@@ -12,10 +15,12 @@ import { useRecorrido } from "./Recorrido";
 
 function Calle() {
   const { recorridos } = useRecorrido();
+  const lista = puestos[useIdioma()];
+  const t = useT();
   return (
-    <nav className="calle" aria-label="Los puestos del tianguis">
-      <p className="calle__cuenta" aria-live="polite">{`${recorridos.size} de ${puestos.length} puestos recorridos`}</p>
-      {puestos.map((p) => (
+    <nav className="calle" aria-label={t("Los puestos del tianguis", "The market stalls")}>
+      <p className="calle__cuenta" aria-live="polite">{t(`${recorridos.size} de ${lista.length} puestos recorridos`, `${recorridos.size} of ${lista.length} stalls visited`)}</p>
+      {lista.map((p) => (
         <a key={p.id} className={`calle__puesto${recorridos.has(p.id) ? " visto" : ""}`} href={`#${p.id}`} aria-label={p.nombre}>
           <span className="calle__toldo" aria-hidden="true" />
           <span className="calle__mostrador" aria-hidden="true">
@@ -33,6 +38,7 @@ export function Portada() {
   const hero = useRef<HTMLElement>(null);
   const casts = useCasts();
   const pedir = usePedirLuz();
+  const t = useT();
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -75,13 +81,15 @@ export function Portada() {
       <div className="hero__copy">
         <h1 className="hero__name">Ricardo<br />Orduño</h1>
         <p className="hero__lead">
-          Desarrollador full stack en Sonora, México. Hago de principio a fin, de la
-          interfaz al servidor, las tiendas, cajas y apps con las que cobran negocios de
-          aquí: una repostería en Navojoa vende con mi tienda y una taquería cobra con mi caja.
+          {t(
+            "Desarrollador full stack en Sonora, México. Hago de principio a fin, de la interfaz al servidor, las tiendas, cajas y apps con las que cobran negocios de aquí: una repostería en Navojoa vende con mi tienda y una taquería cobra con mi caja.",
+            "Full stack developer in Sonora, Mexico. From the interface to the server, I build the online stores, registers and apps that local businesses get paid through: a pastry shop in Navojoa sells through my store and a taquería rings up orders on my register.",
+          )}
         </p>
         <div className="hero__actions" ref={casts}>
-          <a className="ticket-btn casts" data-shadow="box" href="#puestos" ref={casts}>Ver proyectos</a>
-          <a className="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
+          <a className="ticket-btn casts" data-shadow="box" href="#puestos" ref={casts}>{t("Ver proyectos", "See projects")}</a>
+          <a className="line-btn" href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
+          <BotonCV />
         </div>
       </div>
 

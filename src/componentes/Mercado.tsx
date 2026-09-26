@@ -4,6 +4,7 @@ import { usePuestoEncendido } from "../luz/usePuestoEncendido";
 import { CON_MOVIMIENTO, gsap, useGSAP } from "../movimiento/gsap";
 import { abrirPuesto, colocarObjeto, subirMercancia } from "../movimiento/entradas";
 import { puestos, type Mercancia as DatosMercancia, type Puesto as DatosPuesto } from "../datos/puestos";
+import { useIdioma, useT } from "../idioma";
 import { Odometro } from "./Odometro";
 import { Rotulo } from "./Rotulo";
 import { useRecorrido } from "./Recorrido";
@@ -48,6 +49,7 @@ function Puesto({ p }: { p: DatosPuesto }) {
   const pedir = usePedirLuz();
   const { recorrer } = useRecorrido();
   const encendido = usePuestoEncendido(ref);
+  const t = useT();
 
   useEffect(() => {
     if (encendido) recorrer(p.id);
@@ -84,12 +86,12 @@ function Puesto({ p }: { p: DatosPuesto }) {
         <Mercancia m={p.mercancia} />
         <div className="stall__info">
           <div className={`tag tag--${p.objeto} casts`} data-shadow="box" ref={casts}>
-            <span className="tag__row"><span className="tag__k">Origen</span><span className="tag__v">{p.origen}</span></span>
+            <span className="tag__row"><span className="tag__k">{t("Origen", "Origin")}</span><span className="tag__v">{p.origen}</span></span>
             <span className="tag__row"><span className="tag__k">Commits</span><Odometro valor={String(p.commits)} activo={encendido} /></span>
-            <span className="tag__row"><span className="tag__k">Estado</span><span className={`tag__v${p.caliente ? " tag__v--hot" : ""}`}>{p.estado}</span></span>
+            <span className="tag__row"><span className="tag__k">{t("Estado", "Status")}</span><span className={`tag__v${p.caliente ? " tag__v--hot" : ""}`}>{p.estado}</span></span>
           </div>
           <p>{p.descripcion}</p>
-          <ul className="tech-tags" aria-label="Tecnologías">
+          <ul className="tech-tags" aria-label={t("Tecnologías", "Technologies")}>
             {p.tecnologias.map((t) => <li key={t}>{t}</li>)}
           </ul>
           {p.enlace && <a className="daylight" href={p.enlace.href} target="_blank" rel="noopener">{p.enlace.texto}</a>}
@@ -100,13 +102,18 @@ function Puesto({ p }: { p: DatosPuesto }) {
 }
 
 export function Mercado() {
+  const idioma = useIdioma();
+  const t = useT();
   return (
     <section id="puestos" className="market" tabIndex={-1}>
       <header className="market__head">
-        <Rotulo>Proyectos</Rotulo>
-        <p>Cada proyecto es un puesto con su foco: se prende cuando llegas a él. El número de cada cartulina son los commits de su repositorio.</p>
+        <Rotulo>{t("Proyectos", "Projects")}</Rotulo>
+        <p>{t(
+          "Cada proyecto es un puesto con su foco: se prende cuando llegas a él. El número de cada cartulina son los commits de su repositorio.",
+          "Each project is a market stall with its own bulb: it lights up when you reach it. The number on each tag is the commit count of its repository.",
+        )}</p>
       </header>
-      {puestos.map((p) => <Puesto key={p.id} p={p} />)}
+      {puestos[idioma].map((p) => <Puesto key={p.id} p={p} />)}
     </section>
   );
 }

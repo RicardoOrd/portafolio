@@ -3,11 +3,12 @@ import { useCasts, usePedirLuz } from "../luz/Luz";
 import { usePuestoEncendido } from "../luz/usePuestoEncendido";
 import { CON_MOVIMIENTO, estaQuieto, gsap, useGSAP } from "../movimiento/gsap";
 import { abrirPuesto, colgar } from "../movimiento/entradas";
+import { CORREO, GITHUB, LINKEDIN } from "../datos/contacto";
+import { useT } from "../idioma";
+import { BotonCV } from "./BotonCV";
 
 // Contacto es el último puesto: cierra la venta que la portada puso precio.
 // "Copiar correo" usa el portapapeles y un sello de "Apartado" cae sobre "Disponible".
-
-const CORREO = "ricardoordunoc@gmail.com";
 
 export function Trato() {
   const ref = useRef<HTMLElement>(null);
@@ -18,6 +19,7 @@ export function Trato() {
   const pedir = usePedirLuz();
   const encendido = usePuestoEncendido(ref);
   const [aviso, setAviso] = useState("");
+  const t = useT();
 
   useEffect(() => { pedir(); }, [encendido, pedir]);
 
@@ -54,7 +56,7 @@ export function Trato() {
   const copiar = async () => {
     try {
       await navigator.clipboard.writeText(CORREO);
-      setAviso("Listo, el correo está en tu portapapeles.");
+      setAviso(t("Listo, el correo está en tu portapapeles.", "Done, the email is on your clipboard."));
       sellar();
     } catch {
       const el = correo.current;
@@ -64,32 +66,33 @@ export function Trato() {
         s?.removeAllRanges();
         s?.addRange(r);
       }
-      setAviso("No pude copiarlo solo: ya está seleccionado, cópialo con Ctrl+C.");
+      setAviso(t("No pude copiarlo solo: ya está seleccionado, cópialo con Ctrl+C.", "I couldn't copy it on my own: it's selected, so copy it with Ctrl+C."));
     }
   };
 
   return (
     <section id="trato" className={`deal stall${encendido ? " is-lit" : ""}`} ref={ref} tabIndex={-1}>
-      <div className="awning"><h2 className="awning__sign">Contacto</h2></div>
+      <div className="awning"><h2 className="awning__sign">{t("Contacto", "Contact")}</h2></div>
       <div className="stall__body deal__body">
         <span className={`foco${encendido ? " on" : ""}`} aria-hidden="true"><i /></span>
         <div className="deal__texto">
-          <p className="deal__lead">Busco un equipo donde importe todo el camino, de la interfaz al servidor.</p>
-          <p className="deal__sub">Escríbeme por correo o por LinkedIn y platicamos.</p>
+          <p className="deal__lead">{t("Busco un equipo donde importe todo el camino, de la interfaz al servidor.", "I'm looking for a team that cares about the whole road, from the interface to the server.")}</p>
+          <p className="deal__sub">{t("Escríbeme por correo o por LinkedIn y platicamos. Mi CV está en inglés.", "Email me or message me on LinkedIn and let's talk.")}</p>
           <p className="deal__correo" ref={correo}>{CORREO}</p>
           <div className="deal__actions" ref={casts}>
-            <button className="ticket-btn casts" data-shadow="box" type="button" ref={casts} onClick={copiar}>Copiar correo</button>
-            <a className="line-btn" href={`mailto:${CORREO}`}>Escribir</a>
-            <a className="line-btn" href="https://www.linkedin.com/in/ricardo-orduno-camacho/" target="_blank" rel="noopener">LinkedIn</a>
-            <a className="line-btn" href="https://github.com/RicardoOrd" target="_blank" rel="noopener">GitHub</a>
+            <button className="ticket-btn casts" data-shadow="box" type="button" ref={casts} onClick={copiar}>{t("Copiar correo", "Copy email")}</button>
+            <a className="line-btn" href={`mailto:${CORREO}`}>{t("Escribir", "Email me")}</a>
+            <a className="line-btn" href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
+            <a className="line-btn" href={GITHUB} target="_blank" rel="noopener">GitHub</a>
+            <BotonCV />
           </div>
           <p className="deal__aviso" role="status" aria-live="polite">{aviso}</p>
         </div>
         <div className="deal__trato tag casts" data-shadow="box" ref={(el) => { trato.current = el; return casts(el); }}>
-          <span className="tag__row"><span className="tag__k">Puesto</span><span className="tag__v">Full stack</span></span>
-          <span className="tag__row"><span className="tag__k">Precio</span><span className="tag__v">Una entrevista</span></span>
-          <span className="tag__row"><span className="tag__k">Estado</span><span className="tag__v tag__v--hot">Disponible</span></span>
-          <span className="sello" aria-hidden="true" ref={sello}>Apartado</span>
+          <span className="tag__row"><span className="tag__k">{t("Puesto", "Role")}</span><span className="tag__v">Full stack</span></span>
+          <span className="tag__row"><span className="tag__k">{t("Precio", "Price")}</span><span className="tag__v">{t("Una entrevista", "One interview")}</span></span>
+          <span className="tag__row"><span className="tag__k">{t("Estado", "Status")}</span><span className="tag__v tag__v--hot">{t("Disponible", "Available")}</span></span>
+          <span className="sello" aria-hidden="true" ref={sello}>{t("Apartado", "Reserved")}</span>
         </div>
       </div>
     </section>

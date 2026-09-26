@@ -1,6 +1,7 @@
 import { createContext, useContext, useRef, useState, type ReactNode } from "react";
 import { usePaseo } from "../movimiento/Paseo";
 import { estaQuieto } from "../movimiento/gsap";
+import { useT } from "../idioma";
 
 // Las capturas se toman del puesto para verlas de cerca: la imagen sale de su lugar
 // hacia el visor con View Transitions y regresa al cerrar. Sin soporte, abre directo.
@@ -21,6 +22,7 @@ export function VisorProvider({ children }: { children: ReactNode }) {
   const foto = useRef<HTMLImageElement>(null);
   const origen = useRef<HTMLButtonElement | null>(null);
   const paseo = usePaseo();
+  const t = useT();
 
   // El cambio de la transición tiene que ser síncrono: el visor se maneja directo en el DOM
   const [visor] = useState(() => ({
@@ -64,7 +66,7 @@ export function VisorProvider({ children }: { children: ReactNode }) {
       {children}
       <dialog
         className="visor"
-        aria-label="Captura ampliada"
+        aria-label={t("Captura ampliada", "Enlarged screenshot")}
         ref={dialogo}
         data-lenis-prevent
         onCancel={(e) => { e.preventDefault(); visor.cerrar(); }}
@@ -73,7 +75,7 @@ export function VisorProvider({ children }: { children: ReactNode }) {
           if (t === e.currentTarget || t.classList.contains("visor__lienzo")) visor.cerrar();
         }}
       >
-        <button className="visor__cerrar" type="button" onClick={visor.cerrar}>Cerrar</button>
+        <button className="visor__cerrar" type="button" onClick={visor.cerrar}>{t("Cerrar", "Close")}</button>
         <div className="visor__lienzo"><img ref={foto} alt="" src="data:," decoding="async" /></div>
       </dialog>
     </VisorContext>

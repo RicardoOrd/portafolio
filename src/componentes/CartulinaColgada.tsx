@@ -3,6 +3,7 @@ import { useCasts, usePedirLuz } from "../luz/Luz";
 import { useQuieto } from "../movimiento/gsap";
 import { commitsTotales } from "../datos/puestos";
 import { Odometro } from "./Odometro";
+import { useT } from "../idioma";
 
 // La cartulina de la portada cuelga del cable de la guirnalda. Se puede agarrar y
 // soltar: la mueve un péndulo amortiguado que solo corre mientras se mueve.
@@ -15,6 +16,7 @@ export function CartulinaColgada() {
   const casts = useCasts();
   const pedir = usePedirLuz();
   const quieto = useQuieto();
+  const t = useT();
   const [agarrada, setAgarrada] = useState(false);
   const [contar, setContar] = useState(false);
 
@@ -128,13 +130,13 @@ export function CartulinaColgada() {
     <aside
       ref={ref}
       className={`hero__tag${quieto ? "" : " colgante"}${agarrada ? " agarrada" : ""}`}
-      aria-label="Cartulina con mis datos"
+      aria-label={t("Cartulina con mis datos", "Price tag with my details")}
     >
       <div className="tag casts" data-shadow="box" ref={casts}>
-        <span className="tag__row"><span className="tag__k">Origen</span><span className="tag__v">Sonora, México</span></span>
+        <span className="tag__row"><span className="tag__k">{t("Origen", "Origin")}</span><span className="tag__v">{t("Sonora, México", "Sonora, Mexico")}</span></span>
         <span className="tag__row"><span className="tag__k">Commits</span><Odometro valor={commitsTotales} activo={contar} /></span>
-        <span className="tag__row"><span className="tag__k">Estado</span><span className="tag__v">Buscando equipo</span></span>
-        <span className="tag__row"><span className="tag__k">Precio</span><span className="tag__v">Una entrevista</span></span>
+        <span className="tag__row"><span className="tag__k">{t("Estado", "Status")}</span><span className="tag__v">{t("Buscando equipo", "Looking for a team")}</span></span>
+        <span className="tag__row"><span className="tag__k">{t("Precio", "Price")}</span><span className="tag__v">{t("Una entrevista", "One interview")}</span></span>
       </div>
     </aside>
   );

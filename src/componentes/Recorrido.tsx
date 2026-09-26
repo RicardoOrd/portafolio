@@ -1,11 +1,12 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { puestos } from "../datos/puestos";
 import { useAviso } from "./Aviso";
+import { useT } from "../idioma";
 
 // Qué puestos ya visitaste en esta pestaña. La calle de la portada prende su farol
 // y al completarlos sale el logro.
 
-const ids = new Set(puestos.map((p) => p.id));
+const ids = new Set(puestos.es.map((p) => p.id));
 const CLAVE = "recorridos";
 
 interface Recorrido {
@@ -24,6 +25,7 @@ export function RecorridoProvider({ children }: { children: ReactNode }) {
   // Copia al día para decidir sin esperar al siguiente render
   const actuales = useRef(recorridos);
   const avisar = useAviso();
+  const t = useT();
 
   const fijar = useCallback((nuevos: ReadonlySet<string>) => {
     actuales.current = nuevos;
@@ -46,8 +48,10 @@ export function RecorridoProvider({ children }: { children: ReactNode }) {
     if (!ids.has(id) || actuales.current.has(id)) return;
     const nuevos = new Set(actuales.current).add(id);
     fijar(nuevos);
-    if (nuevos.size === ids.size) avisar("Terminaste el mercado", "Logro desbloqueado: pasaste por todos los puestos.");
-  }, [avisar, fijar]);
+    if (nuevos.size === ids.size) {
+      avisar(t("Terminaste el mercado", "Market complete"), t("Logro desbloqueado: pasaste por todos los puestos.", "Achievement unlocked: you visited every stall."));
+    }
+  }, [avisar, fijar, t]);
 
   return <RecorridoContext value={{ recorridos, recorrer }}>{children}</RecorridoContext>;
 }

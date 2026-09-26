@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger, useGSAP } from "../movimiento/gsap";
+import { otraVersion, useIdioma, useT } from "../idioma";
 
 // El riel: un cable del que cuelgan las secciones como cartulinas. El foco de la
 // sección en pantalla se prende solo y el cable de abajo se enciende conforme bajas.
+// Al final cuelga el selector de idioma: lleva a la misma sección en la otra versión.
 
 const secciones = [
-  { id: "puestos", nombre: "Proyectos" },
-  { id: "comerciante", nombre: "Sobre mí" },
-  { id: "inventario", nombre: "Habilidades" },
-  { id: "trato", nombre: "Contacto" },
-];
+  { id: "puestos", nombre: ["Proyectos", "Projects"] },
+  { id: "comerciante", nombre: ["Sobre mí", "About me"] },
+  { id: "inventario", nombre: ["Habilidades", "Skills"] },
+  { id: "trato", nombre: ["Contacto", "Contact"] },
+] as const;
 
 export function Riel() {
   const riel = useRef<HTMLElement>(null);
@@ -17,6 +19,8 @@ export function Riel() {
   const progreso = useRef<HTMLSpanElement>(null);
   const [actual, setActual] = useState<string | null>(null);
   const [abierto, setAbierto] = useState(false);
+  const t = useT();
+  const otra = otraVersion[useIdioma()];
 
   // Sección actual: la que cruza la mitad de la pantalla. En la portada no hay ninguna.
   useEffect(() => {
@@ -64,7 +68,7 @@ export function Riel() {
       onBlur={(e) => { if (abierto && !riel.current?.contains(e.relatedTarget as Node | null)) setAbierto(false); }}
     >
       <div className="rail__inner">
-        <a className="rail__brand" href="#inicio" aria-label="Ricardo Orduño, volver al inicio">
+        <a className="rail__brand" href="#inicio" aria-label={t("Ricardo Orduño, volver al inicio", "Ricardo Orduño, back to the top")}>
           <span className="rail__lampara" aria-hidden="true" />
           <span className="rail__placa" aria-hidden="true">
             {/* El espacio no se ve (el flex lo ignora), pero hace que el texto diga "Ricardo Orduño" */}
@@ -81,9 +85,9 @@ export function Riel() {
           onClick={() => setAbierto((a) => !a)}
         >
           <span className="rail__foco" aria-hidden="true" />
-          <span className="rail__tag">Menú</span>
+          <span className="rail__tag">{t("Menú", "Menu")}</span>
         </button>
-        <nav className="rail__nav" id="secciones" aria-label="Secciones">
+        <nav className="rail__nav" id="secciones" aria-label={t("Secciones", "Sections")}>
           <span className="rail__cable" aria-hidden="true" />
           {secciones.map((s) => (
             <a
@@ -94,10 +98,21 @@ export function Riel() {
               onClick={() => setAbierto(false)}
             >
               <span className="rail__foco" aria-hidden="true" />
-              <span className="rail__tag">{s.nombre}</span>
+              <span className="rail__tag">{t(s.nombre[0], s.nombre[1])}</span>
             </a>
           ))}
         </nav>
+        <a
+          className="rail__idioma"
+          href={actual ? `${otra.href}#${actual}` : otra.href}
+          hrefLang={otra.idioma}
+          lang={otra.idioma}
+        >
+          <span className="rail__tag">
+            <span className="rail__idioma-largo">{otra.nombre}</span>
+            <span className="rail__idioma-corto" aria-hidden="true">{otra.idioma.toUpperCase()}</span>
+          </span>
+        </a>
       </div>
       <div className="rail__progreso" aria-hidden="true"><span ref={progreso} /></div>
     </header>

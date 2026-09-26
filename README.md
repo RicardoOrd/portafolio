@@ -29,6 +29,11 @@ relativas (`base: "./"`) porque el sitio vive en `/portafolio/`.
 
 ## Editar
 
+- Idiomas: `index.html` es la versión en español y `en.html` la de inglés. Cada
+  texto va junto a su traducción, `t("Proyectos", "Projects")` (`src/idioma.ts`);
+  al cambiar un texto, cambia los dos.
+- CV: `public/ricardo-orduno-camacho-cv.pdf`. Para actualizarlo, reemplaza ese
+  archivo con el mismo nombre.
 - Proyectos: `src/datos/puestos.ts`. Los commits de cada cartulina son reales.
 - Secciones: `src/componentes/`, una por archivo.
 - Colores, tipografía y materiales: variables al inicio de `src/styles.css`. Las

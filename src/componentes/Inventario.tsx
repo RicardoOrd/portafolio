@@ -1,35 +1,60 @@
 import { Fragment, useEffect, useRef, useState, type CSSProperties } from "react";
 import { useCasts } from "../luz/Luz";
 import { Rotulo } from "./Rotulo";
+import { useT, type T } from "../idioma";
 
 // Habilidades: una cartulina a todo lo ancho con los precios a tratar. Lo más fuerte
 // lleva una marca de plumón rojo que se barre la primera vez que ves la lista.
 
 type Articulo = string | { texto: string; marca: "circulo" | "raya" };
 
-const inventario: { clave: string; articulos: Articulo[] }[] = [
+const inventario = (t: T): { clave: string; articulos: Articulo[] }[] => [
   {
-    clave: "Interfaz",
+    clave: t("Interfaz", "Frontend"),
     articulos: [
       { texto: "TypeScript", marca: "circulo" }, { texto: "React", marca: "circulo" }, "Next.js",
-      { texto: "Angular", marca: "circulo" }, "RxJS", "Zustand", "TanStack Query", "Tailwind", "Vite", "HTML y CSS a mano",
+      { texto: "Angular", marca: "circulo" }, "RxJS", "Zustand", "TanStack Query", "Tailwind", "Vite", t("HTML y CSS a mano", "hand-written HTML and CSS"),
     ],
   },
   {
-    clave: "Movimiento",
+    clave: t("Movimiento", "Motion"),
     articulos: [
-      "Transiciones y animación en CSS y JavaScript",
-      { texto: "luz y sombras calculadas en vivo", marca: "raya" },
-      "respeto a quien pide menos movimiento",
+      t("Transiciones y animación en CSS y JavaScript", "Transitions and animation in CSS and JavaScript"),
+      { texto: t("luz y sombras calculadas en vivo", "light and shadows computed live"), marca: "raya" },
+      t("respeto a quien pide menos movimiento", "respect for anyone who asks for less motion"),
     ],
   },
-  { clave: "Backend", articulos: ["Java con Spring Boot", "Node.js", "NestJS", "Python", "API REST", "tiempo real con WebSockets y Socket.IO"] },
-  { clave: "Datos", articulos: ["PostgreSQL", "SQLite", "Prisma", "Drizzle ORM", "IndexedDB con Dexie para trabajar sin conexión", "respaldos y recuperación"] },
-  { clave: "Seguridad y calidad", articulos: ["JWT y Passport", "Argon2 y bcrypt", "validación con Zod", "pruebas con Jest, Vitest, Supertest y Karma", "monitoreo con Sentry y Pino"] },
-  { clave: "Servicios", articulos: ["Pagos con Openpay", "imágenes con Cloudinary", "correo con Resend"] },
-  { clave: "Servidor", articulos: ["Docker", "Caddy", "nginx", "GitHub Actions", "Oracle Cloud", "Vercel", "Linux"] },
-  { clave: "Juegos y escritorio", articulos: ["Roblox con Luau", "Rojo", "Wally", "Electron"] },
-  { clave: "Oficio", articulos: ["Git con ramas y pull requests", "revisión de código", "PowerShell y Bash"] },
+  {
+    clave: "Backend",
+    articulos: [
+      t("Java con Spring Boot", "Java with Spring Boot"), "Node.js", "NestJS", "Python", t("API REST", "REST APIs"),
+      t("tiempo real con WebSockets y Socket.IO", "real time with WebSockets and Socket.IO"),
+    ],
+  },
+  {
+    clave: t("Datos", "Data"),
+    articulos: [
+      "PostgreSQL", "SQLite", "Prisma", "Drizzle ORM",
+      t("IndexedDB con Dexie para trabajar sin conexión", "IndexedDB with Dexie for offline work"), t("respaldos y recuperación", "backups and recovery"),
+    ],
+  },
+  {
+    clave: t("Seguridad y calidad", "Security and quality"),
+    articulos: [
+      t("JWT y Passport", "JWT and Passport"), t("Argon2 y bcrypt", "Argon2 and bcrypt"), t("validación con Zod", "validation with Zod"),
+      t("pruebas con Jest, Vitest, Supertest y Karma", "testing with Jest, Vitest, Supertest and Karma"), t("monitoreo con Sentry y Pino", "monitoring with Sentry and Pino"),
+    ],
+  },
+  {
+    clave: t("Servicios", "Services"),
+    articulos: [t("Pagos con Openpay", "Payments with Openpay"), t("imágenes con Cloudinary", "images with Cloudinary"), t("correo con Resend", "email with Resend")],
+  },
+  { clave: t("Servidor", "Servers"), articulos: ["Docker", "Caddy", "nginx", "GitHub Actions", "Oracle Cloud", "Vercel", "Linux"] },
+  { clave: t("Juegos y escritorio", "Games and desktop"), articulos: [t("Roblox con Luau", "Roblox with Luau"), "Rojo", "Wally", "Electron"] },
+  {
+    clave: t("Oficio", "Craft"),
+    articulos: [t("Git con ramas y pull requests", "Git with branches and pull requests"), t("revisión de código", "code review"), t("PowerShell y Bash", "PowerShell and Bash")],
+  },
 ];
 
 // Un círculo a mano alzada y una raya ondulada: se barren, así no dependen del largo del trazo
@@ -54,6 +79,7 @@ export function Inventario() {
   const lista = useRef<HTMLDivElement>(null);
   const casts = useCasts();
   const [visto, setVisto] = useState(false);
+  const t = useT();
 
   useEffect(() => {
     const el = lista.current;
@@ -68,16 +94,16 @@ export function Inventario() {
   let orden = 0;
   return (
     <section id="inventario" className="inventory" tabIndex={-1}>
-      <Rotulo>Habilidades</Rotulo>
+      <Rotulo>{t("Habilidades", "Skills")}</Rotulo>
       <div
         className={`ledger casts${visto ? " visto" : ""}`}
         data-shadow="box"
         id="lista"
         ref={(el) => { lista.current = el; return casts(el); }}
       >
-        <p className="ledger__note">Precios a tratar</p>
+        <p className="ledger__note">{t("Precios a tratar", "Prices negotiable")}</p>
         <dl>
-          {inventario.map(({ clave, articulos }) => (
+          {inventario(t).map(({ clave, articulos }) => (
             <div className="ledger__row" key={clave}>
               <dt>{clave}</dt>
               <dd>

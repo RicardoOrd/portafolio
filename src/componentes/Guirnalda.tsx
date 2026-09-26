@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { usePedirLuz } from "../luz/Luz";
 import { estaQuieto } from "../movimiento/gsap";
+import { useT } from "../idioma";
 
 // Siete focos colgados de un cable con vuelos, de lado a lado de la portada.
 // Cada uno se prende o se apaga al tocarlo; las sombras de la portada salen del más cercano.
@@ -16,6 +17,7 @@ export function Guirnalda() {
   const [activo, setActivo] = useState(0);
   const botones = useRef<(HTMLButtonElement | null)[]>([]);
   const pedir = usePedirLuz();
+  const t = useT();
 
   // Llegada: la guirnalda se prende foco por foco (el momento orquestado de la página)
   useEffect(() => {
@@ -37,7 +39,7 @@ export function Guirnalda() {
   };
 
   return (
-    <div className="guirnalda" role="group" aria-label="Guirnalda: prende y apaga los focos con clic o con las flechas">
+    <div className="guirnalda" role="group" aria-label={t("Guirnalda: prende y apaga los focos con clic o con las flechas", "String of lights: turn the bulbs on and off with a click or the arrow keys")}>
       <svg viewBox="0 0 1000 90" preserveAspectRatio="none" focusable="false" aria-hidden="true">
         <path d="M0 20 Q125 70 250 20 Q375 70 500 20 Q625 70 750 20 Q875 70 1000 20" />
       </svg>
@@ -49,7 +51,7 @@ export function Guirnalda() {
           type="button"
           style={{ left: `${x}%`, top: `${y}px` }}
           aria-pressed={prendidos[i]}
-          aria-label={`Foco ${i + 1} de ${focos.length}`}
+          aria-label={t(`Foco ${i + 1} de ${focos.length}`, `Bulb ${i + 1} of ${focos.length}`)}
           tabIndex={i === activo ? 0 : -1}
           onClick={() => setPrendidos((p) => p.map((on, j) => (j === i ? !on : on)))}
           onKeyDown={(e) => alTeclear(e, i)}
