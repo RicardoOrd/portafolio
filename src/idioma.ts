@@ -13,9 +13,12 @@ export const traductores: Record<Idioma, T> = {
   en: (_, en) => en,
 };
 
-/** La otra versión de la página: a dónde lleva el selector de idioma del riel */
+/**
+ * La otra versión de la página: a dónde lleva el selector de idioma del riel. El archivo
+ * es en.html, pero se anuncia como /portafolio/en: GitHub Pages lo sirve sin la extensión.
+ */
 export const otraVersion: Record<Idioma, { idioma: Idioma; href: string; nombre: string }> = {
-  es: { idioma: "en", href: "en.html", nombre: "English" },
+  es: { idioma: "en", href: "en", nombre: "English" },
   en: { idioma: "es", href: "./", nombre: "Español" },
 };
 
